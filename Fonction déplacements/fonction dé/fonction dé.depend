@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1639732204 source:c:\repos\monopoly\fonction déplacements\fonction dé\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
