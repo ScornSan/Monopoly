@@ -4,6 +4,11 @@
 #define MAX_DE 6
 #define MIN_DE 1
 
+int clem_chelou()
+{
+    return 0;
+}
+
 int aller_en_prison()
 {
     int compteur_prison = 0;
