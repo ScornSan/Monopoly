@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1639838410 source:c:\repos\monopoly\projet final\projet\main.c
+	"mono.h"
+
+1639835179 c:\repos\monopoly\projet final\projet\mono.h
+	<stdio.h>
+	<stdlib.h>
+
+1639834350 source:c:\repos\monopoly\projet final\projet\fonction_de.c
+	"mono.h"
+
+1639836050 source:c:\repos\monopoly\projet final\projet\fonctions actions joueurs\fonction_de.c
+	"actions.h"
+
+1639834900 c:\repos\monopoly\projet final\projet\fonctions actions joueurs\actions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+
+1639836746 source:c:\repos\monopoly\projet final\projet\fonctions affichage\pion.c
+	"affichage.h"
+
+1639835607 c:\repos\monopoly\projet final\projet\fonctions affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
