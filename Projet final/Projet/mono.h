@@ -1,7 +1,7 @@
 #ifndef MONO_H_INCLUDED
 #define MONO_H_INCLUDED
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "Structure_joueur/structure_joueur.h"
+#include <conio.h>
 
 #endif // MONO_H_INCLUDED

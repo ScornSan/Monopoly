@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1639856360 source:c:\repos\monopoly\structures\joueur\structure joueur\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

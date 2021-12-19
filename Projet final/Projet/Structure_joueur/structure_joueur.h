@@ -1,9 +1,12 @@
 #ifndef STRUCTURE_JOUEUR_H_INCLUDED
 #define STRUCTURE_JOUEUR_H_INCLUDED
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#define CASES 32
 
-typedef struct joueur
+typedef struct players
 {
     char pseudo;
     int argent;

@@ -7,7 +7,8 @@
 #include <time.h>
 #include <conio.h>
 
-void lancer_de();
-int tour_joueur_x();
+#define MAX_DE 6
+#define MIN_DE 1
+
 
 #endif // ACTIONS_H_INCLUDED

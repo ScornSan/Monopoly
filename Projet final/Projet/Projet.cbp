@@ -31,9 +31,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Fonctions_actions_joueurs/actions.h" />
+		<Unit filename="Fonctions_actions_joueurs/deplacement_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/fonction_de.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Fonctions_affichage/affichage.h" />
+		<Unit filename="Fonctions_affichage/pion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Structure_joueur/structure_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Structure_joueur/structure_joueur.h" />
+		<Unit filename="Tour_joueur/Tour_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="mono.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
