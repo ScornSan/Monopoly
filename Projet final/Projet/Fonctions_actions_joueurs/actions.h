@@ -7,6 +7,7 @@
 #include <time.h>
 #include <conio.h>
 
+
 #define MAX_DE 6
 #define MIN_DE 1
 

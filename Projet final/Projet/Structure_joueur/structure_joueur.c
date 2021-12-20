@@ -11,7 +11,7 @@ int demander_nb_joueur()
         fflush(stdin);
         scanf("%d", &nb_joueurs);
     }
-    return nb_joueurs;
+    return nb_joueurs; // on retourne avec -1 car la valeur qu'on retourne va nous servir pour les indices
 }
 
 
@@ -21,7 +21,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs)
     // remplissage
     for (int x = 0; x < nombre_joueurs; x++)
     {
-        printf("Joueur %d, entrez votre pseudo : ", x+1);
+        printf("Joueur %d, entrez votre pseudo : ", x + 1);
         fflush(stdin);
         gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;

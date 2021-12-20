@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1639955927 source:c:\repos\monopoly\projet final\projet\main.c
+1640019302 source:c:\repos\monopoly\projet final\projet\main.c
 	"mono.h"
 
 1639955401 c:\repos\monopoly\projet final\projet\mono.h
@@ -47,30 +47,28 @@
 	<stdlib.h>
 	<windows.h>
 
-1639951292 source:c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.c
+1640016528 source:c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.c
 	"structure_joueur.h"
 
-1639938527 c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.h
+1640013658 c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1639951705 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
-	<stdio.h>
-	<stdlib.h>
+1640017876 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structure_joueur/structure_joueur.h"
 
 1639955135 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
-1639955125 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
+1640013664 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	<conio.h>
 
-1639955290 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
+1640017841 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structure_joueur/structure_joueur.h"
 
