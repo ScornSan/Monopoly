@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1640083887 source:c:\depot\monopoly\affichage\plateau\affichage plateau\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
