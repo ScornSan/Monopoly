@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <conio.h>
 
 void couleur(int couleurTexte,int couleurFond) // fonction d'affichage de couleurs
 {
@@ -9,7 +9,7 @@ void couleur(int couleurTexte,int couleurFond) // fonction d'affichage de couleu
     SetConsoleTextAttribute(H,couleurFond*16+couleurTexte);
 }
 
-void gotoligcol( int lig, int col )
+void gotoligcol( int lig, int col )  // fonction curseur
 {
     // ressources
     COORD mycoord;
@@ -19,13 +19,55 @@ void gotoligcol( int lig, int col )
 
 }
 
-// FONCTION AFFICHAGE DU MENU
 
-void affichage_Menu ()
+void nouvelle_partie()
 {
-    char echap;
-    FILE * fichier_regles;
-    int choix = 0;
+    int nbDeJoueurs;
+    couleur(12, 0);
+    printf("Appuyez sur [ECHAP] pour revenir au menu");
+    couleur(9, 0);
+    gotoligcol(8,45);
+    printf("BIENVENUE DANS UNE NOUVELLE PARTIE ! \n");
+    gotoligcol(9,50);
+    printf("QUE LE MEILLEUR GAGNE ^^\n");
+    gotoligcol(11,49);
+    couleur(15,0);
+    printf("Combien de joueur etes-vous ? \n");
+    couleur(12,0);
+    gotoligcol(12,50);
+    printf(">>>>  ");
+    scanf("%d", &nbDeJoueurs);
+    // BLINDAGE
+    while (nbDeJoueurs < 2 || nbDeJoueurs > 4)
+    {
+            system("cls");
+            couleur(15,0);
+            gotoligcol(10,20);
+            printf("Oups nombre de joueurs invalide ! Vous ne pouvez jouer qu'a 2, 3 ou 4 personnes :( \n");
+            gotoligcol(11,20);
+            printf("Saisissez un nombre de joueurs valide : \n");
+            couleur(12,0);
+            gotoligcol(12,20);
+            printf(">>>>  ");
+            scanf("%d", &nbDeJoueurs);
+    }
+
+    for (int i = 0; i < nbDeJoueurs; i++)
+    {
+        system("cls");
+        char nom;
+        couleur(15,0);
+        gotoligcol(10,40);
+        printf ("Nom du joueur %d : ", i+1);
+        couleur(12,0);
+        scanf("%s", &nom);
+        fflush(stdin);
+
+    }
+}
+
+void affichage_choix()
+{
     gotoligcol(5,50);
     couleur(12, 0);
     printf("=======================\n");
@@ -52,6 +94,15 @@ void affichage_Menu ()
     couleur(12, 0);
     printf(">>>>\n");
     gotoligcol(15,45);
+}
+
+// FONCTION AFFICHAGE DU MENU
+
+void affichage_Menu ()
+{
+    FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
+    int choix = 0;
+    affichage_choix();
 
     // SAISIE DU CHOIX
     scanf("%d", &choix);
@@ -59,7 +110,7 @@ void affichage_Menu ()
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
-        gotoligcol(14,45);
+        gotoligcol(16,45);
         printf("INVALIDE ! Entrez votre selection : ");
         fflush(stdin);
         scanf("%d", &choix);
@@ -72,24 +123,21 @@ void affichage_Menu ()
 
 
         case 1 :
-            couleur(15, 0);
-            gotoligcol(10,45);
-            printf("BIENVENUE DANS UNE NOUVELLE PARTIE ! \n");
-            gotoligcol(12,50);
-            printf("QUE LE MEILLEUR GAGNE ^^\n");
+
+            fflush(stdin);
             system("cls");
-            // printf(" Ajouter Fonction RESET");
-            couleur(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            nouvelle_partie();
             break;
 
         case 2 :
+            fflush(stdin);
             // Ajouter fonction sauvegarde partie
             couleur(12, 0);
             printf("Appuyez sur [ECHAP] pour revenir au menu");
             break;
 
         case 3 :
+            fflush(stdin);
 
             // AJOUTER PROGRAMME QUI REPREND UNE ANCIENNE PARTIE
             couleur(12, 0);
@@ -97,11 +145,11 @@ void affichage_Menu ()
             break;
 
         case 4 :
-
+            fflush(stdin);
             fichier_regles = fopen("reglesDuJeu.txt", "r");
             couleur(12, 0);
             printf("Appuyez sur [ECHAP] pour revenir au menu");
-            scanf("%c", &echap);
+
             couleur(15, 0);
             if (fichier_regles == NULL)
             {
@@ -119,34 +167,48 @@ void affichage_Menu ()
             break;
 
         case 5 :
+                fflush(stdin);
                 couleur(12, 0);
                 printf("Appuyez sur [ECHAP] pour revenir au menu");
-                scanf("%c", &echap);
-                do {
-
                 couleur(15, 0);
                 gotoligcol(10,45);
-                printf("La team est constituee de : \n");
+                printf("Programmeurs de ce jeu : \n");
                 gotoligcol(12,45);
                 printf("Yohan MARCEL \n");
                 gotoligcol(13,45);
                 printf("Sarah BLIN \n");
                 gotoligcol(14,45);
                 printf("Clement POMPEI \n");
-                gotoligcol(15,45);                         // C'est la boucle la le pb
+                gotoligcol(15,45);
                 printf("Benjamin GENDRY \n");
                 couleur(10, 0);
                 break;
-                } while (echap != '27');
 
-        case 6 :
 
-                return 0;
-     }
+         case 6 :
+                fflush(stdin);
+                couleur(12, 0);
+                printf("Appuyez sur [ECHAP] pour revenir au menu");
+                exit(0);
 
+        }
+}
+
+void echap ()
+{
+    int echap;
+    echap = getch();
+    if ( echap == 27)
+    {
+        fflush(stdin);
+        system("cls");
+        affichage_Menu();
+    }
 }
 
 int main()
 {
     affichage_Menu();
+    echap();
+    fflush(stdin);
 }
