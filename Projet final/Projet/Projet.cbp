@@ -42,10 +42,13 @@
 		<Unit filename="Fonctions_affichage/pion.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Structure_joueur/structure_joueur.c">
+		<Unit filename="Structures/Structures_cartes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Structure_joueur/structure_joueur.h" />
+		<Unit filename="Structures/structure_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Structures/structure_joueur.h" />
 		<Unit filename="Tour_joueur/Tour_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>

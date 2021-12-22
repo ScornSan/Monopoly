@@ -1,21 +1,24 @@
 #include "../Fonctions_actions_joueurs/actions.h"
-#include "../Structure_joueur/structure_joueur.h"
+#include "../Structures/structure_joueur.h"
 
 int tour_joueur(t_joueur joueur_i[], int id_joueur)
 {
     int de1, de2;
     int nb_lancer = 0;
+    bool case_depart = false;
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || ((de1 == de2)))
     {
-        printf("C'est au joueur %d de jouer ! Appuyez sur une touche pour lancer les dés\n", id_joueur + 1);
+        printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n", id_joueur + 1);
         if (getch())
         {
             joueur_i[id_joueur].position += lancer_de(&de1, &de2);
-            if (de1 == de2)
+            if (joueur_i[id_joueur].position >= 28)
             {
-                printf("Vous avez fait double !\n");
+                printf("Vous etes passe par la case depart ! Vous recevez 200");
             }
+            joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
+
             //deplacement_joueur(joueur_i[id_joueur], id_joueur);
             // déplacement du joueur
             /*if (tomber_sur_terrain)
@@ -32,6 +35,10 @@ int tour_joueur(t_joueur joueur_i[], int id_joueur)
             }
 
             */
+            if (de1 == de2)
+            {
+                printf("Vous avez fait double !\n");
+            }
             nb_lancer++;
         }
     }

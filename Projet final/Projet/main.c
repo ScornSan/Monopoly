@@ -1,4 +1,5 @@
 #include "mono.h"
+#include <string.h>
 
 int main()
 {
@@ -6,13 +7,13 @@ int main()
     int nombre_de_joueurs = demander_nb_joueur();
     t_joueur joueur[nombre_de_joueurs]; // on augmente de 1 car on parle de la taille
     creation_joueurs(joueur, nombre_de_joueurs);
-    while (nombre_de_joueurs / 1 != 1)
+    while (nombre_de_joueurs != 1)
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
             fin_de_partie = tour_joueur(joueur, i);
-            printf("%d", joueur[i].position);
             // le pion se déplacera, il ne faudra pas jouer pendant ce temps
+            printf("%d\n", joueur[i].position);
             if (fin_de_partie < 0)
             {
                 break; // on sort de la boucle et on fait la fin du jeu

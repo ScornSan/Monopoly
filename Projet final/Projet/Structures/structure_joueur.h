@@ -8,9 +8,18 @@
 
 typedef struct players
 {
-    char pseudo;
+    char pseudo[20];
     int argent;
     int position;
 }t_joueur;
+
+typedef struct cartes
+{
+    int puissance_carte;
+    int prix_achat;
+    int prix_loyer;
+    int prix_vente;
+    int prix_rachat;
+}t_carte;
 
 #endif // STRUCTURE_JOUEUR_H_INCLUDED
