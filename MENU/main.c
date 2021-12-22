@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
+
 void couleur(int couleurTexte,int couleurFond) // fonction d'affichage de couleurs
 {
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
@@ -54,6 +55,7 @@ void nouvelle_partie()
 
     for (int i = 0; i < nbDeJoueurs; i++)
     {
+        fflush(stdin);
         system("cls");
         char nom;
         couleur(15,0);
@@ -61,7 +63,7 @@ void nouvelle_partie()
         printf ("Nom du joueur %d : ", i+1);
         couleur(12,0);
         scanf("%s", &nom);
-        fflush(stdin);
+
 
     }
 }

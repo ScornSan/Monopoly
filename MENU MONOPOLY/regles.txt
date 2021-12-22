@@ -1,0 +1,133 @@
+Cahier Des Charges : Règles (modifiées) du Monopoly
+
+Objectif
+L'objectif du jeu est de devenir le joueur le plus riche par l'achat, la location et la vente de propriété et d'amener vos adversaires à la faillite.
+
+Matériel
+Dans le jeu physique, les joueurs disposent d'un plateau, de pions (un par joueur), de cartes de rue et de gares, de maisons, d'hôtels… 
+Puisque nous implémentons une version virtuelle du jeu, il n'y a pas de matériel à proprement parler. Néanmoins, il y a bien 16 cartes chance et 16 cartes communauté différentes. Il y a au maximum 32 maisons et 12 hôtels en même temps sur le terrain.
+
+Interface
+Nous réaliserons le jeu en mode console (sauf bonus interface graphique). Le plateau sera réaffiché intégralement à chaque changement de joueur.euse, avec les informations utiles.
+Chaque joueur.euse devra voir à l'écran :
+-	Le plateau, ainsi que la position de chaque joueurs/maisons/hôtels sur ce plateau. Nous devrons également y voir pour chaque terrain, s'il est disponible à l'achat, ou à défaut, le nom de son/sa propriétaire devra être affiché.
+-	L'argent dont il ou elle dispose.
+-	Ses propriétés/maisons/hôtels.
+-	Ses possibilités : acheter une maison/un hôtel, lancer les dés…
+Le plateau sera affiché sous la forme d'une grille, de 8 colonnes par 4 lignes.
+Les joueurs évolueront sur ce plateau de gauche à droite, puis ligne par ligne de haut en bas. Ainsi, une fois arrivé tout à droite de la première ligne, un pion sera déplacé sur la seconde ligne, à partir de la première colonne.
+ATTENTION : ce n'est pas parce que nous affichons le plateau sous la forme d'une grille à deux dimensions que les données doivent prendre la forme d'une matrice en mémoire. Vous pouvez très bien stocker les informations dans un tableau à une dimension dans la mémoire, et ajouter un retour à la ligne toutes les 6 cases lors de son affichage. Le piège lorsque l'on débute est de mélanger représentation en mémoire et représentation visuelle à l'écran. A vous de réfléchir en avance comment vous allez gérer ce plateau, qui représente un point difficile mais primordial du projet ! Sans une bonne conception préalable, vous avez 80% de "chances" de vous retrouver bloqués dans ce projet.
+Le terminal n'offrant pas beaucoup de libertés ni de place dans l'affichage, vous pouvez afficher un numéro sur chaque case et permettre au joueur d'afficher les détails d'une case choisie.
+
+Préparation
+-	Un menu principal permettra aux joueurs d'indiquer ce qu'ils souhaitent faire : lancer une nouvelle partie, sauvegarder la partie en cours, charger une ancienne partie, afficher les règles, afficher le nom des membres de l'équipe du projet, quitter… Les joueurs devront pouvoir retourner au menu principal à tout moment, sans perdre la partie en cours.
+-	En lançant une nouvelle partie, le nombre de joueurs sera demandé au clavier.
+
+-	Chaque joueur.euse  donnera ensuite son nom, qui sera affiché tout au long du jeu (ex : "c'est à Tata de jouer !", "Ce terrain appartient à Toto"…).
+-	Chaque joueur reçoit une somme initiale de 1 500 € (il sera impossible d'avoir une somme négative). L'argent sera traité sous la forme de virements bancaires (pas de billets à gérer, ni de monnaie à rendre).
+
+Banquier
+C'est le programme qui fera office de Banquier. Ce dernier est censé encaisser et distribuer l'argent aux joueurs.
+
+
+La Banque
+Outre son argent, la Banque détient les cartes des terrains, les maisons et les hôtels avant leur achat et utilisation par les joueurs.
+La Banque paie les salaires (200 € pour le passage de la case départ) et les bonus.
+Elle vend les maisons et les hôtels pour les joueurs et prête de l'argent lorsque requis sur les hypothèques.
+La Banque perçoit toutes les taxes, amendes, prêts et intérêts. La Banque ne fait jamais faillite (elle dispose de fonds illimités).
+
+
+Le jeu
+Au début, et une fois que chaque joueur.euse ait saisi son nom, Le programme choisira aléatoirement qui commence.  Son jeton est affiché sur le coin marqué “GO”, il "lance" les 2 dés, et sera déplacé du nombre indiqué. Après qu'il/elle ait terminé son jeu, le tour de jeu passe à sa gauche (sens horaire). Les jetons restent sur la case et procéder à partir de ce point au tour suivant.
+Deux ou plus de deux joueur.euses peuvent être sur la même cases au même moment. En fonction de la case que son jeton atteint, le joueur peut avoir le droit d'acheter des biens immobiliers ou d'autres propriétés ou être obligé de payer un loyer, payer des impôts, tirer une carte chance ou communauté etc.
+
+
+Doubles
+Si un.e joueur.euse lance des doubles, il déplace son jeton comme d'habitude, la somme des deux dés, et est assujetti à tous les privilèges ou pénalités relatifs à l'espace sur lequel il atterrit.
+Il a alors le droit de relancer les dés une deuxième fois. Il relance et déplace son jeton.
+Si un.e joueur.euse lance des doubles trois fois de suite, il déplace immédiatement son jeton dans l'espace “En prison”.
+
+
+Départ
+Chaque fois qu'un jeton atterrit ou passe par-dessus la case départ, que ce soit en jetant les dés ou en tirant une carte, le banquier paie au joueur un salaire de 200 €.
+Les 200 € ne sont payés qu'une seule fois à chaque fois autour de la planche.
+Cependant, si un.e joueur.euse qui passe le départ sur le jet d'un dé atterrit 2 cases au-delà sur le Coffre de la communauté, ou 7 cases au-delà sur la Chance, et tire la carte “Avance au Départ”, il ramasse 200 € pour passer le départ la première fois et 200 € pour l'atteindre la deuxième fois par des instructions sur la carte.
+
+
+Acheter une propriété
+Chaque fois qu'un.e joueur.euse atterrit sur une propriété non possédée, il.elle peut acheter cette propriété à la Banque à son prix imprimé.
+Le joueur reçoit la carte de titre de propriété et la place face visible devant lui.
+
+
+Paiement du loyer
+Lorsqu'un.e joueur.euse atterrit sur une propriété appartenant à un autre joueur, le propriétaire perçoit le loyer du joueur conformément à la liste imprimée sur la carte de titre de propriété qui lui est applicable.
+Si la propriété est hypothéquée, aucun loyer ne peut être perçu. Lorsqu'une propriété est hypothéquée, sa carte de titre de propriété est placée face cachée devant le propriétaire.
+C'est un avantage de détenir toutes les cartes de titre de propriété dans un groupe de couleur parce que le propriétaire peut alors facturer un double loyer pour les propriétés non améliorées dans ce groupe de couleur. Cette règle s'applique aux propriétés non hypothéquées, même si une autre propriété de ce groupe de couleur est hypothéquée.
+Il est encore plus avantageux d'avoir des maisons et des hôtels sur les propriétés parce que les loyers sont beaucoup plus élevés que pour les propriétés non améliorées.
+Le loyer est retiré automatiquement de la cagnotte de la personne qui doit payer : si le solde est insuffisant on lui demande s'il.elle veut hypothéquer ou vendre des biens : si ce n'est pas possible c'est la faillite et c'est perdu !
+
+
+Chance et communauté
+Quand un.e joueur.euse atterrit sur l'un de ces cases, il/elle prend la carte du haut de la pioche indiquée, suit les instructions et retourne la carte face cachée au bas de la pioche. La carte “Sortir de prison” est conservée jusqu'à ce qu'elle soit utilisée, puis retournée au fond du paquet.
+
+
+Impôt sur le revenu
+Lorsqu'un.e joueur.euse atterrit sur “Impôt sur le revenu”, il doit payer l'impôt de 200 € à la Banque.
+
+
+Prison
+Un.e joueur.euse atterrit en prison quand :
+1.	Son jeton atterrit dans l'espace marqué “ALLER EN PRISON”
+2.	Il tire une carte marquée “ALLER EN PRISON”
+3.	Il lance trois fois de suite des doubles.
+Lorsqu'un.e joueur.euse est envoyé en prison, il ne peut pas recevoir 200€ de salaire pour ce coup car, peu importe où se trouve son jeton sur le plateau, il doit le déplacer directement en prison.
+Son tour se termine lorsqu'il est envoyé en prison. Si un.e joueur.euse n'est pas “envoyé en prison” mais qu'il atterrit dans le cours normal du jeu sur cet case, il est juste “En visite”, n'encourt aucune pénalité, et avance de la manière habituelle sur son prochain jet.
+Un.e joueur.euse sort de prison lorsqu'il :
+1.	Lance des doubles sur l'un de ses trois tours suivants, s'il réussit à le faire, il avance immédiatement le nombre d'espaces indiqués par son double, même s'il a lancé des doubles, il ne prend pas un autre tour
+2.	Utilise la carte “Sortir de prison gratuitement” s'il en a une
+3.	Achete la carte “Sortir de prison gratuitement” d'un autre joueur et la jouer
+4.	Payer une amende de 50 € avant de lancer les dés lors de l'un ou l'autre de ses deux tours suivants.
+5.	Si le joueur ne lance pas le double à son troisième tour, il doit payer l'amende de 50 €. Il/elle sort alors de prison et avance immédiatement le nombre de cases indiquées par son jet.
+Même s'il.elle est en prison, un.e joueur.euse peut encore acheter, vendre ou hypothéquer une propriété, acheter ou vendre des maisons et des hôtels, faire des échanges et percevoir des loyers.
+
+
+Stationnement gratuit
+Un.e joueur.euse qui atterrit sur cet espace ne reçoit pas d'argent, de biens ou de récompenses de quelque nature que ce soit. Ce n'est qu'un lieu de repos “libre”.
+
+
+Maisons
+Une maison peut être acheté sur n'importe quel case propriété possédée.
+S'il achète une maison, il peut la mettre sur la propriété ou il.elle est.
+Le prix que le joueur doit payer à la Banque pour chaque maison est indiqué sur sa carte de titre de propriété pour la propriété sur laquelle il érige la maison.
+Le propriétaire peut toujours percevoir un double loyer s'il.elle possède tout un groupe de propriétés.
+
+
+Hôtels
+Quand un.e joueur.euse a quatre maisons sur une propriété, il.elle peut acheter un hôtel à la Banque et l'ériger sur cette propriété. Il/elle rend les quatre maisons de cette propriété à la Banque et paie le prix de l'hôtel tel qu'indiqué sur la carte de titre de propriété.
+Un seul hôtel peut être érigé sur une même propriété.
+Pénurie de bâtiments
+Lorsque la Banque n'a pas de maisons à vendre, les joueurs souhaitant construire doivent attendre qu'un autre joueur vende ses maisons à la Banque avant de construire.
+
+
+Vendre/négocier un bien immobilier
+Les maisons et les hôtels peuvent être revendus à la Banque à tout moment pour la moitié du prix payé.
+Les hôtels peuvent être vendus en une seule fois. Ou bien ils peuvent être vendus une maison à la fois (un hôtel équivaut à cinq maisons), de manière égale, à l'inverse de la manière dont ils ont été érigés.
+
+
+Hypothèques
+Les propriétés non améliorées peuvent être hypothéquées par l'entremise de la Banque en tout temps.
+Avant qu'une propriété améliorée puisse être hypothéquée, tous les bâtiments sur toutes les propriétés de son groupe de couleur doivent être revendus à la Banque à moitié prix. La valeur de l'hypothèque est imprimée sur chaque carte de titre de propriété.
+Aucun loyer ne peut être perçu sur les propriétés hypothéquées ou les services publics, mais le loyer peut être perçu sur les propriétés non hypothéquées du même groupe de couleur. Afin de lever l'hypothèque, le propriétaire doit payer à la Banque le montant de l'hypothèque majoré d'un intérêt de 10 %.
+Toutefois, le propriétaire peut vendre ou échanger cette propriété hypothéquée à un autre joueur à n'importe quel prix convenu. Le nouveau propriétaire peut lever l'hypothèque immédiatement, s'il le désire, en remboursant l'hypothèque plus 10 % d'intérêts à la Banque. S'il ne résilie pas l'hypothèque immédiatement, il doit payer à la banque un intérêt de 10% lorsqu'il achète/reçoit la propriété hypothéquée, et s'il lève l'hypothèque plus tard, il doit payer à la Banque un intérêt additionnel de 10% ainsi que le montant de l'hypothèque.
+
+
+Faillite
+Un.e joueur.euse est en faillite lorsqu'il doit plus qu'il ne peut payer à un autre joueur ou à la Banque. Si sa dette est envers un autre joueur, il doit remettre à ce joueur tout ce qu'il a de valeur et se retirer du jeu.
+Dans le cadre de ce règlement, s'il est propriétaire de maisons ou d'hôtels, il doit les restituer à la Banque en échange d'argent à hauteur de la moitié du montant payé et cet argent est remis au créancier.
+S'il a hypothéqué un bien, il remet également son bien à ce créancier, mais le nouveau propriétaire doit payer immédiatement à la Banque le montant des intérêts sur le prêt, soit 10 % de la valeur du bien.
+Une fois que le nouveau propriétaire l'a fait, il peut, à son gré, payer le capital ou détenir la propriété jusqu'à une date ultérieure à laquelle il peut résilier l'hypothèque. S'il détient des biens de cette façon jusqu'à un tour ultérieur, il/elle doit payer les intérêts à nouveau lorsqu'il/elle lève l'hypothèque.
+Si un.e joueur.euse doit à la Banque, au lieu d'un autre joueur, plus que ce qu'il peut payer (en raison de taxes ou de pénalités), même en vendant ses bâtiments, en hypothéquant sa propriété ou en vendant ou en échangeant avec d'autres joueurs, il doit remettre tous ses biens à la Banque.
+
+
+Divers
+La Banque ne peut prêter de l'argent à un.e joueur.euse qu'en hypothéquant un bien immobilier. Aucun.e joueur.euse ne peut emprunter à ou prêter de l'argent à un autre joueur.
