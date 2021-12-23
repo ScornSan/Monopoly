@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1640019302 source:c:\repos\monopoly\projet final\projet\main.c
+1640282356 source:c:\repos\monopoly\projet final\projet\main.c
 	"mono.h"
+	<string.h>
 
-1639955401 c:\repos\monopoly\projet final\projet\mono.h
-	"Structure_joueur/structure_joueur.h"
+1640174357 c:\repos\monopoly\projet final\projet\mono.h
+	"Structures/structure_joueur.h"
 	<conio.h>
 
 1639834350 source:c:\repos\monopoly\projet final\projet\fonction_de.c
@@ -47,10 +48,10 @@
 	<stdlib.h>
 	<windows.h>
 
-1640016528 source:c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.c
+1640029582 source:c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.c
 	"structure_joueur.h"
 
-1640013658 c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.h
+1640028353 c:\repos\monopoly\projet final\projet\structure_joueur\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -61,14 +62,34 @@
 1639955135 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
-1640013664 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
+1640031997 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	<conio.h>
+	<stdbool.h>
 
-1640017841 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
+1640284519 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
-	"../Structure_joueur/structure_joueur.h"
+	"../Structures/structure_joueur.h"
+
+1640029582 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
+	"structure_joueur.h"
+
+1640280893 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1640281571 source:c:\repos\monopoly\projet final\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
+1640284072 source:c:\repos\monopoly\projet final\projet\structures\achat_terrain_nu.c
+	"structure_joueur.h"
+
+1640281631 source:c:\repos\monopoly\projet final\projet\structures\paiement_loyer.c
+	"structure_joueur.h"
 
