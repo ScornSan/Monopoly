@@ -55,7 +55,6 @@ void nouvelle_partie()
 
     for (int i = 0; i < nbDeJoueurs; i++)
     {
-        fflush(stdin);
         system("cls");
         char nom;
         couleur(15,0);
@@ -96,9 +95,21 @@ void affichage_choix()
     couleur(12, 0);
     printf(">>>>\n");
     gotoligcol(15,45);
+
 }
 
 // FONCTION AFFICHAGE DU MENU
+
+void echap ()
+{
+    if ( getch() == 27)
+    {
+        fflush(stdin);
+        system("cls");
+        affichage_Menu();
+    }
+}
+
 
 void affichage_Menu ()
 {
@@ -129,6 +140,8 @@ void affichage_Menu ()
             fflush(stdin);
             system("cls");
             nouvelle_partie();
+            fflush(stdin);
+            echap();
             break;
 
         case 2 :
@@ -188,29 +201,16 @@ void affichage_Menu ()
 
 
          case 6 :
-                fflush(stdin);
-                couleur(12, 0);
-                printf("Appuyez sur [ECHAP] pour revenir au menu");
                 exit(0);
 
         }
+
+        echap();
 }
 
-void echap ()
-{
-    int echap;
-    echap = getch();
-    if ( echap == 27)
-    {
-        fflush(stdin);
-        system("cls");
-        affichage_Menu();
-    }
-}
 
 int main()
 {
     affichage_Menu();
-    echap();
     fflush(stdin);
 }
