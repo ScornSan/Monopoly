@@ -10,7 +10,7 @@ int tour_joueur(t_joueur joueur_i[], int id_joueur)
     while ((nb_lancer == 0) || ((de1 == de2)))
     {
         printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n", id_joueur + 1);
-        if (getch())
+        if (getch() == 32)
         {
             joueur_i[id_joueur].position += lancer_de(&de1, &de2);
             if (joueur_i[id_joueur].position >= 28)

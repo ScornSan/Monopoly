@@ -3,7 +3,8 @@
 
 int main()
 {
-    int fin_de_partie;
+    t_carte tab[GROUPES_CARTES][3];
+    /*int fin_de_partie;
     int nombre_de_joueurs = demander_nb_joueur();
     t_joueur joueur[nombre_de_joueurs]; // on augmente de 1 car on parle de la taille
     creation_joueurs(joueur, nombre_de_joueurs);
@@ -21,6 +22,7 @@ int main()
         }
     }
     printf("fin de jeu");
-    //deplacement_joueur();*
+    //deplacement_joueur();*/
+    remplissages_cartes(tab[GROUPES_CARTES][3]);
     return 0;
 }
