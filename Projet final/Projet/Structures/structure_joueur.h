@@ -18,7 +18,7 @@ typedef struct players
 
 typedef struct cartes
 {
-    char nom[20];
+    char *nom;
     int nb_maison;
     int prix_achat;
     bool prop_achete;
@@ -26,6 +26,7 @@ typedef struct cartes
     int prix_hypotheque;
     int prix_rachat_hypotheque;
     int possession_carte;
+    bool possession_quartier;
     int prix_rachat;
 }t_carte;
 

@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(t_joueur joueur_i[], int id_joueur)
+int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3])
 {
     int de1, de2;
     int nb_lancer = 0;
@@ -24,23 +24,26 @@ int tour_joueur(t_joueur joueur_i[], int id_joueur)
             {
                 printf("Joueur %d, vous devez payez l'impot sur le revenu s'elevant a 200", id_joueur + 1);
                 joueur_i[id_joueur].argent -= 200;
+                break;
             }
             else if (joueur_i[id_joueur].position == 5 || joueur_i[id_joueur].position == 19) /// carte chance
             {
-                continue;
+                break;
             }
             else if (joueur_i[id_joueur].position == 12 || joueur_i[id_joueur].position == 26) /// carte communauté
             {
-                continue;
+                break;
             }
             else if (joueur_i[id_joueur].position == 14) /// stationnement ou case départ*
             {
                 printf("Vous etes en stationnement gratuit ! Vous pouves soufflez le temps d'un tour !\n");
+                break;
             }
             else
             {
                 printf("Test boucle\n");
-                achat_terrain_nu(joueur_i, id_joueur);
+                tomber_sur_terrain(joueur_i, nombre_joueurs, id_joueur, cartes_terrain);
+                break;
             }
             //deplacement_joueur(joueur_i[id_joueur], id_joueur);
             // déplacement du joueur
