@@ -7,11 +7,11 @@ int demander_nb_joueur()
     //int nb_joueurs = 2; /// TODO remettre à 0
     while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4)
     {
-        printf("A combien souhaitez-vous jouer ? Ce Monopoly se joue avec 2, 3 ou 4 joueurs\n");
+        printf("A combien souhaitez-vous jouer ?\n");
         fflush(stdin);
         scanf("%d", &nb_joueurs);
     }
-    return nb_joueurs;
+    return nb_joueurs; // on retourne avec -1 car la valeur qu'on retourne va nous servir pour les indices
 }
 
 
@@ -21,7 +21,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs)
     // remplissage
     for (int x = 0; x < nombre_joueurs; x++)
     {
-        printf("Joueur %d, entrez votre pseudo : ", x+1);
+        printf("Joueur %d, entrez votre pseudo : ", x + 1);
         fflush(stdin);
         gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;

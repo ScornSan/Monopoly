@@ -21,7 +21,7 @@ mycoord.Y = lig;
 SetConsoleCursorPosition(H, mycoord );
 
 }
-
+/*
 void affichage_carte()
 {
     int lig = 15;
@@ -32,7 +32,7 @@ void affichage_carte()
                 {
                     Color(0,7);
                     gotoligcol(lig,col);
-                    printf(" ");
+                    printf(" " );
                     col++;
                 }
             lig++;
@@ -59,11 +59,13 @@ void affichage_carte()
             lig = lig +14;
         }
 
-}
-int main()
+}*/
+
+
+
+
+void affichage_plateau()
 {   //passage en plein écran --> écran passe de 120 a 180 colonnes
-    HWND hwnd=GetForegroundWindow();
-    ShowWindow(hwnd,SW_MAXIMIZE);
     lignes();
     colonnes();
     sepa_lignes();
@@ -80,10 +82,8 @@ int main()
     lettreI();
     //affichage_carte();
     gotoligcol(52,premiere_colonne);
-    return 0;
 
 }
-
 /*
     0 : Noir
     1 : Bleu foncé
