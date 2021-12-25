@@ -8,6 +8,8 @@
 #include <conio.h>
 #define CASES 28
 #define GROUPES_CARTES 8
+#define TOUCHE_ESPACE 32
+#define TOUCHE_ENTER 13
 
 typedef struct players
 {
@@ -20,10 +22,12 @@ typedef struct cartes
 {
     char *nom;
     int nb_maison;
+    int prix_maison;
     int prix_achat;
     bool prop_achete;
     int prix_loyer;
-    int prix_hypotheque;
+    bool hypotheque;
+    int val_hypotheque;
     int prix_rachat_hypotheque;
     int possession_carte;
     bool possession_quartier;

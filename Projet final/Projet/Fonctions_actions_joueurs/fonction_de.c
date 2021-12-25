@@ -3,7 +3,7 @@
 int lancer_de(int* val_de1, int* val_de2)
 {
     // variables
-    long int somme_de;
+    int somme_de;
     srand(time(NULL)); // initialisation générateur de nombres
     // On demande de lancer les dés
 

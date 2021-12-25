@@ -41,17 +41,14 @@
 		<Unit filename="Fonctions_actions_joueurs/payer_un_loyer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/tomber_sur_terrain.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
 		<Unit filename="Fonctions_affichage/pion.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Structures/achat_terrain_nu.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Structures/paiement_loyer.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/structure_joueur.c">

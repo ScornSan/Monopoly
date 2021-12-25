@@ -1,5 +1,4 @@
 #include "mono.h"
-#include <string.h>
 
 int main()
 {
@@ -14,8 +13,7 @@ int main()
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
             fin_de_partie = tour_joueur(joueur, nombre_de_joueurs, i, tab);
-            // le pion se déplacera, il ne faudra pas jouer pendant ce temps
-            printf("%d\n", joueur[i].position);
+
             if (fin_de_partie < 0)
             {
                 break; // on sort de la boucle et on fait la fin du jeu
