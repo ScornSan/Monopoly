@@ -32,6 +32,7 @@ typedef struct cartes
     int possession_carte;
     bool possession_quartier;
     int prix_rachat;
+    int id_carte;
 }t_carte;
 
 

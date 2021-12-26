@@ -15,7 +15,7 @@ int demander_nb_joueur()
 }
 
 
-void creation_joueurs(t_joueur joueur[], int nombre_joueurs)
+void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_carte[])
 {
     // tableau de structures, nombre de struct = nombre de joueurs
     // remplissage
@@ -26,5 +26,6 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs)
         gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;
         joueur[x].position = 0;
+        identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
     }
 }
