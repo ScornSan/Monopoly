@@ -36,8 +36,7 @@
 #define carac_lettreC_2 0xDC
 #define carac_lettreC_3 0xDF
 
-void Color(int cT,int cF);
-void gotoligcol( int lig, int col );
+
 
 
 #endif // AFFICHAGE_PLATEAU_H_INCLUDED

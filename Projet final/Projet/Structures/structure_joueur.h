@@ -5,9 +5,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <windows.h>
 #include <conio.h>
 #define CASES 28
 #define GROUPES_CARTES 8
+
+HANDLE win;
+
+CONSOLE_SCREEN_BUFFER_INFO coninfo;
+
 
 typedef struct players
 {
@@ -29,6 +35,9 @@ typedef struct cartes
     bool possession_quartier;
     int prix_rachat;
 }t_carte;
+
+#define MAX 100
+
 
 
 #endif // STRUCTURE_JOUEUR_H_INCLUDED

@@ -8,20 +8,27 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || ((de1 == de2)))
     {
-        printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n", id_joueur + 1);
+        carre_noir();
+        char chaine[100] = "C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des";
+        placement_script(chaine,0);
+        printf("%s%d\n", chaine,id_joueur + 1);
         if (getch() == 32)
         {
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
 
             if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
             {
-                printf("Vous etes passe par la case depart ! Vous recevez 200");
+                char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200";
+                placement_script(chaine,2);
+                printf("%s",chaine);
                 joueur_i[id_joueur].argent += 200;
             }
             joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
             if (joueur_i[id_joueur].position == 2)
             {
-                printf("Joueur %d, vous devez payez l'impot sur le revenu s'elevant a 200", id_joueur + 1);
+                char chaine[100] = "Joueur %d, vous devez payez l'impot sur le revenu s'elevant a 200";
+                placement_script(chaine,2);
+                printf("%s",chaine, id_joueur + 1);
                 joueur_i[id_joueur].argent -= 200;
                 break;
             }
@@ -35,12 +42,22 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             }
             else if (joueur_i[id_joueur].position == 14) /// stationnement ou case départ*
             {
-                printf("Vous etes en stationnement gratuit ! Vous pouves soufflez le temps d'un tour !\n");
+                char chaine[100] = "Vous etes en stationnement gratuit ! Vous pouvez pendant un tour !";
+                placement_script(chaine,2);
+                printf("%s",chaine);
                 break;
             }
             else
             {
-                printf("Test boucle\n");
+                /////////////
+
+                /*carre_noir();
+                char chaine[100] =  "Test boucle";
+                placement_script(chaine,0);
+                printf("%s",chaine);*/
+
+                /////////////
+
                 tomber_sur_terrain(joueur_i, nombre_joueurs, id_joueur, cartes_terrain);
                 break;
             }
@@ -62,7 +79,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             */
             if (de1 == de2)
             {
-                printf("Vous avez fait double !\n");
+                carre_noir();
+                char chaine[100] = "Vous avez fait double !";
+                placement_script(chaine,0);
+                printf("%s",chaine);
             }
             nb_lancer++;
         }

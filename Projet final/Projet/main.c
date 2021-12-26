@@ -5,7 +5,8 @@
 int main()
 {
     HWND hwnd=GetForegroundWindow();
-    ShowWindow(hwnd,SW_MAXIMIZE);/*
+    ShowWindow(hwnd,SW_MAXIMIZE);
+    affichage_plateau();
     t_carte tab[GROUPES_CARTES][3];
     int fin_de_partie;
     int nombre_de_joueurs = demander_nb_joueur();
@@ -18,15 +19,17 @@ int main()
         {
             fin_de_partie = tour_joueur(joueur, nombre_de_joueurs, i, tab);
             // le pion se déplacera, il ne faudra pas jouer pendant ce temps
-            printf("%d\n", joueur[i].position);
+            //printf("%d\n", joueur[i].position);
             if (fin_de_partie < 0)
             {
                 break; // on sort de la boucle et on fait la fin du jeu
             }
         }
     }
-    printf("fin de jeu");*/
+    carre_noir();
+    char chaine[30] = "FIN DE JEU";
+    placement_script(chaine,0);
+    printf("%s",chaine);
     //deplacement_joueur();
-    affichage_plateau();
     return 0;
 }
