@@ -44,6 +44,9 @@
 		<Unit filename="Fonctions_actions_joueurs/tomber_sur_terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/vente_maisons.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
 		<Unit filename="Fonctions_affichage/pion.c">
 			<Option compilerVar="CC" />

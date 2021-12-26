@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1640282356 source:c:\repos\monopoly\projet final\projet\main.c
+1640550974 source:c:\repos\monopoly\projet final\projet\main.c
 	"mono.h"
-	<string.h>
 
-1640174357 c:\repos\monopoly\projet final\projet\mono.h
+1640356267 c:\repos\monopoly\projet final\projet\mono.h
 	"Structures/structure_joueur.h"
 	<conio.h>
+	<string.h>
 
 1639834350 source:c:\repos\monopoly\projet final\projet\fonction_de.c
 	"mono.h"
@@ -59,7 +59,7 @@
 1640017876 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structure_joueur/structure_joueur.h"
 
-1639955135 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
+1640375541 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640031997 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
@@ -70,26 +70,34 @@
 	<conio.h>
 	<stdbool.h>
 
-1640284519 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
+1640550993 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1640029582 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
+1640550515 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1640280893 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
+1640549108 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 	<conio.h>
 
-1640281571 source:c:\repos\monopoly\projet final\projet\structures\structures_cartes.c
+1640450938 source:c:\repos\monopoly\projet final\projet\structures\structures_cartes.c
 	"structure_joueur.h"
 
-1640284072 source:c:\repos\monopoly\projet final\projet\structures\achat_terrain_nu.c
-	"structure_joueur.h"
+1640356172 source:c:\repos\monopoly\projet final\projet\structures\achat_terrain_nu.c
 
 1640281631 source:c:\repos\monopoly\projet final\projet\structures\paiement_loyer.c
 	"structure_joueur.h"
+
+1640465084 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\payer_un_loyer.c
+	"../Structures/structure_joueur.h"
+
+1640551367 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1640548949 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
 
