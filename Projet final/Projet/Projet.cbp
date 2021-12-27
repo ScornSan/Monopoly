@@ -31,6 +31,55 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Affichage_plateau/Colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/Details.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/Lignes .c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/affichage_plateau.h" />
+		<Unit filename="Affichage_plateau/affichage_plateau_projet_yohan.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/cases_chance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/cases_commu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/cases_couleur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/cases_speciales_colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/cases_speciales_lignes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/lettreD_et_fleche.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/lettreI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/lignes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/logo_prison.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/parking_gratuit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/sepa_colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Affichage_plateau/sepa_lignes.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/actions.h" />
 		<Unit filename="Fonctions_actions_joueurs/deplacement_joueur.c">
 			<Option compilerVar="CC" />
@@ -49,6 +98,21 @@
 		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
 		<Unit filename="Fonctions_affichage/pion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Menu/affichage_choix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Menu/echap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Menu/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Menu/nouvelle_partie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Partie/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">
