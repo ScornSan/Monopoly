@@ -1,0 +1,6 @@
+#ifndef AFFICHAGE_CHOIX_H_INCLUDED
+#define AFFICHAGE_CHOIX_H_INCLUDED
+
+void affichage_choix();
+
+#endif // AFFICHAGE_CHOIX_H_INCLUDED

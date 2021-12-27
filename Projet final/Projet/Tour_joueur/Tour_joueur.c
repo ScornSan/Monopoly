@@ -6,6 +6,9 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     int de1, de2;
     int nb_lancer = 0;
     int key;
+    char chaine[10] = "";
+    char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
+    char phrase_stationnement[100] = "Vous etes en stationnement gratuit ! Vous pouvez pendant un tour !";
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
 
     /// vérification tour suivant ou pas
@@ -14,15 +17,29 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
         fflush(stdin);
         if (nb_lancer == 0)
         {
-            placement_script();
-            printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n"
-            "Appuyez sur 'h' pour hypothequer une propriete\n"
-            "Appuyez sur 'v' pour vendre des maisons / hotels\n", id_joueur + 1);
+            carre_noir();
+            char chaine1[20] = "C'est a ";
+            char chaine2[100] = " de jouer ! Appuyez sur ESPACE pour lancer les des";
+            char phrase_prop_vente[50] = " Appuyez sur 'v' pour vendre une propriete";
+            char phrase_prop_hypotheque[50] = " Appuyez sur 'h' pour hypothequer une propriete";
+
+            longueur = (strlen(chaine1)+ strlen(joueur_i[id_joueur].pseudo) + strlen(chaine2));
+            placement_script(longueur, 0);
+            printf("%s%s%s\n", chaine1, joueur_i[id_joueur].pseudo, chaine2);
+
+            placement_script(strlen(phrase_prop_vente), 1);
+            printf("%s", phrase_prop_vente);
+
+            placement_script(strlen(phrase_prop_hypotheque), 2);
+            printf("%s", phrase_prop_hypotheque);
             key = getch();
         }
         else
         {
-            printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n", id_joueur + 1);
+            carre_noir();
+            char chaine[100] = "Vous avez fait double ! A vous de rejouez, ";
+            placement_script(strlen(chaine), 0);
+            printf("%s%s", chaine, joueur_i[id_joueur].pseudo);
             key = getch();
         }
 
@@ -33,11 +50,14 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3)
             {
-            // fonction prison, on interrompt le tour si c'est le troisième double, direct en prison
+                // fonction prison, on interrompt le tour si c'est le troisième double, direct en prison
             }
             if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
             {
-                printf("Vous etes passe par la case depart ! Vous recevez 200");
+                char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200\n";
+                int longueur = strlen(chaine);
+                placement_script(longueur,2);
+                printf("%s",chaine);
                 joueur_i[id_joueur].argent += 200;
             }
             joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
@@ -45,7 +65,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             switch(joueur_i[id_joueur].position)
             {
                 case 2:
-                    printf("%s, vous devez payez l'impot sur le revenu s'elevant a 200\n", joueur_i[id_joueur].pseudo);
+
+                    longueur = strlen(chaine)+strlen(phrase_impot);
+                    placement_script(longueur,2);
+                    printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
                     joueur_i[id_joueur].argent -= 200;
                     break;
 
@@ -64,7 +87,9 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                     break;
 
                 case 14:
-                    printf("Vous etes en stationnement gratuit ! Vous pouves soufflez le temps d'un tour !\n");
+                    longueur = strlen(phrase_stationnement);
+                    placement_script(longueur,2);
+                    printf("%s", phrase_stationnement);
                     break;
 
                 default:
@@ -86,3 +111,5 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
 }
 
     /// tour d'un joueur, ou autre lancer car dés doubles
+
+

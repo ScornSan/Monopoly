@@ -11,6 +11,9 @@
 #define TOUCHE_ESPACE 32
 #define TOUCHE_ENTER 13
 
+int longueur;
+int chaine[100];
+
 typedef struct players
 {
     char pseudo[20];
