@@ -28,7 +28,7 @@ int main()
     }
     carre_noir();
     char chaine[30] = "FIN DE JEU";
-    placement_script(chaine,0);
+    placement_script(longueur,0);
     printf("%s",chaine);
     //deplacement_joueur();
     return 0;

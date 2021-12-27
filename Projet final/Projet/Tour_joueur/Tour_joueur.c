@@ -9,9 +9,11 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     while ((nb_lancer == 0) || ((de1 == de2)))
     {
         carre_noir();
-        char chaine[100] = "C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des";
-        placement_script(chaine,0);
-        printf("%s%d\n", chaine,id_joueur + 1);
+        char chaine[100] = "C'est au joueur ";
+        char chaine2[100] = " de jouer ! Appuyez sur ESPACE pour lancer les des";
+        longueur = (strlen(chaine)+strlen(chaine2));
+        placement_script(longueur,0);
+        printf("%s%d%s\n", chaine,id_joueur + 1,chaine2);
         if (getch() == 32)
         {
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
@@ -19,16 +21,19 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
             {
                 char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200";
-                placement_script(chaine,2);
+                longueur = strlen(chaine);
+                placement_script(longueur,2);
                 printf("%s",chaine);
                 joueur_i[id_joueur].argent += 200;
             }
             joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
             if (joueur_i[id_joueur].position == 2)
             {
-                char chaine[100] = "Joueur %d, vous devez payez l'impot sur le revenu s'elevant a 200";
-                placement_script(chaine,2);
-                printf("%s",chaine, id_joueur + 1);
+                char chaine[100] = "Joueur ";
+                char cahine2[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
+                longueur = strlen(chaine)+strlen(chaine2);
+                placement_script(longueur,2);
+                printf("%s%d%s",chaine, id_joueur + 1, chaine2);
                 joueur_i[id_joueur].argent -= 200;
                 break;
             }
@@ -43,7 +48,8 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             else if (joueur_i[id_joueur].position == 14) /// stationnement ou case départ*
             {
                 char chaine[100] = "Vous etes en stationnement gratuit ! Vous pouvez pendant un tour !";
-                placement_script(chaine,2);
+                longueur = strlen(chaine);
+                placement_script(longueur,2);
                 printf("%s",chaine);
                 break;
             }
@@ -53,7 +59,8 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
 
                 /*carre_noir();
                 char chaine[100] =  "Test boucle";
-                placement_script(chaine,0);
+                longueur = strlen(chaine);
+                placement_script(longueur,0);
                 printf("%s",chaine);*/
 
                 /////////////
@@ -81,7 +88,8 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             {
                 carre_noir();
                 char chaine[100] = "Vous avez fait double !";
-                placement_script(chaine,0);
+                longueur = strlen(chaine);
+                placement_script(longueur,0);
                 printf("%s",chaine);
             }
             nb_lancer++;

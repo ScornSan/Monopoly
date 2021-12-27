@@ -1,22 +1,23 @@
 #include "structure_joueur.h"
 void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b)
 {
-
     char chaine[MAX] = "Vous etes dans la ";
-    chaine[1] = strcat(chaine, (terrain[a][b].nom)); ///concatenation de chaine et chaine "Maison ..." /// a faire qd affichage n° maison
-    placement_script(chaine,0);
+    chaine[100] = strcat(chaine, (terrain[a][b].nom)); ///concatenation de chaine et chaine "Maison ..." /// a faire qd affichage n° maison
+    longueur = strlen(chaine);
+    placement_script(longueur,3);
     printf("%s\n",chaine);
-    sleep(3);
+    sleep(2);
     //affichage_carte(15,120,terrain,a,b);
             if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_achat)
             {
                 carre_noir();
-                placement_script(chaine,0);
+                placement_script(longueur,0);
                 printf("%s\n",chaine);
                 char chaine[MAX] = "Voulez-vous acheter ce terrain ?";
-                placement_script(chaine,2);
+                longueur = strlen(chaine);
+                placement_script(longueur,2);
                 printf("%s\n",chaine);
-                position_choix(chaine);
+                position_choix(longueur);
                 if (getch() == 13) // 13 est le numéro ascii pour retour charriot, ou ENTER
                 {
                     terrain[a][b].prop_achete = true;
@@ -29,7 +30,8 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
                 if (id_joueurs_v1 == terrain[a][b].possession_carte)
                 {
                     char chaine[100] = "Vous etes sur votre propriete !";
-                    placement_script(chaine,2);
+                    longueur = strlen(chaine);
+                    placement_script(longueur,2);
                     printf("%s",chaine);
                 }
                 for (int i = 0; i < max_joueurs; i++)
@@ -44,9 +46,10 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
             }
             else if (pion_joueur[id_joueurs_v1].argent < terrain[a][b].prix_achat)
             {
-                char chaine[100] = "Vous n'avez pas assez d'argent pour acheter '%s'";
-                placement_script(chaine,2);
-                printf("%s",chaine, terrain[a][b].nom);
+                char chaine[100] = "Vous n'avez pas assez d'argent pour acheter ";
+                longueur = strlen(chaine) + 12;
+                placement_script(longueur,2);
+                printf("%s'%s'",chaine, terrain[a][b].nom);
             }
 }
 
@@ -54,8 +57,10 @@ void tomber_sur_terrain(t_joueur pion_joueur[], int nb_joueurs, int id_joueurs_v
 {
     ////////////
 
+    carre_noir();
     char chaine[100] = "On entre dans l'achat terrain";
-    placement_script(chaine,4);
+    longueur = strlen(chaine);
+    placement_script(longueur,0);
     printf("%s",chaine);
 
     /////////

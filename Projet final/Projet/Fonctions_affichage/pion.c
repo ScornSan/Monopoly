@@ -3,22 +3,12 @@
 
 
 
-void placement_script(char chaine[MAX],int a)
+void placement_script(int longueur, int a)
 {
-
+    /// int longueur est la longueur de la chaine de carac a afficher
     /// int a représentent le nombre de ligne a afficher en 1 seule fois avant l'affichage du carré noir pour clear
-
-    int nb;
-
-    ///calcul de la taille de la chaine de caractère a afficher pour la centrer ensuite
-    for (int i = 0; chaine[i] != '\0' ;i++)
-    {
-        nb = i+1;
-    }
-
     int ligne = 29;          /// centre vertical du carré noir
-    int colonne = 51-((nb)/2);           /// centre toujours le texte a afficher peut importe sa longeur horizontalement
-                                            /// 'nb' + 10, le +10 equivaut a la taille de la chaine "Maison 3.2" par ex
+    int colonne = 51-((longueur)/2);        /// centre toujours le texte a afficher peut importe sa longeur horizontalement
     gotoligcol(ligne + a,colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
 }
 
@@ -39,28 +29,15 @@ void connaissance_position_curseur()
 
 }
 
-void position_choix(char chaine[MAX])
+void position_choix(int longueur)
 {
-    /*HANDLE win;
-    CONSOLE_SCREEN_BUFFER_INFO coninfo;
-    GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
-
-    int x = coninfo.dwCursorPosition.X;
-    int y = coninfo.dwCursorPosition.Y;
-    */
-    int nb;
-
-    for (int i = 0; chaine[i] != '\0' ;i++)
-    {
-        nb = i+1;
-    }
     int ligne = 33;
-    int colonne = 51-((nb/4)+2);
+    int colonne = 51-((longueur/4)+2);
     gotoligcol(ligne,colonne);
     printf("Oui");
     gotoligcol(ligne +1,colonne-4);
     printf("-->[ENTRER]");
-    colonne = 51+((nb/4)-2);
+    colonne = 51+((longueur/4)-2);
     gotoligcol(ligne,colonne);
     printf("Non");
     gotoligcol(ligne+1,colonne-4);

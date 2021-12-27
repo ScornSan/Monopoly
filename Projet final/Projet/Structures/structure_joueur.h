@@ -14,10 +14,11 @@ HANDLE win;
 
 CONSOLE_SCREEN_BUFFER_INFO coninfo;
 
+int longueur;
 
 typedef struct players
 {
-    char pseudo[20];
+    char pseudo[18];
     int argent;
     int position;
 }t_joueur;
