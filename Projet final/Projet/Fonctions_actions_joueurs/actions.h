@@ -8,9 +8,10 @@
 #include <conio.h>
 #include <stdbool.h>
 
-
 #define MAX_DE 6
 #define MIN_DE 1
+
+int longueur;
 
 
 #endif // ACTIONS_H_INCLUDED

@@ -1,23 +1,22 @@
 #include "../Affichage_plateau/affichage_plateau.h"
 #include "../Structures/structure_joueur.h"
 
-void placement_script()
+void placement_script(int longueur, int a)
 {
-
+    /// int longueur est la longueur de la chaine de carac a afficher
     /// int a représentent le nombre de ligne a afficher en 1 seule fois avant l'affichage du carré noir pour clear
-
     int nb;
 
     ///calcul de la taille de la chaine de caractère a afficher pour la centrer ensuite
-    /*for (int i = 0; chaine[i] != '\0' ;i++)
+    for (int i = 0; chaine[i] != '\0' ;i++)
     {
         nb = i+1;
-    }*/
+    }
 
-    int ligne = 29;          /// centre vertical du carré noir
-    int colonne = 51;        /// centre toujours le texte a afficher peut importe sa longeur horizontalement
-
-    gotoligcol(ligne + colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
+    int ligne = 29;          /// centre vertical du carré noir           /// centre toujours le texte a afficher peut importe sa longeur horizontalement
+                                            /// 'nb' + 10, le +10 equivaut a la taille de la chaine "Maison 3.2" par ex
+    int colonne = 51-((longueur)/2);        /// centre toujours le texte a afficher peut importe sa longeur horizontalement
+    gotoligcol(ligne + a,colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
 }
 
 
@@ -39,7 +38,8 @@ void connaissance_position_curseur()
 
 void position_choix()
 {
-    /*HANDLE win;
+    char chaine[100];
+    HANDLE win;
     CONSOLE_SCREEN_BUFFER_INFO coninfo;
     GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 
@@ -85,7 +85,7 @@ void carre_noir()
     Color(15,0);
 }
 
-void affichage_carte(int ligne, int colonne,t_carte terrain[][3],int a , int b)
+void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
 {
     Color(0,7);
     int lig = ligne;
@@ -125,7 +125,7 @@ void affichage_carte(int ligne, int colonne,t_carte terrain[][3],int a , int b)
         gotoligcol(ligne +4, colonne+1);
         printf("Loyer : %d$\n",terrain[a][b].prix_loyer);
         gotoligcol(ligne +6, colonne+1);
-        printf("Hypotheque : %d$\n",terrain[a][b].prix_hypotheque);
+        printf("Hypotheque : %d$\n",terrain[a][b].val_hypotheque);
         gotoligcol(ligne +8, colonne+1);
         printf("Maisons : %d\n",terrain[a][b].nb_maison);
         Color(15,0);
