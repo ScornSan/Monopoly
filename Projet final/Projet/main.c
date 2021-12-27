@@ -1,27 +1,96 @@
-#include "mono.h"
+#include "Structures/structure_joueur.h"
+
+void affichage_Menu()
+{
+    FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
+    int choix = 0;
+    int nombre_de_joueurs;
+    affichage_choix();
+    // SAISIE DU CHOIX
+    // Blindage de la saisie
+     while (choix < 1 || choix > 6)
+     {
+        gotoligcol(16,45);
+        printf("Entrez votre selection : ");
+        fflush(stdin);
+        scanf("%d", &choix);
+     }
+     system("cls");
+
+     switch(choix)
+     {
+        case 1 :
+
+            system("cls");
+            //nouvelle_partie();
+            fflush(stdin);
+            system("cls");
+            partie_en_cours();
+            echap();
+            /// AJOUTER FONCTION NOUVELLE PARTIE
+            break;
+
+        case 2 :
+            fflush(stdin);
+            // Ajouter fonction sauvegarde partie
+            couleur(12, 0);
+            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            break;
+
+        case 3 :
+            fflush(stdin);
+            // AJOUTER PROGRAMME QUI REPREND UNE ANCIENNE PARTIE
+            couleur(12, 0);
+            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            break;
+
+        case 4 :
+            fflush(stdin);
+            fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
+            couleur(12, 0);
+            printf("Appuyez sur [ECHAP] pour revenir au menu");
+
+            couleur(15, 0);
+            if (fichier_regles == NULL)
+            {
+                printf("Erreur fopen \n");
+            }
+
+            char c = fgetc(fichier_regles);
+            while( c != EOF) // EOF detecte le dernier caractere du fichier
+            {
+                printf("%c", c);
+                c = fgetc(fichier_regles);
+            }
+            fclose(fichier_regles); // on ferme le fichier
+            break;
+
+        case 5 :
+                fflush(stdin);
+                couleur(12, 0);
+                printf("Appuyez sur [ECHAP] pour revenir au menu");
+                couleur(15, 0);
+                gotoligcol(10,70);
+                printf("Programmeurs de ce jeu : \n");
+                gotoligcol(12,70);
+                printf("Yohan MARCEL \n");
+                gotoligcol(13,70);
+                printf("Sarah BLIN \n");
+                gotoligcol(14,70);
+                printf("Clement POMPEI \n");
+                gotoligcol(15,70);
+                printf("Benjamin GENDRY \n");
+                couleur(10, 0);
+                break;
+
+         case 6 :
+                exit(0);
+        }
+    echap();
+}
 
 int main()
 {
-    t_carte tab[GROUPES_CARTES][3];
-    int fin_de_partie;
-    int nombre_de_joueurs = demander_nb_joueur();
-    int identifiant_carte[nombre_de_joueurs];
-    t_joueur joueur[nombre_de_joueurs]; // on crée un tableau de structures de joueurs, de taille du nombre demandé
-    creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on crée les structures joueurs
-    remplissages_cartes(tab); // on remplit les cartes terrains
-    while (nombre_de_joueurs != 1)
-    {
-        for (int i = 0; i < nombre_de_joueurs; i++)
-        {
-            fin_de_partie = tour_joueur(joueur, nombre_de_joueurs, i, tab, identifiant_carte);
-
-            if (fin_de_partie < 0)
-            {
-                break; // on sort de la boucle et on fait la fin du jeu
-            }
-        }
-    }
-    printf("fin de jeu");
-    //deplacement_joueur();*/
+    affichage_Menu();
     return 0;
 }

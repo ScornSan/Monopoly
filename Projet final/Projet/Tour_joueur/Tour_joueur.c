@@ -14,6 +14,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
         fflush(stdin);
         if (nb_lancer == 0)
         {
+            placement_script();
             printf("C'est au joueur %d de jouer ! Appuyez sur ESPACE pour lancer les des\n"
             "Appuyez sur 'h' pour hypothequer une propriete\n"
             "Appuyez sur 'v' pour vendre des maisons / hotels\n", id_joueur + 1);
@@ -28,7 +29,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
-
+            //deplacement_pion_graph(de1, de2);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3)
             {
@@ -44,7 +45,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             switch(joueur_i[id_joueur].position)
             {
                 case 2:
-                    printf("Joueur %d, vous devez payez l'impot sur le revenu s'elevant a 200", id_joueur + 1);
+                    printf("%s, vous devez payez l'impot sur le revenu s'elevant a 200\n", joueur_i[id_joueur].pseudo);
                     joueur_i[id_joueur].argent -= 200;
                     break;
 

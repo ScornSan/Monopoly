@@ -12,6 +12,7 @@ void paiement_loyer(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, 
 
 void ajout_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b)
 {
+    int fleche1;
     printf("Vous etes sur votre propriete ! Vous possedez %d maison(s) !\n"
            "Appuyez sur ESPACE pour continuer ou pressez la touche ENTER pour ajouter des maisons", terrain[a][b].nb_maison);
     if (getch() == TOUCHE_ENTER)
@@ -21,13 +22,18 @@ void ajout_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t
         fflush(stdin);
         while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            if (getch() == 'z' && terrain[a][b].nb_maison < 4) // z sert à augmenter de 1 le nombre
+            fleche1 = getch();
+            if (fleche1 == 'z' && terrain[a][b].nb_maison < 4) // z sert à augmenter de 1 le nombre
             {
                 terrain[a][b].nb_maison++;
+                printf(" ");
+                printf("%d", fleche1);
             }
-            else if (getch() == 's' && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
+            else if (fleche1 == 's' && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
             {
                 terrain[a][b].nb_maison--;
+                printf(" ");
+                printf("%d", fleche1);
             }
         }
     }

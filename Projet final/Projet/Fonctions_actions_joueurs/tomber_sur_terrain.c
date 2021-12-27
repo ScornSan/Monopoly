@@ -12,9 +12,9 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
             terrain[a][b].prop_achete = true;
             terrain[a][b].possession_carte = id_joueurs;
             terrain[a][b].id_carte = identifiant_carte[id_joueurs]; // on ajoute un identifiant a la carte acheté
+            printf("%d ceci est l'id\n", terrain[a][b].id_carte);
             identifiant_carte[id_joueurs]++; // on ajoute 1 à l'identifiant pour la prochaine carte a acheter du joueur i
             pion_joueur[id_joueurs].argent = pion_joueur[id_joueurs].argent - terrain[a][b].prix_achat;
-            printf("%d ceci est l'id\n", identifiant_carte[id_joueurs]);
         }
     }
     else if (terrain[a][b].prop_achete = true && terrain[a][b].hypotheque ==  false) // paiement du loyer car propriété possedé ou faire une maison / hotel

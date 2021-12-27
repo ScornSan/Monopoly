@@ -12,10 +12,8 @@ SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), mycoord );
 
 }
 
-void deplacement_pion_graph()
+void deplacement_pion_graph(int a, int b)
 {
-    int a, b;
-    lancer_de(&a, &b);
     for (int i = 0; i <= (a + b); i++)
     {
 
