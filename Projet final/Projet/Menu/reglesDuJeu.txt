@@ -1,4 +1,4 @@
-                   
+
 
 
 
@@ -138,4 +138,3 @@ Si un.e joueur.euse doit a la Banque, au lieu d un autre joueur, plus que ce qu 
 
 Divers
 La Banque ne peut preter de l argent a un.e joueur.euse qu en hypothequant un bien immobilier. Aucun.e joueur.euse ne peut emprunter a ou preter de l argent a un autre joueur.
-
