@@ -1,3 +1,5 @@
+/// ne pas faire la manip chaine de carac ici car debut donc pas centré
+
 void affichage_choix()
 {
     position(5,75);

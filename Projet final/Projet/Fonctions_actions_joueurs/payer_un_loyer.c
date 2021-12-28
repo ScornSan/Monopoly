@@ -31,14 +31,12 @@ void ajout_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t
             if (fleche1 == 'z' && terrain[a][b].nb_maison < 4) // z sert à augmenter de 1 le nombre
             {
                 terrain[a][b].nb_maison++;
-                printf(" ");
-                printf("%d", fleche1);
+                printf(" %c", fleche1);
             }
             else if (fleche1 == 's' && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
             {
                 terrain[a][b].nb_maison--;
-                printf(" ");
-                printf("%d", fleche1);
+                printf(" %c", fleche1);
             }
         }
     }

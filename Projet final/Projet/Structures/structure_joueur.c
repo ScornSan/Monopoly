@@ -1,5 +1,5 @@
 #include "structure_joueur.h"
-
+/// ne pas faire la manip chaine de carac ici car debut donc pas centré
 int demander_nb_joueur()
 {
     // demande le nombre de joueurs
@@ -27,6 +27,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
         gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;
         joueur[x].position = 0;
+        joueur[x].prison = false;
         identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
     }
 }
