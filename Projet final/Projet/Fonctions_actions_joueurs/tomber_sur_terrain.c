@@ -7,7 +7,7 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
     longueur = strlen(chaine) + strlen(terrain[a][b].nom);
     placement_script(longueur,2);
     printf("%s %s",chaine, terrain[a][b].nom);
-    sleep(3);
+    usleep(300000);
     if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs].argent > terrain[a][b].prix_achat)
     {
         //carre_noir();
