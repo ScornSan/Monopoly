@@ -87,6 +87,9 @@
 		<Unit filename="Fonctions_actions_joueurs/fonction_de.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/hypothequer.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/payer_un_loyer.c">
 			<Option compilerVar="CC" />
 		</Unit>
