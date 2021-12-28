@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct joueur
 {
     char pseudo[40];
     int argent;
     int position;
+    bool prison;
 
 }t_joueur;
 
@@ -32,6 +34,7 @@ void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[])
         gets(&joueur_x[x].pseudo);
         joueur_x[x].argent = 1500;
         joueur_x[x].position = 0;
+        joueur_x[x].prison = 0;
     }
 }
 
@@ -46,6 +49,7 @@ void sauvegarde(int nb_joueurs, t_joueur joueur_x[])
         fprintf(sauvegarde1, "%s\n", joueur_x[x].pseudo);
         fprintf(sauvegarde1, "%d\n", joueur_x[x].argent);
         fprintf(sauvegarde1, "%d\n", joueur_x[x].position);
+        fprintf(sauvegarde1, "%c\n", joueur_x[x].prison);
     }
     fclose(sauvegarde1);
     sauvegarde1 = NULL;
@@ -60,6 +64,7 @@ void chargerpartie(int nb_joueurs, t_joueur joueur_x[])
         fscanf(sauvegarde1, "%s", &joueur_x[x].pseudo);
         fscanf(sauvegarde1, "%d", &joueur_x[x].argent);
         fscanf(sauvegarde1, "%d", &joueur_x[x].position);
+        fscanf(sauvegarde1, "%c\n", joueur_x[x].prison);
 
     }
     printf("%s a %d$ !", joueur_x[0].pseudo, joueur_x[0].argent);
@@ -69,18 +74,21 @@ void chargerpartie(int nb_joueurs, t_joueur joueur_x[])
 
 int main()
 {
+    int banqueargent = 0;
+    int cartecommu = 0;
+    int cartechance = 0;
     char choixsauv = 0;
     int nb_joueurs = nb_player();
     t_joueur joueur_x[nb_joueurs];
     creation_structures_joueurs(nb_joueurs, joueur_x);
-    printf("Sauvegarde ou charger?\nY/N : ");
+    printf("Sauvegarde ou charger?\nS/C : ");
     scanf("%c", &choixsauv);
 
-    if (choixsauv == 'y')
+    if (choixsauv == 's')
     {
         sauvegarde(nb_joueurs, joueur_x);
     }
-    if (choixsauv == 'n')
+    if (choixsauv == 'c')
     {
         chargerpartie(nb_joueurs, joueur_x);
     }

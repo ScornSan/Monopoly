@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1640110637 source:c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\main.c
+	"bibli1.h"
+
+1640016522 source:c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\melangeurcarte.c
+	"bibli1.h"
+
+1640015549 source:c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\affichage.c
+	"bibli1.h"
+
+1640015489 c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\bibli1.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+
+1640111827 source:c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\remplissage.c
+	"bibli1.h"
+
+1640112171 source:c:\users\garfl\desktop\ece scolarité 2021 - 2026\ing1\informatique\projet 1 monopoly\fonction des cartes chances et communautés\pioche.c
+	"bibli1.h"
+

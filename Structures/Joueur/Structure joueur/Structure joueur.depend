@@ -9,8 +9,15 @@
 	<stdlib.h>
 	<string.h>
 
-1640365408 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
+1640732741 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<stdbool.h>
+
+1640732741 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
 
