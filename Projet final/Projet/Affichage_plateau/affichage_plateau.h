@@ -38,5 +38,4 @@
 
 
 
-
 #endif // AFFICHAGE_PLATEAU_H_INCLUDED

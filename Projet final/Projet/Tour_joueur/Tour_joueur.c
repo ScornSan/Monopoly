@@ -6,6 +6,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     int de1, de2;
     int nb_lancer = 0;
     int key;
+    int nb_tour_prison = 0;
     char chaine[10] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = "Vous etes en stationnement gratuit ! Vous pouvez pendant un tour !";
@@ -48,10 +49,19 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
             //deplacement_pion_graph(de1, de2);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
-            if (nb_lancer == 3)
+            printf("%d", nb_lancer);
+            if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
-                // fonction prison, on interrompt le tour si c'est le troisième double, direct en prison
+                nb_tour_prison++;
+                printf("Vous etes en prison ! C'est votre %d tour.", nb_tour_prison);
+                joueur[id_joueur].prison = true;
+                case_prison(joueur_i, nombre_joueurs, id_joueur, &de1, &de2); // on interrompt le tour si c'est le troisième double, direct en prison
             }
+            else
+            {
+                joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
+            }
+
             if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
             {
                 char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200\n";

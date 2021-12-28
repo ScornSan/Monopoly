@@ -40,7 +40,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1640614032 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\pion.c
+1640619449 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\pion.c
 	"affichage.h"
 
 1639835607 c:\repos\monopoly\projet final\projet\fonctions_affichage\affichage.h
@@ -59,10 +59,10 @@
 1640558089 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
-1640555336 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
+1640704583 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
-1640555336 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
+1640622566 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -70,14 +70,14 @@
 	<conio.h>
 	<stdbool.h>
 
-1640614677 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
+1640654740 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1640555336 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
+1640652038 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1640555336 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
+1640652014 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -95,11 +95,12 @@
 1640564368 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 
-1640560140 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+1640650671 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
 	"../Structures/structure_joueur.h"
 
-1640566072 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\vente_maisons.c
+1640651539 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\vente_maisons.c
 	"../Structures/structure_joueur.h"
+	"../Affichage_plateau/affichage_plateau.h"
 
 1640560365 source:c:\repos\monopoly\projet final\projet\menu\affichage_choix.c
 
@@ -146,7 +147,7 @@
 1640538909 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_chance.c
 	"affichage_plateau.h"
 
-1640538909 c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau.h
+1640651852 c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -194,4 +195,11 @@
 
 1640606878 source:c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
+
+1640620568 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\instructions_sur_plateau.c
+	"../Affichage_plateau/affichage_plateau.h"
+	"../Structures/structure_joueur.h"
+
+1640654795 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\case_prison.c
+	"../Structures/structure_joueur.h"
 
