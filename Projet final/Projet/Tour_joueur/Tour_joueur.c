@@ -131,6 +131,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {
