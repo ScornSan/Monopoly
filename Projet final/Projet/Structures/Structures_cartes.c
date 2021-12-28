@@ -22,8 +22,10 @@ void remplissages_cartes(t_carte carte[][3])
             /// on définit le prix d'achat du terrain et du loyer nu
             carte[i][j].prix_achat = (j * 10) + (i * 20) + 20;
             carte[i][j].prop_achete = false;
-            carte[i][j].prix_hypotheque = (int)(carte[i][j].prix_achat / 2);
+            carte[i][j].hypotheque = false;
+            carte[i][j].val_hypotheque = (int)(carte[i][j].prix_achat / 2); // valeur de l'hypotheque est le prix / 2
             carte[i][j].prix_rachat_hypotheque = carte[i][j].prix_achat * 1.1; // 10% du prix
+            carte[i][j].nb_maison = 0; // terrain nu au départ, 0 maisons
             if (nb_cartes == 2 || i == 1)
             {
                 carte[i][j].prix_loyer = i*4 + j + (carte[i][j].prix_achat / 10);
@@ -31,6 +33,22 @@ void remplissages_cartes(t_carte carte[][3])
             else
             {
                 carte[i][j].prix_loyer = i*4 + j + (carte[i][j].prix_achat / 10) - 2;
+            }
+            if (i == 0 || i == 1)
+            {
+                carte[i][j].prix_maison = 50;
+            }
+            if (i == 2 || i == 3)
+            {
+                carte[i][j].prix_maison = 100;
+            }
+            if (i == 4 || i == 5)
+            {
+                carte[i][j].prix_maison = 150;
+            }
+            if (i == 6 || i == 7)
+            {
+                carte[i][j].prix_maison = 200;
             }
 
         }

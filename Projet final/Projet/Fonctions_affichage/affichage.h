@@ -5,5 +5,4 @@
 #include <stdlib.h>
 #include <windows.h>
 
-#define max 100
 #endif // AFFICHAGE_H_INCLUDED

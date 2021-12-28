@@ -1,4 +1,4 @@
-//#include "../Structure_joueur/structure_joueur.h"
+#include "../Structures/structure_joueur.h"
 
 /*void deplacement_joueur(t_joueur joueur_indice[], int i_joueur)
 {
