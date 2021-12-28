@@ -3,8 +3,13 @@
 void paiement_loyer(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b)
 {
     // terrain[a][b].possession_carte est l'indice du joueur qui possède la carte
-    printf("%s, vous etes sur %s qui appartient a %s !\n"
-           "Vous devez payer %d de loyer !\n", pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo, terrain[a][b].prix_loyer);
+    carre_noir();
+    longueur = strlen(pion_joueur[id_joueurs_v1].pseudo) + strlen(terrain[a][b].nom) + strlen(pion_joueur[terrain[a][b].possession_carte].pseudo) + 36;
+    placement_script(longueur,2);
+    printf("%s, vous etes sur %s qui appartient a %s !",pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo);
+    longueur = 31;
+    placement_script(longueur,4);
+    printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
 
     pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
     pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;

@@ -1,7 +1,4 @@
-#include "../Structures/structure_joueur.h"
-#include "../Affichage_plateau/affichage_plateau.h"
-
-void vente_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[])
+#include "..void vente_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[])
 {
     int touche = 25; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int fleche2;

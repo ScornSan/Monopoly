@@ -1,7 +1,10 @@
 #include "Structures/structure_joueur.h"
+#include "Affichage_plateau/affichage_plateau.h"
 
 void affichage_Menu()
 {
+    HWND hwnd=GetForegroundWindow();
+    ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
     int choix = 0;
     int nombre_de_joueurs;

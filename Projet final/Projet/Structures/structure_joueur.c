@@ -7,6 +7,7 @@ int demander_nb_joueur()
     //int nb_joueurs = 2; /// TODO remettre à 0
     while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4)
     {
+        system("cls");
         printf("A combien souhaitez-vous jouer ?\n");
         fflush(stdin);
         scanf("%d", &nb_joueurs);
@@ -26,7 +27,6 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
         gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;
         joueur[x].position = 0;
-        joueur[x].prison = false;
         identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
     }
 }
