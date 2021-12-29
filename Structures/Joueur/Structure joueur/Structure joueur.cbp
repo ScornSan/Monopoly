@@ -37,7 +37,13 @@
 		<Unit filename="banquescartescommu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="carteprison.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sauvameliore.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="structurejoueur.h">

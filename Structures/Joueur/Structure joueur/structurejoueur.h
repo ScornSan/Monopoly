@@ -8,7 +8,7 @@
 
 typedef struct joueur
 {
-    char pseudo;
+    char pseudo[40];
     int argent;
     int position;
     bool prison;

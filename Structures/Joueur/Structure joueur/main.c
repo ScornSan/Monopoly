@@ -1,7 +1,5 @@
 #include "structurejoueur.h"
 
-
-
 int nb_player()
 {
     // demannde le nombre de joueurs
@@ -23,11 +21,11 @@ void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[])
         gets(&joueur_x[x].pseudo);
         joueur_x[x].argent = 1500;
         joueur_x[x].position = 0;
-        joueur_x[x].prison = 0;
+        joueur_x[x].prison = false;
     }
 }
 
-void sauvegarde(int nb_joueurs, t_joueur joueur_x[])
+/*void sauvegarde(int nb_joueurs, t_joueur joueur_x[])
 {
     FILE* sauvegarde1 = NULL;
     sauvegarde1 = fopen("sauvegarde1.txt", "w"); // "w" pour ECRASEMENT donc on crée un NOUVEAU FICHIER et on ECRASE l'autre si il y'en a un
@@ -60,6 +58,7 @@ void chargerpartie(int nb_joueurs, t_joueur joueur_x[])
     fclose(sauvegarde1);
     sauvegarde1 = NULL;
 }
+*/ ///ANCIEN SYSTEME
 
 int main()
 {
@@ -70,12 +69,16 @@ int main()
     int nb_joueurs = nb_player();
     t_joueur joueur_x[nb_joueurs];
     creation_structures_joueurs(nb_joueurs, joueur_x);
-    printf("Sauvegarde ou charger?\nS/C : ");
+    printf("Sauvegarder EMPLACEMENT 1 ? EMPLACEMENT 2? ou charger un fichier?\na/b/c/ : ");
     scanf("%c", &choixsauv);
 
-    if (choixsauv == 's')
+    if (choixsauv == 'a')
     {
-        sauvegarde(nb_joueurs, joueur_x);
+        sauvegardeclassique(nb_joueurs, joueur_x);
+    }
+    if (choixsauv == 'b')
+    {
+        sauvegardeenplus(nb_joueurs, joueur_x);
     }
     if (choixsauv == 'c')
     {

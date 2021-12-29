@@ -34,7 +34,7 @@ void banquechance(int x, t_joueur joueur_x[x], int cartechance, int banqueargent
     }
     if (cartechance == 12 || cartechance == 13) // Carte de prison libération
     {
-        joueur_x[x].prison = 1;
+        carteprison(x, joueur_x[x]);
         printf("Le joueur reçoit une clé de prison !");
         printf("\nSi il lui arrive de passer en prison, il pourra utiliser la clé...");
     }
