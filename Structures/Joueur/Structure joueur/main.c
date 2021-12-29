@@ -21,6 +21,7 @@ void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[])
         gets(&joueur_x[x].pseudo);
         joueur_x[x].argent = 1500;
         joueur_x[x].position = 0;
+        joueur_x[x].ancienne_position = 0;
         joueur_x[x].prison = false;
     }
 }

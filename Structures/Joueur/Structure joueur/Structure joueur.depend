@@ -9,28 +9,28 @@
 	<stdlib.h>
 	<string.h>
 
-1640790895 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
+1640808717 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
 	"structurejoueur.h"
 
-1640774175 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartes.c
+1640792958 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartes.c
 	"structurejoueur.h"
 
-1640789634 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
+1640808452 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 
-1640789634 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
+1640808452 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 
-1640773690 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartescommu.c
+1640792958 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartescommu.c
 	"structurejoueur.h"
 
-1640790895 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\carteprison.c
+1640792958 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\carteprison.c
 	"structurejoueur.h"
 
 1640791157 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\sauvameliore.c
