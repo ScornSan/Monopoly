@@ -1,9 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include "structurejoueur.h"
 
-void banquechance(t_joueur joueur_x[x])
+void banquechance(int x, t_joueur joueur_x[x], int cartechance, int banqueargent)
 {
     if (cartechance == 0 || cartechance == 1) // Impot
     {

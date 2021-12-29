@@ -9,13 +9,19 @@
 	<stdlib.h>
 	<string.h>
 
-1640732741 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
+1640773508 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\main.c
+	"structurejoueur.h"
+
+1640773660 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartes.c
+	"structurejoueur.h"
+
+1640773430 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 
-1640732741 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\banquescartes.c
+1640773430 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\structures\joueur\structure joueur\structurejoueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

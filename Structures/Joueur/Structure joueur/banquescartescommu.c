@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include "structurejoueur.h"
 
-void banquecommu(int nb_player, t_joueur joueur_x[x])
+
+void banquecommu(int x, int nb_joueurs, t_joueur joueur_x[x], int cartecommu, int banqueargent)
 {
     if (cartecommu == 0 || cartecommu == 1) // Case départ pour tout les joueurs
     {
@@ -12,7 +10,7 @@ void banquecommu(int nb_player, t_joueur joueur_x[x])
             joueur_x[x].position = 0;
             printf("Tout les joueurs vont a la case depart !");
         }
-
+    }
     if (cartecommu == 2 || cartecommu == 3) // Case prison pour tout les joueurs
     {
        for (int x = 0; x < nb_joueurs; x++)

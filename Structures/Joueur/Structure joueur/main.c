@@ -1,16 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#include "structurejoueur.h"
 
-typedef struct joueur
-{
-    char pseudo[40];
-    int argent;
-    int position;
-    bool prison;
-
-}t_joueur;
 
 
 int nb_player()
