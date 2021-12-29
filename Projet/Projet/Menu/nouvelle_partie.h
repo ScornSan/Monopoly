@@ -1,7 +1,0 @@
-#ifndef NOUVELLE_PARTIE_H_INCLUDED
-#define NOUVELLE_PARTIE_H_INCLUDED
-
-
-void nouvelle_partie();
-
-#endif // NOUVELLE_PARTIE_H_INCLUDED
