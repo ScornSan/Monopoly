@@ -13,7 +13,7 @@ void affichage_Menu()
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
-        gotoligcol(16,70);
+        gotoligcol(16,45);
         printf("Entrez votre selection : ");
         fflush(stdin);
         scanf("%d", &choix);
@@ -25,6 +25,7 @@ void affichage_Menu()
         case 1 :
 
             system("cls");
+            //nouvelle_partie();
             fflush(stdin);
             system("cls");
             partie_en_cours();
