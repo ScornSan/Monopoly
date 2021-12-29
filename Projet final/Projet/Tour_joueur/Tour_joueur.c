@@ -12,9 +12,9 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
     char phrase_prison[100] = ", allez en Prison !";
-    char phrase_commu[100] = "Vous etes tombes sur une case communaute!";
+    char phrase_commu[100] = ", vous etes tombes sur une case communaute!";
     char phrase_commu_2[100] = "Appuyez sur ESPACE pour piocher une carte communaute";
-    char phrase_chance[100] = "Vous etes tombes sur une case chance!";
+    char phrase_chance[100] = ", vous etes tombes sur une case chance!";
     char phrase_chance_2[100] = "Appuyez sur ESPACE pour piocher une carte chance";
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
 
@@ -32,7 +32,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
 
             longueur = (strlen(chaine1)+ strlen(joueur_i[id_joueur].pseudo) + strlen(chaine2));
             placement_script(longueur, 0);
-            printf("%s%s%s\n", chaine1, joueur_i[id_joueur].pseudo, chaine2);
+            printf("%s%s%s", chaine1, joueur_i[id_joueur].pseudo, chaine2);
 
             placement_script(strlen(phrase_prop_vente), 1);
             printf("%s", phrase_prop_vente);
@@ -44,9 +44,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
         else
         {
             carre_noir();
-            char chaine[100] = "Vous avez fait double ! A vous de rejouez, ";
-            placement_script(strlen(chaine), 0);
-            printf("%s%s", chaine, joueur_i[id_joueur].pseudo);
+            char chaine[100] = " ,vous avez fait double ! A vous de rejouez, ";
+            longueur = (strlen(chaine) + strlen(joueur_i[id_joueur].pseudo)) ;
+            placement_script(longueur, 0);
+            printf("%s%s",  joueur_i[id_joueur].pseudo, chaine);
             key = getch();
         }
 
@@ -55,73 +56,94 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
             //deplacement_pion_graph(de1, de2);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
-            if (nb_lancer == 3)
+            if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
-                // fonction prison, on interrompt le tour si c'est le troisième double, direct en prison
+                if (joueur_i[id_joueur].prison == true)
+                {
+                    char chaine[100] = ", vous etes deja en prison";
+                    int longueur = (strlen(joueur_i[id_joueur].pseudo)+ strlen(chaine));
+                    placement_script(longueur, 0);
+                    printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2); // la fonction s'active s'il est deja en prison
+                    break;
+                }
+
+                else // si c'est la premiere fois qu'il arrive en prison
+                {
+                    int longueur = (strlen(phrase_prison)+ strlen(joueur_i[id_joueur].pseudo));
+                    placement_script(longueur, 0);
+                    printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison);
+                    usleep(50000);
+                    joueur_i[id_joueur].prison = true;
+                    break;
+                }
             }
-            if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
+            else if (nb_lancer < 3 && joueur_i[id_joueur].prison == false)
             {
-                char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200";
-                int longueur = strlen(chaine);
-                placement_script(longueur,2);
-                printf("%s",chaine);
-                joueur_i[id_joueur].argent += 200;
-            }
-            joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
-
-            switch(joueur_i[id_joueur].position)
-            {
-                case 2:
-
-                    longueur = strlen(chaine)+strlen(phrase_impot);
+                if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
+                {
+                    char chaine[100] = ", vous etes passe par la case depart ! Vous recevez 200";
+                    int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo);
                     placement_script(longueur,2);
-                    printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
-                    joueur_i[id_joueur].argent -= 200;
-                    sleep(3);
-                    break;
+                    printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+                    joueur_i[id_joueur].argent += 200;
+                }
+                joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
 
-                //case 5:
-                case 19:
-                    longueur = strlen(phrase_chance);
-                    longueur_2 = strlen(phrase_chance_2);
-                    placement_script(longueur,2);
-                    printf("%s",phrase_chance);
-                    placement_script(longueur_2,3),
-                    printf("%s",phrase_chance_2);
-                    sleep(3);
+                switch(joueur_i[id_joueur].position)
+                {
+                    case 2:
 
-                    break;
+                        longueur = strlen(joueur_i[id_joueur].pseudo)+strlen(phrase_impot);
+                        placement_script(longueur,2);
+                        printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
+                        joueur_i[id_joueur].argent -= 200;
+                        usleep(3000);
+                        break;
 
-                //case 12:
-                case 26:
-                    longueur = strlen(phrase_commu);
-                    longueur_2 = strlen(phrase_commu_2);
-                    placement_script(longueur,2);
-                    printf("%s",phrase_commu);
-                    placement_script(longueur_2,3),
-                    printf("%s",phrase_commu_2);
-                    sleep(3);
+                    //case 5:
+                    case 19:
+                        longueur = strlen(phrase_chance) + strlen(joueur_i[id_joueur].pseudo);
+                        longueur_2 = strlen(phrase_chance_2);
+                        placement_script(longueur,2);
+                        printf("%s%s",joueur_i[id_joueur].pseudo, phrase_chance);
+                        placement_script(longueur_2,3),
+                        printf("%s",phrase_chance_2);
+                        usleep(3000);
 
-                    break;
+                        break;
 
-                case 21:
-                    longueur = strlen(phrase_prison) + strlen(joueur_i[id_joueur].pseudo);
-                    placement_script(longueur,2);
-                    printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
-                    sleep(3);
+                    //case 12:
+                    case 26:
+                        longueur = strlen(phrase_commu);
+                        longueur_2 = strlen(phrase_commu_2);
+                        placement_script(longueur,2);
+                        printf("%s",phrase_commu);
+                        placement_script(longueur_2,3),
+                        printf("%s",phrase_commu_2);
+                        usleep(3000);
 
-                    break;
+                        break;
 
-                case 14:
-                    longueur = strlen(phrase_stationnement) + strlen(joueur_i[id_joueur].pseudo);
-                    placement_script(longueur,2);
-                    printf("%s%s",joueur_i[id_joueur].pseudo, phrase_stationnement);
-                    sleep(3);
-                    break;
+                    case 21:
+                        longueur = strlen(phrase_prison) + strlen(joueur_i[id_joueur].pseudo);
+                        placement_script(longueur,2);
+                        printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
+                        usleep(3000);
 
-                default:
-                    tomber_sur_terrain(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
-                    break;
+                        break;
+
+                    case 14:
+                        longueur = strlen(phrase_stationnement) + strlen(joueur_i[id_joueur].pseudo);
+                        placement_script(longueur,2);
+                        printf("%s%s",joueur_i[id_joueur].pseudo, phrase_stationnement);
+                        usleep(3000);
+                        break;
+
+                    default:
+                        tomber_sur_terrain(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+                        break;
+                }
             }
         }
         else if ((key == 'h' || key == 'H') && nb_lancer == 0)
