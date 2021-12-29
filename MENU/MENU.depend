@@ -1,9 +1,0 @@
-# depslib dependency file v1.0
-1640174890 source:c:\users\sasab\documents\repository\monopoly\menu\main.c
-	<windows.h>
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-
-1640199606 source:c:\users\sasab\documents\repository\monopoly\menu\nouvelle_partie.c
-
