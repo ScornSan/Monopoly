@@ -61,11 +61,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
                 joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
-<<<<<<< HEAD
+
                 deplacement_joueur(joueur_i, nombre_joueurs, id_joueur);
-=======
                 deplacement_joueur(joueur_i[id_joueur], nombre_joueurs, id_joueur);
->>>>>>> f2c53d1dff1e2d562489e91ca2d82d4b7c6d4414
+
                 if (joueur_i[id_joueur].prison == true)
                 {
                     nb_tour_prison++;

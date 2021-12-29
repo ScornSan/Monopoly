@@ -8,11 +8,8 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur)
     int i;
 
     for (i = pion[id_joueur].ancienne_position; i < pion[id_joueur].position; i++)
-<<<<<<< HEAD
-    {printf("%d", i);
-=======
     {
->>>>>>> f2c53d1dff1e2d562489e91ca2d82d4b7c6d4414
+        printf("%d", i);
         if (i >= 0 && i < 6)
         {
             Color(0,id_joueur);

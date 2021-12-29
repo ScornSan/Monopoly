@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1640728857 source:c:\repos\monopoly\projet final\projet\main.c
+1640787631 source:c:\repos\monopoly\projet final\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
@@ -40,10 +40,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1640705947 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\pion.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\pion.c
 	"affichage.h"
 
-1640705947 c:\repos\monopoly\projet final\projet\fonctions_affichage\affichage.h
+1640787631 c:\repos\monopoly\projet final\projet\fonctions_affichage\affichage.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -56,13 +56,13 @@
 	<stdlib.h>
 	<string.h>
 
-1640781828 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1640788130 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
-1640711206 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
+1640784500 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
-1640705947 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
+1640787631 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -74,17 +74,17 @@
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1640774763 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
+1640787631 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1640774749 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
+1640787631 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 	<conio.h>
 
-1640705947 source:c:\repos\monopoly\projet final\projet\structures\structures_cartes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\structures\structures_cartes.c
 	"structure_joueur.h"
 
 1640284072 source:c:\repos\monopoly\projet final\projet\structures\achat_terrain_nu.c
@@ -208,104 +208,104 @@
 	<stdlib.h>
 	<windows.h>
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
 
-1640705947 c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau.h
+1640787631 c:\repos\monopoly\projet final\projet\affichage_plateau\affichage_plateau.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_chance.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_chance.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_commu.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_commu.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_couleur.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_couleur.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_speciales_colonnes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_speciales_colonnes.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_speciales_lignes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\cases_speciales_lignes.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\colonnes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\colonnes.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\details.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\details.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lettred_et_fleche.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lettred_et_fleche.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lettrei.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lettrei.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lignes .c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lignes .c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lignes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\lignes.c
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\logo_prison.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\logo_prison.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\parking_gratuit.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\parking_gratuit.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\sepa_colonnes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\sepa_colonnes.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\affichage_plateau\sepa_lignes.c
+1640787631 source:c:\repos\monopoly\projet final\projet\affichage_plateau\sepa_lignes.c
 	"affichage_plateau.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\hypothequer.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\hypothequer.c
 	"../Structures/structure_joueur.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\payer_un_loyer.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 
-1640709059 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
 	"../Structures/structure_joueur.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\instructions_sur_plateau.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\menu\affichage_choix.c
+1640787631 source:c:\repos\monopoly\projet final\projet\menu\affichage_choix.c
 
-1640705947 source:c:\repos\monopoly\projet final\projet\menu\echap.c
+1640787631 source:c:\repos\monopoly\projet final\projet\menu\echap.c
 	<stdio.h>
 	<stdlib.h>
 	"echap.h"
 
-1640705947 c:\repos\monopoly\projet final\projet\menu\echap.h
+1640787631 c:\repos\monopoly\projet final\projet\menu\echap.h
 
-1640707172 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\vente_maisons.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\vente_maisons.c
 	"../Structures/structure_joueur.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\menu\menu.c
+1640787631 source:c:\repos\monopoly\projet final\projet\menu\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<conio.h>
 	"../Structures/structure_joueur.h"
 
-1640705947 source:c:\repos\monopoly\projet final\projet\menu\nouvelle_partie.c
+1640787631 source:c:\repos\monopoly\projet final\projet\menu\nouvelle_partie.c
 	"nouvelle_partie.h"
 	"../Structures/structure_joueur.h"
 
-1640705947 c:\repos\monopoly\projet final\projet\menu\nouvelle_partie.h
+1640787631 c:\repos\monopoly\projet final\projet\menu\nouvelle_partie.h
 
-1640705947 source:c:\repos\monopoly\projet final\projet\partie\nouvelle_partie.c
+1640787631 source:c:\repos\monopoly\projet final\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 
-1640729710 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\case_prison.c
+1640787631 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 
-<<<<<<< HEAD
-=======
+1640729710 D
+
 1640784504 source:c:\repos\monopoly\projet\projet final\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
 
@@ -445,4 +445,144 @@
 1640787059 source:c:\repos\monopoly\projet\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
->>>>>>> f2c53d1dff1e2d562489e91ca2d82d4b7c6d4414
+1640787059 53d1dff1e2d562489e91ca2d82d4b7c6d4414
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+	"affichage_plateau.h"
+
+1640787631 c:\repos\monopoly\projet\affichage_plateau\affichage_plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\cases_chance.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\cases_commu.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\cases_couleur.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\cases_speciales_colonnes.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\cases_speciales_lignes.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\colonnes.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\details.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\lettred_et_fleche.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\lettrei.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\lignes .c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\lignes.c
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\logo_prison.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\parking_gratuit.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\sepa_colonnes.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\affichage_plateau\sepa_lignes.c
+	"affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\case_prison.c
+	"../Structures/structure_joueur.h"
+
+1640787631 c:\repos\monopoly\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1640788130 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
+	"../Structures/structure_joueur.h"
+
+1640784500 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+	"actions.h"
+
+1640787631 c:\repos\monopoly\projet\fonctions_actions_joueurs\actions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<stdbool.h>
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+	"../Affichage_plateau/affichage_plateau.h"
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\fonctions_affichage\pion.c
+	"affichage.h"
+
+1640787631 c:\repos\monopoly\projet\fonctions_affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640787631 source:c:\repos\monopoly\projet\main.c
+	"Structures/structure_joueur.h"
+	"Affichage_plateau/affichage_plateau.h"
+
+1640787631 source:c:\repos\monopoly\projet\menu\affichage_choix.c
+
+1640787631 source:c:\repos\monopoly\projet\menu\echap.c
+	<stdio.h>
+	<stdlib.h>
+	"echap.h"
+
+1640787631 c:\repos\monopoly\projet\menu\echap.h
+
+1640787631 source:c:\repos\monopoly\projet\menu\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\menu\nouvelle_partie.c
+	"nouvelle_partie.h"
+	"../Structures/structure_joueur.h"
+
+1640787631 c:\repos\monopoly\projet\menu\nouvelle_partie.h
+
+1640787631 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
+	"../Structures/structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\structures\structure_joueur.c
+	"structure_joueur.h"
+
+1640787631 source:c:\repos\monopoly\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
+1640788142 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
+	"../Fonctions_actions_joueurs/actions.h"
+	"../Structures/structure_joueur.h"
+
