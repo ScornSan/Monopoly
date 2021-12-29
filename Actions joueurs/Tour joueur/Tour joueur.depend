@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1639822432 source:c:\repos\monopoly\actions\tour joueur\main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-
