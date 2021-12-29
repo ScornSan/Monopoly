@@ -6,53 +6,109 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur)
     int placement_colonne_gauche = 42;
     int placement_ligne_haut = 2;
     int i;
+    int arret;
+    arret = pion[id_joueur].position;;
 
-    for (i = pion[id_joueur].ancienne_position; i < pion[id_joueur].position; i++)
+    for (i = pion[id_joueur].ancienne_position; i <= pion[id_joueur].position; i++)
     {
-        printf("%d", i);
-        if (i >= 0 && i < 6)
-        {
-            Color(0,id_joueur);
-            gotoligcol(47, placement_depart + id_joueur * 2);
-            printf(" ");
-            placement_depart-=13;
-            gotoligcol(47, placement_depart + id_joueur * 2); // 47 est la hauteur, donc le milieu des cases en bas
-            printf("a");
-            sleep(1);
-        }
-        if (i == 6 && (id_joueur == 0 || id_joueur == 1))
-        {
-            Color(0,id_joueur);
-            gotoligcol(47, 2 + id_joueur * 2);
-            printf("a");
-            sleep(1);
-        }
-        if (i == 6 && (id_joueur == 2 || id_joueur == 3))
-        {
-            Color(0,id_joueur);
-            gotoligcol(48, 2 + id_joueur);
-            printf("a");
-            sleep(1);
-        }
-        if (i >= 7 && i <= 14)
-        {
-            Color(0,id_joueur);
-            gotoligcol(placement_colonne_gauche, 2 + id_joueur * 2);
-            printf(" ");
-            placement_colonne_gauche-=5;
-            gotoligcol(placement_colonne_gauche, 2 + id_joueur * 2);
-            printf("a");
-            sleep(1);
-        }
-        if (i >= 15 && i <= 21)
-        {
-            Color(0,id_joueur);
-            gotoligcol(12, placement_ligne_haut);
-            printf(" ");
-            placement_colonne_gauche+=13;
-            gotoligcol(12, placement_ligne_haut);
-            printf("a");
-            sleep(1);
+            switch(i)
+            {
+                case 0:
+                    Color(0,15);
+                    printf(" ");
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 1:
+                    Color(0,15);
+                    printf(" ");
+                    gotoligcol(47, placement_depart - 13 - id_joueur * 2);
+                    Color(0,id_joueur);
+
+                    printf(" ");
+                    sleep(1);break;
+
+                case 2:
+                    Color(0,15);
+                    printf(" ");
+                    gotoligcol(47, placement_depart - 13 * 2 - id_joueur * 2);
+                    Color(0,id_joueur);
+
+                    printf(" ");
+                    sleep(1);break;
+
+                case 3:
+                    Color(0,15);
+                    printf(" ");
+                    gotoligcol(47, placement_depart - 13 * 3 - id_joueur * 2);
+                    Color(0,id_joueur);
+
+                    printf(" ");
+                    sleep(1);break;
+
+                case 4:
+                    Color(0,15);
+                    printf(" ");
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart - 13 * 4 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 5:
+                    Color(0,15);
+                    printf(" ");
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart - 13 * 5 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 6:
+                    Color(0,15);
+                    printf(" ");
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart - 13 * 6 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 7:
+                    Color(0,15);
+                    printf(" ");
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart - 13 * 7 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 8:
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart + 13 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 9:
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart + 13 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 10:
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart + 13 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 11:
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart + 13 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
+
+                case 12:
+                    Color(0,id_joueur);
+                    gotoligcol(47, placement_depart + 13 - id_joueur * 2);
+                    printf(" ");
+                    sleep(1);break;
         }
     }
 }
