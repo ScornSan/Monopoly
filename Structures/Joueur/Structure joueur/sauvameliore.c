@@ -132,7 +132,7 @@ void chargerpartie(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauve
                 fscanf(sauvegarde2, "%d", &joueur_x[x].position);
                 fscanf(sauvegarde2, "%d", &joueur_x[x].ancienne_position);
                 fscanf(sauvegarde2, "%d", &joueur_x[x].prison);
-                fscanf(sauvegarde2, "%s", &cartes.nom);
+                fscanf(sauvegarde2, "%c", &cartes.nom);
                 fscanf(sauvegarde2, "%d", &cartes.nb_maison);
                 fscanf(sauvegarde2, "%d", &cartes.hypotheque);
                 fscanf(sauvegarde2, "%d", &cartes.id_carte);

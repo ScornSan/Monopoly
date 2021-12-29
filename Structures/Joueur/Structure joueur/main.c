@@ -12,7 +12,7 @@ int nb_player()
     return nb_joueurs;
 }
 
-void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[])
+void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[], t_carte cartes)
 {
     for (int x = 0; x < nb_joueurs; x++)
     {
@@ -24,6 +24,21 @@ void creation_structures_joueurs(int nb_joueurs, t_joueur joueur_x[])
         joueur_x[x].ancienne_position = 0;
         joueur_x[x].prison = false;
     }
+    // Cartes initialisation
+    cartes.nom = 0;
+    cartes.nb_maison = 0;
+    cartes.prix_maison = 0;
+    cartes.prix_achat = 0;
+    cartes.prop_achete = false;
+    cartes.prix_loyer = 0;
+    cartes.hypotheque = false;
+    cartes.val_hypotheque = 0;
+    cartes.prix_rachat_hypotheque = 0;
+    cartes.possession_carte = 0;
+    cartes.possession_quartier = false;
+    cartes.prix_rachat = 0;
+    cartes.id_carte = 0;
+
 }
 
 /*void sauvegarde(int nb_joueurs, t_joueur joueur_x[])
@@ -68,8 +83,9 @@ int main()
     int cartechance = 0;
     char choixsauv = 0;
     int nb_joueurs = nb_player();
+    t_carte cartes;
     t_joueur joueur_x[nb_joueurs];
-    creation_structures_joueurs(nb_joueurs, joueur_x);
+    creation_structures_joueurs(nb_joueurs, joueur_x, cartes);
     printf("Sauvegarder EMPLACEMENT 1 ? EMPLACEMENT 2? ou charger un fichier?\na/b/c/ : ");
     scanf("%c", &choixsauv);
 
