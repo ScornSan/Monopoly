@@ -51,8 +51,4 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
     {
 
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 6191a5483b0435544ebd5616aaa3c556a4710a3a
 }
