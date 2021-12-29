@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1640705947 source:c:\repos\monopoly\projet final\projet\main.c
+1640728857 source:c:\repos\monopoly\projet final\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
@@ -56,10 +56,10 @@
 	<stdlib.h>
 	<string.h>
 
-1640705947 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1640781828 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
-1640709345 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
+1640711206 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640705947 c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\actions.h
@@ -70,14 +70,14 @@
 	<conio.h>
 	<stdbool.h>
 
-1640708602 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
+1640776068 source:c:\repos\monopoly\projet final\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1640707646 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
+1640774763 source:c:\repos\monopoly\projet final\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1640707630 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
+1640774749 c:\repos\monopoly\projet final\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -301,6 +301,6 @@
 1640705947 source:c:\repos\monopoly\projet final\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 
-1640705992 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\case_prison.c
+1640729710 source:c:\repos\monopoly\projet final\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 

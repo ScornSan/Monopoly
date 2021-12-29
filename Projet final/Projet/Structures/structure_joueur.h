@@ -19,6 +19,7 @@ typedef struct players
     char pseudo[20];
     int argent;
     int position;
+    int ancienne_position;
     bool prison;
 }t_joueur;
 
