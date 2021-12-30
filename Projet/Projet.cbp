@@ -99,6 +99,9 @@
 		<Unit filename="Fonctions_actions_joueurs/vente_maisons.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_affichage/Déclaration_position_cases.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
 		<Unit filename="Fonctions_affichage/instructions_sur_plateau.c">
 			<Option compilerVar="CC" />

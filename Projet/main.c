@@ -7,13 +7,14 @@ void affichage_Menu()
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
     int choix = 0;
+    int repere[4]; //////
     int nombre_de_joueurs;
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
-        gotoligcol(16,45);
+        gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
         scanf("%d", &choix);
@@ -25,10 +26,9 @@ void affichage_Menu()
         case 1 :
 
             system("cls");
-            //nouvelle_partie();
             fflush(stdin);
             system("cls");
-            partie_en_cours();
+            partie_en_cours(repere); //////
             echap();
             /// AJOUTER FONCTION NOUVELLE PARTIE
             break;
@@ -91,6 +91,7 @@ void affichage_Menu()
         }
     echap();
 }
+
 
 int main()
 {

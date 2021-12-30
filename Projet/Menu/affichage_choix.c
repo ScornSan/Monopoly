@@ -1,4 +1,3 @@
-/// ne pas faire la manip chaine de carac ici car debut donc pas centré
 
 void affichage_choix()
 {
@@ -26,7 +25,4 @@ void affichage_choix()
     printf("6-Quitter\n");
     position(15,70);
     couleur(12, 0);
-    printf(">>>>\n");
-    position(15,75);
-
 }

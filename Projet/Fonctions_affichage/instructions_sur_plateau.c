@@ -65,6 +65,7 @@ void carre_noir()
     Color(15,0);
 }
 
+
 /*void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
 {
     Color(0,7);
