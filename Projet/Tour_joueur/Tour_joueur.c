@@ -7,23 +7,35 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
     int longueur_2;
     int de1, de2;
     int nb_lancer = 0;
+<<<<<<< HEAD
     int nb_tour_prison = 0;
+=======
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
     int key;
     char chaine[10] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
     char phrase_prison[100] = ", allez en Prison !";
     char phrase_commu[100] = "Vous etes tombes sur une case communaute!";
+<<<<<<< HEAD
     char phrase_commu_2[100] = "Appuyez sur ENTRER pour piocher une carte communaute";
     char phrase_chance[100] = "Vous etes tombes sur une case chance!";
     char phrase_chance_2[100] = "Appuyez sur ENTRER pour piocher une carte chance";
+=======
+    char phrase_commu_2[100] = "Appuyez sur ESPACE pour piocher une carte communaute";
+    char phrase_chance[100] = "Vous etes tombes sur une case chance!";
+    char phrase_chance_2[100] = "Appuyez sur ESPACE pour piocher une carte chance";
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
 
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
         fflush(stdin);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
         if (nb_lancer == 0)
         {
             carre_noir();
@@ -54,6 +66,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
 
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
+<<<<<<< HEAD
             joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position; //
 
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
@@ -69,6 +82,17 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                 {
                     nb_tour_prison++;
                     case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2, nb_tour_prison); // la fonction s'active s'il passe son tour en prison
+=======
+            joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
+            //deplacement_pion_graph(de1, de2);
+            nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
+            if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
+            {
+                if (joueur_i[id_joueur].prison == true)
+                {
+                    printf("Vous etes deja en prison");
+                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2); // la fonction s'active s'il est deja en prison
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
                     break;
                 }
                 else // si c'est la premiere fois qu'il arrive en prison
@@ -84,6 +108,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             {
                 if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
                 {
+<<<<<<< HEAD
                     placement_script(strlen(phrase_impot), 2);
                     printf("%s%s",chaine);
                     joueur_i[id_joueur].argent += 200;
@@ -92,10 +117,23 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                 printf("%d", joueur_i[id_joueur].ancienne_position);
                 printf("%d", joueur_i[id_joueur].position);
                 deplacement_joueur(joueur_i, nombre_joueurs, id_joueur); //
+=======
+                    char chaine[100] = "Vous etes passe par la case depart ! Vous recevez 200";
+                    int longueur = strlen(chaine);
+                    placement_script(longueur,2);
+                    printf("%s",chaine);
+                    joueur_i[id_joueur].argent += 200;
+                }
+                joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 
                 switch(joueur_i[id_joueur].position)
                 {
                     case 2:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
                         longueur = strlen(chaine)+strlen(phrase_impot);
                         placement_script(longueur,2);
                         printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
@@ -124,6 +162,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                         placement_script(longueur_2,3),
                         printf("%s",phrase_commu_2);
                         usleep(3000);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
                         break;
 
                     case 21:
@@ -131,6 +173,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                         placement_script(longueur,2);
                         printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
                         usleep(3000);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
                         break;
 
                     case 14:

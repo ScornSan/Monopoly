@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+/// ne pas faire la manip chaine de carac ici car debut donc pas centré
+
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 void affichage_choix()
 {
     position(5,75);

@@ -1,20 +1,20 @@
-#include "../Affichage_plateau/affichage_plateau.h"
 #include "../Structures/structure_joueur.h"
+#include "../Affichage_Plateau_2/affichage_plateau.h"
+
+
 
 void placement_script(int longueur, int a)
 {
     /// int longueur est la longueur de la chaine de carac a afficher
     /// int a représentent le nombre de ligne a afficher en 1 seule fois avant l'affichage du carré noir pour clear
-
-    int ligne = 29;          /// centre vertical du carré noir           /// centre toujours le texte a afficher peut importe sa longeur horizontalement
-                                            /// 'nb' + 10, le +10 equivaut a la taille de la chaine "Maison 3.2" par ex
+    int ligne = 29;          /// centre vertical du carré noir
     int colonne = 51-((longueur)/2);        /// centre toujours le texte a afficher peut importe sa longeur horizontalement
     gotoligcol(ligne + a,colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
 }
 
 
 
-/*void connaissance_position_curseur()
+void connaissance_position_curseur()
 {
     HANDLE win;
 
@@ -27,22 +27,13 @@ void placement_script(int longueur, int a)
     int x = coninfo.dwCursorPosition.X;
     int y = coninfo.dwCursorPosition.Y;
 
-}*/
+}
 
-<<<<<<< HEAD
-void position_choix(int longueur,int a)
+void position_choix(int longueur)
 {
-    char chaine[100];
-=======
-void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
-{
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
-    //int x = coninfo.dwCursorPosition.X;
-    //int y = coninfo.dwCursorPosition.Y;
-    int ligne = 33 + a;
+    int ligne = 33;
     int colonne = 51-((longueur/4)+2);
     gotoligcol(ligne,colonne);
-<<<<<<< HEAD
     printf("Oui");
     gotoligcol(ligne +1,colonne-4);
     printf("-->[ENTRER]");
@@ -52,16 +43,6 @@ void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], ch
     gotoligcol(ligne+1,colonne-4);
     printf("-->[Autre]");
 
-=======
-    printf("%s",chaine1);
-    gotoligcol(ligne +1,colonne-4);
-    printf("-->[%s]",chaine3);
-    colonne = 51+((longueur/4)-2);
-    gotoligcol(ligne,colonne);
-    printf("%s",chaine2);
-    gotoligcol(ligne+1,colonne-4);
-    printf("-->[%s]",chaine4);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 }
 
 
@@ -83,7 +64,7 @@ void carre_noir()
     Color(15,0);
 }
 
-/*void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
+/*void affichage_carte(int ligne, int colonne,t_carte terrain[][3],int a , int b)
 {
     Color(0,7);
     int lig = ligne;
@@ -111,8 +92,7 @@ void carre_noir()
             col = colonne;
             for (int j = 0; j< 11; j++)
                 {
-                    gotoligcol(lig,col);
-                    printf("%c", 0x11);
+                    gotoligcol(lig,col)à                    printf("%c", 0x11);
                     col = col +2;
                 }
             lig = lig + 14;
@@ -123,8 +103,16 @@ void carre_noir()
         gotoligcol(ligne +4, colonne+1);
         printf("Loyer : %d$\n",terrain[a][b].prix_loyer);
         gotoligcol(ligne +6, colonne+1);
-        printf("Hypotheque : %d$\n",terrain[a][b].val_hypotheque);
+        printf("Hypotheque : %d$\n",terrain[a][b].prix_hypotheque);è
         gotoligcol(ligne +8, colonne+1);
         printf("Maisons : %d\n",terrain[a][b].nb_maison);
         Color(15,0);
+}*/
+
+
+/*void emplacement_carte()
+{
+    creation_carte(15, 120);
+    creation_carte(31, 120);
+    creation_carte(47, 120);
 }*/

@@ -6,10 +6,8 @@ void paiement_loyer(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, 
     carre_noir();
     longueur = strlen(pion_joueur[id_joueurs_v1].pseudo) + strlen(terrain[a][b].nom) + strlen(pion_joueur[terrain[a][b].possession_carte].pseudo) + 36;
     placement_script(longueur,2);
-    printf("%s, vous etes sur %s qui appartient a %s !",pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo);
-    longueur = 31;
-    placement_script(longueur,4);
-    printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
+    printf("%s, vous etes sur %s qui appartient a %s !"
+           "Vous devez payer %d de loyer !\n", pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo);
 
     pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
     pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;
@@ -31,22 +29,14 @@ void ajout_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t
             if (fleche1 == 'z' && terrain[a][b].nb_maison < 4) // z sert à augmenter de 1 le nombre
             {
                 terrain[a][b].nb_maison++;
-<<<<<<< HEAD
                 printf(" ");
                 printf("%d", fleche1);
-=======
-                printf(" %c", fleche1);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
             }
             else if (fleche1 == 's' && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
             {
                 terrain[a][b].nb_maison--;
-<<<<<<< HEAD
                 printf(" ");
                 printf("%d", fleche1);
-=======
-                printf(" %c", fleche1);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
             }
         }
     }

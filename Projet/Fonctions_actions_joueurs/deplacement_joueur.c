@@ -1,5 +1,6 @@
 #include "../Structures/structure_joueur.h"
 
+<<<<<<< HEAD
 void effacement_blanc(int id_joueur)
 {
     Color(0,15);
@@ -340,3 +341,10 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur)
         }
     }
 }
+=======
+/*void deplacement_joueur(t_joueur joueur_indice[], int i_joueur)
+{
+    int a, b;
+    printf("%d", joueur_indice[i_joueur].position);
+}*/
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb

@@ -7,15 +7,11 @@ int demander_nb_joueur()
     //int nb_joueurs = 2; /// TODO remettre à 0
     while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4)
     {
-<<<<<<< HEAD
 <<<<<<< HEAD:Projet/Structure_joueur/structure_joueur.c
         printf("A combien souhaitez-vous jouer ? Ce Monopoly se joue avec 2, 3 ou 4 joueurs\n");
 =======
         printf("A combien souhaitez-vous jouer ? J\n");
 >>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb:Projet/Structure_joueur/structure_joueur.c.save
-=======
-        printf("A combien souhaitez-vous jouer ? Ce Monopoly se joue avec 2, 3 ou 4 joueurs\n");
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
         fflush(stdin);
         scanf("%d", &nb_joueurs);
     }

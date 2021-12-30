@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="Affichage_plateau\affichage_plateau_projet_yohan.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
@@ -77,4 +78,6 @@
 			<Cursor1 position="0" topLine="24" />
 		</Cursor>
 	</File>
+=======
+>>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 </CodeBlocks_layout_file>

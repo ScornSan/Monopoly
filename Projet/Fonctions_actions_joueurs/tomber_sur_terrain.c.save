@@ -2,31 +2,17 @@
 
 void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joueurs, t_carte terrain[][3], int a, int b, int identifiant_carte[])
 {
-    //carre_noir();
-    char chaine[100] = "Vous etes dans la ";
+    carre_noir();
+    char chaine[100] = "Vous etes dans la";
     longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-    placement_script(longueur,2);
-    printf("%s %s",chaine, terrain[a][b].nom);
-    usleep(300000);
+    placement_script(longueur,0);
+    printf("%s %s\n",chaine, terrain[a][b].nom);
+    sleep(3);
     if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs].argent > terrain[a][b].prix_achat)
     {
-<<<<<<< HEAD
-        char chaine[100] = "Voulez-vous acheter ce terrain?";
-        carre_noir();
-        longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-        placement_script(longueur,2);
-        printf("%s%s",chaine, terrain[a][b].nom);
-=======
-        //carre_noir();
-        //longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-        //placement_script(longueur,2);
-        //printf("%s%s",chaine, terrain[a][b].nom);
-        char chaine[100] = "Voulez-vous acheter ce terrain?";
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
-        longueur = strlen(chaine);
-        placement_script(longueur,4);
-        printf("%s",chaine);
-        position_choix(longueur,2);
+        char 
+        printf("Voulez-vous acheter ce terrain ?\n"
+                "Appuyez sur ENTRER pour acheter le terrain, ou entrez une autre touche pour ne rien faire\n");
         if (getch() == TOUCHE_ENTER) // 13 est le numéro ascii pour retour charriot, ou ENTER
         {
             terrain[a][b].prop_achete = true;
@@ -53,10 +39,7 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
     }
     else if (pion_joueur[id_joueurs].argent < terrain[a][b].prix_achat)
     {
-        char chaine[100] = "Vous n'avez pas assez d'argent pour acheter ";
-        longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-        placement_script(longueur,0);
-        printf("%s'%s'\n",chaine, terrain[a][b].nom);
+        printf("Vous n'avez pas assez d'argent pour acheter '%s'\n", terrain[a][b].nom);
     }
 }
 
