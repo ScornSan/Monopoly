@@ -530,3 +530,94 @@
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+	"affichage_plateau.h"
+
+1640796720 c:\repos\monopoly\projet\affichage_plateau\affichage_plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\cases_chance.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\cases_commu.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\cases_couleur.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\cases_speciales_colonnes.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\cases_speciales_lignes.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\colonnes.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\details.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\lettred_et_fleche.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\lettrei.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\lignes .c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\lignes.c
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\logo_prison.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\parking_gratuit.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\sepa_colonnes.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\affichage_plateau\sepa_lignes.c
+	"affichage_plateau.h"
+
+1640796720 source:c:\repos\monopoly\projet\fonctions_affichage\pion.c
+	"affichage.h"
+
+1640796720 c:\repos\monopoly\projet\fonctions_affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640796720 source:c:\repos\monopoly\projet\main.c
+	"Structures/structure_joueur.h"
+	"Affichage_plateau/affichage_plateau.h"
+
+1640883047 c:\repos\monopoly\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1640796720 source:c:\repos\monopoly\projet\menu\echap.c
+	<stdio.h>
+	<stdlib.h>
+	"echap.h"
+
+1640796720 c:\repos\monopoly\projet\menu\echap.h
+
+1640796720 source:c:\repos\monopoly\projet\menu\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"../Structures/structure_joueur.h"
+
+1640796720 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
+	"../Structures/structure_joueur.h"
+
+1640796720 source:c:\repos\monopoly\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
