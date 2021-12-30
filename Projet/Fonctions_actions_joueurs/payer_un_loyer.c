@@ -82,11 +82,11 @@ void ajout_hotel(t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_c
 
         while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            if (getch() == 'z' && terrain[a][b].nb_maison < 5)
+            if (getch() == 'z' && getch() == 'Z' && terrain[a][b].nb_maison < 5)
             {
                 terrain[a][b].nb_maison++;
             }
-            else if (getch() == 's' && terrain[a][b].nb_maison > 4)
+            else if (getch() == 's' && getch() == 'S' && terrain[a][b].nb_maison > 4)
             {
                 terrain[a][b].nb_maison--;
             }

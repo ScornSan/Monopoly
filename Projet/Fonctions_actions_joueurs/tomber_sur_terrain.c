@@ -2,6 +2,7 @@
 
 void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joueurs, t_carte terrain[][3], int a, int b, int identifiant_carte[])
 {
+
     //carre_noir();
     char chaine[100] = "Vous etes dans la ";
     longueur = strlen(chaine) + strlen(terrain[a][b].nom);

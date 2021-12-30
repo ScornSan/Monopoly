@@ -22,7 +22,7 @@ void affichage_choix()
     position(13,70);
     printf("5- Afficher le nom des membres de l equipe du projet \n");
     position(14,70);
-    printf("6-Quitter\n");
+    printf("6- Quitter\n");
     position(15,70);
     couleur(12, 0);
 }

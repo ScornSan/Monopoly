@@ -616,3 +616,302 @@
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+	"affichage_plateau.h"
+
+1640861141 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\affichage_plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\cases_chance.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\cases_commu.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\cases_couleur.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\cases_speciales_colonnes.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\cases_speciales_lignes.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\colonnes.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\details.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\lettred_et_fleche.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\lettrei.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\lignes .c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\lignes.c
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\logo_prison.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\parking_gratuit.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\sepa_colonnes.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\affichage_plateau\sepa_lignes.c
+	"affichage_plateau.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\case_prison.c
+	"../Structures/structure_joueur.h"
+
+1640866135 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+	"actions.h"
+
+1640861141 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\actions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<stdbool.h>
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+	"../Affichage_plateau/affichage_plateau.h"
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_affichage\pion.c
+	"affichage.h"
+
+1640861141 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\fonctions_affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640862025 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\affichage_choix.c
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\echap.c
+	<stdio.h>
+	<stdlib.h>
+	"echap.h"
+
+1640861141 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\echap.h
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"../Structures/structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\nouvelle_partie.c
+	"nouvelle_partie.h"
+	"../Structures/structure_joueur.h"
+
+1640861141 c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\menu\nouvelle_partie.h
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\partie\nouvelle_partie.c
+	"../Structures/structure_joueur.h"
+
+1640866266 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\structures\structure_joueur.c
+	"structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
+1640861141 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\tour_joueur\tour_joueur.c
+	"../Fonctions_actions_joueurs/actions.h"
+	"../Structures/structure_joueur.h"
+
+1640875082 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\main.c
+	"Structures/structure_joueur.h"
+	"Affichage_plateau/affichage_plateau.h"
+
+1640870797 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\sauvegardes\sauvegardeclassique.c
+	"../Structures/structure_joueur.h"
+
+1640870754 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\sauvegardes\sauvegardeenplus.c
+	"../Structures/structure_joueur.h"
+
+1640870728 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\sauvegardes\chargerpartie1.c
+	"../Structures/structure_joueur.h"
+
+1640872733 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\sauvegardes\chargerpartieclass.c
+	"../Structures/structure_joueur.h"
+
+1640873597 source:c:\users\garfl\desktop\ece scolarit… 2021-2026\travail 2020 -2021\depot\monopoly\projet\sauvegardes\chargerpartieplus.c
+	"../Structures/structure_joueur.h"
+
+1640887817 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+	"affichage_plateau.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\affichage_plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\cases_chance.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\cases_commu.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\cases_couleur.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\cases_speciales_colonnes.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\cases_speciales_lignes.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\colonnes.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\details.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\lettred_et_fleche.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\lettrei.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\lignes .c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\lignes.c
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\logo_prison.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\parking_gratuit.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\sepa_colonnes.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\affichage_plateau\sepa_lignes.c
+	"affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\case_prison.c
+	"../Structures/structure_joueur.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\fonction_de.c
+	"actions.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\actions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<stdbool.h>
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\hypothequer.c
+	"../Structures/structure_joueur.h"
+
+1640878383 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\payer_un_loyer.c
+	"../Structures/structure_joueur.h"
+
+1640891560 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1640890977 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_affichage\instructions_sur_plateau.c
+	"../Affichage_plateau/affichage_plateau.h"
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_affichage\pion.c
+	"affichage.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\fonctions_affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640893693 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\main.c
+	"Structures/structure_joueur.h"
+	"Affichage_plateau/affichage_plateau.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\affichage_choix.c
+
+1640893693 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\echap.c
+	<stdio.h>
+	<stdlib.h>
+	"echap.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\echap.h
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\nouvelle_partie.c
+	"nouvelle_partie.h"
+	"../Structures/structure_joueur.h"
+
+1640875750 c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\menu\nouvelle_partie.h
+
+1640893275 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\partie\nouvelle_partie.c
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\sauvegardes\chargerpartieclass.c
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\sauvegardes\chargerpartieplus.c
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\sauvegardes\sauvegardeclassique.c
+	"../Structures/structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\sauvegardes\sauvegardeenplus.c
+	"../Structures/structure_joueur.h"
+
+1640893693 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\structures\structure_joueur.c
+	"structure_joueur.h"
+
+1640875750 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
+1640878227 source:c:\users\sasab\documents\repository\monopoly\rajout sauvegarde\projet\tour_joueur\tour_joueur.c
+	"../Fonctions_actions_joueurs/actions.h"
+	"../Structures/structure_joueur.h"
+

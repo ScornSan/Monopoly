@@ -121,6 +121,18 @@
 		<Unit filename="Partie/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Sauvegardes/chargerpartieclass.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/chargerpartieplus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/sauvegardeclassique.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/sauvegardeenplus.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">
 			<Option compilerVar="CC" />
 		</Unit>
