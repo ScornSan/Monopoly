@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-=======
-/// ne pas faire la manip chaine de carac ici car debut donc pas centré
 
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 void affichage_choix()
 {
     position(5,75);
@@ -26,10 +22,7 @@ void affichage_choix()
     position(13,70);
     printf("5- Afficher le nom des membres de l equipe du projet \n");
     position(14,70);
-    printf("6-Quitter\n");
+    printf("6- Quitter\n");
     position(15,70);
     couleur(12, 0);
-    printf(">>>>\n");
-    position(15,75);
-
 }

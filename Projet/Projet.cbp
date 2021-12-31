@@ -84,12 +84,9 @@
 		<Unit filename="Fonctions_actions_joueurs/case_prison.c">
 			<Option compilerVar="CC" />
 		</Unit>
-<<<<<<< HEAD
 		<Unit filename="Fonctions_actions_joueurs/deplacement_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
-=======
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 		<Unit filename="Fonctions_actions_joueurs/fonction_de.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -125,6 +122,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/chargerpartieclass.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/chargerpartieplus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/sauvegardeclassique.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Sauvegardes/sauvegardeenplus.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">

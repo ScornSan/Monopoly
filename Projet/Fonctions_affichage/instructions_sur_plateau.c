@@ -29,30 +29,13 @@ void placement_script(int longueur, int a)
 
 }*/
 
-<<<<<<< HEAD
-void position_choix(int longueur,int a)
-{
-    char chaine[100];
-=======
 void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
 {
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
     //int x = coninfo.dwCursorPosition.X;
     //int y = coninfo.dwCursorPosition.Y;
     int ligne = 33 + a;
     int colonne = 51-((longueur/4)+2);
     gotoligcol(ligne,colonne);
-<<<<<<< HEAD
-    printf("Oui");
-    gotoligcol(ligne +1,colonne-4);
-    printf("-->[ENTRER]");
-    colonne = 51+((longueur/4)-2);
-    gotoligcol(ligne,colonne);
-    printf("Non");
-    gotoligcol(ligne+1,colonne-4);
-    printf("-->[Autre]");
-
-=======
     printf("%s",chaine1);
     gotoligcol(ligne +1,colonne-4);
     printf("-->[%s]",chaine3);
@@ -61,7 +44,6 @@ void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], ch
     printf("%s",chaine2);
     gotoligcol(ligne+1,colonne-4);
     printf("-->[%s]",chaine4);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
 }
 
 

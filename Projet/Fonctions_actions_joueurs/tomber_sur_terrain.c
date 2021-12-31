@@ -2,6 +2,7 @@
 
 void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joueurs, t_carte terrain[][3], int a, int b, int identifiant_carte[])
 {
+
     //carre_noir();
     char chaine[100] = "Vous etes dans la ";
     longueur = strlen(chaine) + strlen(terrain[a][b].nom);
@@ -10,23 +11,11 @@ void identification_terrain(t_joueur pion_joueur[], int max_joueurs, int id_joue
     usleep(300000);
     if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs].argent > terrain[a][b].prix_achat)
     {
-<<<<<<< HEAD
         char chaine[100] = "Voulez-vous acheter ce terrain?";
-        carre_noir();
-        longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-        placement_script(longueur,2);
-        printf("%s%s",chaine, terrain[a][b].nom);
-=======
-        //carre_noir();
-        //longueur = strlen(chaine) + strlen(terrain[a][b].nom);
-        //placement_script(longueur,2);
-        //printf("%s%s",chaine, terrain[a][b].nom);
-        char chaine[100] = "Voulez-vous acheter ce terrain?";
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
         longueur = strlen(chaine);
         placement_script(longueur,4);
         printf("%s",chaine);
-        position_choix(longueur,2);
+        position_choix(longueur,2, "Oui", "Non", "ENTRER", "Autre Touche");
         if (getch() == TOUCHE_ENTER) // 13 est le numéro ascii pour retour charriot, ou ENTER
         {
             terrain[a][b].prop_achete = true;

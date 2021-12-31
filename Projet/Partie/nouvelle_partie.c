@@ -23,5 +23,5 @@ void partie_en_cours()
         }
     }
     printf("fin de jeu");
-    //deplacement_joueur();*/
+
 }

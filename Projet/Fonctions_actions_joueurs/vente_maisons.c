@@ -8,10 +8,6 @@ void vente_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_car
 
     while (touche > identifiant_joueur_max[id_joueur]) // On entre dans le blindage
     {
-<<<<<<< HEAD
-        printf("%s, sur quel propriete voulez-vous vendre vos maisons ?\n", pion_joueur[id_joueur].pseudo);
-        printf("l'id max est de %d", identifiant_joueur_max[id_joueur]);
-=======
         carre_noir(); //
         char phrase_vente_maison[100] = ", sur quel propriete voulez-vous vendre vos maisons ?"; //
         longueur = strlen(phrase_vente_maison)+strlen(pion_joueur[id_joueur].pseudo); //
@@ -19,10 +15,9 @@ void vente_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_car
         printf("%s%s", pion_joueur[id_joueur].pseudo, phrase_vente_maison); //
         placement_script(17,1); //
         printf("l id max est de %d", identifiant_joueur_max[id_joueur]); //
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
         fflush(stdin);
         scanf("%d", &touche);
-    }
+    }                                                                                       // ajouter blindage
     while (touche <= identifiant_joueur_max[id_joueur] && (touche > 0 && touche < 6))
     {
         for (int i = 0; i < GROUPES_CARTES; i++)
@@ -39,55 +34,42 @@ void vente_maisons(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_car
             {
                 if (terrain[i][j].nb_maison >= 1 && touche == terrain[i][j].id_carte)
                 {
-<<<<<<< HEAD
-                    printf("Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre");
-=======
-                    char nombre_maison_avendre[100] = "Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre";
+                     char nombre_maison_avendre[100] = "Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre";
                     placement_script(strlen(nombre_maison_avendre),3);
                     printf("%s",nombre_maison_avendre);
-                    /// il faut rajouter la phrase qui explique  que z augmente et s diminue
-                    ///donc faudra rajouter un compteur qui commence a 0 qui s'affiche et qui est relié a la lecture de z et s
-                    /// ou sinn faire une saisi avec des chiffres et pas z et s
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
+                    char signification_z_et_s[100] = "z pour augmenter et s pour diminuer";
+                    placement_script(strlen(signification_z_et_s),4);
+                    printf("%s", signification_z_et_s);
                     fflush(stdin);
                     while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
                     {
                         fleche2 = getch();
-                        if (fleche2 == 'z' && terrain[i][j].nb_maison < 4) // z sert à augmenter de 1 le nombre
-                        {
-                            terrain[i][j].nb_maison++;
-                            carre_noir();
-<<<<<<< HEAD
-                            placement_script(fleche2, 0);
-                            printf("%d", fleche2);
-=======
-                            placement_script(2, 0);
-                            printf("%c", fleche2);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
-                        }
-                        else if (fleche2 == 's' && terrain[i][j].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
+                        int nb = 0;
+                        if (fleche2 == 'z' && fleche2 == 'Z' && terrain[i][j].nb_maison < 4 && terrain[i][j].nb_maison > 0 && nb >= 0) // z sert à augmenter de 1 le nombre
                         {
                             terrain[i][j].nb_maison--;
-                            carre_noir();
-<<<<<<< HEAD
-                            placement_script(fleche2, 0);
-                            printf("%d", fleche2);
-=======
-                            placement_script(2, 0);
-                            printf("%c", fleche2);
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
+                            nb++;
+
                         }
+                        else if (fleche2 == 's' && fleche2 == 's' && terrain[i][j].nb_maison > 0 && terrain[i][j].nb_maison < 4 && nb>= 0) // s sert a diminuer de 1 le nombre de maisons à faire
+                        {
+                            terrain[i][j].nb_maison++;
+                            nb++;
+                        }
+
+                         carre_noir();
+                         char nb_maison = "Nombre de maison a vendre : ";
+                         longueur = strlen(nb_maison) + 1;
+                         placement_script(longueur, 0);
+                         printf("%s""%d", nb_maison, nb);
                     }
                 }
                 else
                 {
-<<<<<<< HEAD
-                    printf("Vous n'avez pas de maisons sur cette propriete !\n");
-=======
-                    char maison_sur_prop[100] = "Vous n'avez pas de maisons sur cette propriete !"; //
-                    placement_script(strlen(maison_sur_prop),3);/// rajouter le nom de la prop
-                    printf("%s",maison_sur_prop); //
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
+                    char maison_sur_prop[100] = "Vous n'avez pas de maisons sur la propriete!";
+                    longueur = strlen(maison_sur_prop) + 10; // 10 correspond au nombre de caractere du nom d'une propriete
+                    placement_script(longueur,3);
+                    printf("%s%s",maison_sur_prop, terrain[i][j].nom); //
                     break;
                 }
                 break;

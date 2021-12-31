@@ -8,11 +8,7 @@ void nouvelle_partie()
     int nombre_de_joueurs = demander_nb_joueur();
     t_joueur joueur[nombre_de_joueurs]; // on crée un tableau de structures de joueurs, de taille du nombre demandé
     creation_joueurs(joueur, nombre_de_joueurs); // on crée les structures joueurs
-<<<<<<< HEAD
-    remplissages_cartes(tab); // on remplit les cartes terrains
-=======
     /*remplissages_cartes(tab); // on remplit les cartes terrains
->>>>>>> 8f6cb42a2d5b9d237040b7ea1274803ca5449afb
     while (nombre_de_joueurs != 1)
     {
         for (int i = 0; i < nombre_de_joueurs; i++)

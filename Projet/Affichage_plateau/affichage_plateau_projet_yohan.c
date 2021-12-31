@@ -25,6 +25,9 @@ void affichage_plateau()
     lettreI();
     gotoligcol(0,premiere_colonne);
     Color(15,0);
+    position(premiere_ligne, derniere_colonne + 20);
+    printf("Appuyer sur [ECHAP] pour acceder au menu");
+    echap();
 
 }
 /*
