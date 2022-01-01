@@ -10,4 +10,5 @@ void echap ()
         system("cls");
         affichage_Menu();
     }
+    fflush(stdin);
 }

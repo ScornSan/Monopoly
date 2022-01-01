@@ -18,9 +18,16 @@ int demander_nb_joueur()
     couleur(12, 0);
     fflush(stdin);
     scanf("%d", &nb_joueurs);
+
     // demande le nombre de joueurs
     while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4)
     {
+        system("cls");
+        couleur(12, 0);
+        printf("Appuyez sur [ECHAP] pour revenir au menu");
+        couleur(9, 0);
+        position(8,70);
+        printf("BIENVENUE DANS UNE NOUVELLE PARTIE ! \n");
         position(11,72);
         couleur(15, 0);
         printf("A combien souhaitez-vous jouer ?\n");

@@ -19,7 +19,9 @@ typedef struct players
     char pseudo[20];
     int argent;
     int position;
+    int ancienne_position;
     bool prison;
+
 }t_joueur;
 
 typedef struct cartes
@@ -37,6 +39,7 @@ typedef struct cartes
     bool possession_quartier;
     int prix_rachat;
     int id_carte;
+
 }t_carte;
 
 

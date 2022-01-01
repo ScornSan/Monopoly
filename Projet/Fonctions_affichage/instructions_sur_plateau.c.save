@@ -41,7 +41,7 @@ void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], ch
     printf("-->[%s]",chaine3);
     colonne = 51+((longueur/4)-2);
     gotoligcol(ligne,colonne);
-    printf("%s",chaine2);
+    printf("%s"chaine2);
     gotoligcol(ligne+1,colonne-4);
     printf("-->[%s]",chaine4);
 }
@@ -64,40 +64,6 @@ void carre_noir()
         }
     Color(15,0);
 }
-
-void affichage_maisons(t_carte terrain[][3], int a, int b)
-{
-    int placement_depart; 
-
-
-    terrain[a][b].nb_maison;
-    Color(0,4);
-    printf(" ");
-}
-
-
-
-/*
-    0 : Noir
-    1 : Bleu foncé
-    2 : Vert foncé
-    3 : Turquoise
-    4 : Rouge foncé
-    5 : Violet
-    6 : Vert caca d'oie
-    7 : Gris clair
-    8 : Gris foncé
-    9 : Bleu fluo
-    10 : Vert fluo
-    11 : Turquoise
-    12 : Rouge fluo
-    13 : Violet 2
-    14 : Jaune
-    15 : Blanc
-    */
-
-
-
 
 /*void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
 {

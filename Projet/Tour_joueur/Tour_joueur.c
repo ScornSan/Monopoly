@@ -53,8 +53,9 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
 
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
+            joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
-            //deplacement_pion_graph(de1, de2);
+            deplacement_joueur(joueur_i, nombre_joueurs, id_joueur);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
@@ -89,7 +90,6 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                     joueur_i[id_joueur].argent += 200;
                 }
                 joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
-
                 switch(joueur_i[id_joueur].position)
                 {
                     case 2:

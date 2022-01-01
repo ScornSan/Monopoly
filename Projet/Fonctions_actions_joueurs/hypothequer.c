@@ -5,7 +5,6 @@
 
 void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[])
 {
-     //////
     int touche = 25; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int fleche2;
     int nb_cartes;
@@ -46,10 +45,10 @@ void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id
                         terrain[i][j].nb_maison--;
                         pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + (terrain[i][j].prix_maison/2);
                     }
-                    liaison_memoire_affichage(repere,i,j); ///////////////
-                    Color(repere[2],repere[3]); /////////////
-                    carre_couleur(repere[0] + AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE); //////////////
-                    Color(0,15); //////////////
+                    liaison_memoire_affichage(repere,i,j);
+                    Color(repere[2],repere[3]);
+                    carre_couleur(repere[0] + AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
+                    Color(0,15);
                     carre_noir();
                     char phrase_valeur_hypotheque[100] = ", vous recuperer l'argent de la valeur de l'hypoteque de votre propriete hypotequee ";
                     longueur = strlen(phrase_valeur_hypotheque) + strlen(pion_joueur[id_joueur].pseudo)+ 10;
@@ -59,7 +58,6 @@ void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id
                     longueur = strlen(phrase_perception_loyer) + 10;
                     placement_script(longueur,2);
                     printf("%s%s", phrase_perception_loyer, terrain[i][j].val_hypotheque);
-
                     pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].val_hypotheque;
                     terrain[i][j].hypotheque ==  true;
                 }

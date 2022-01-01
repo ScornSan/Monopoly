@@ -143,7 +143,7 @@ void liaison_memoire_affichage(int repere[4]/*t_carte terrain[][3]*/,int a,int b
 void affichage_maisons(int repere[4],int a)
 {
     Color(repere[2],repere[3]);
-    for (int i = 0 ; i < a  ;i++)
+    for (int i = 0 ; i < a ;i++)
     {
         gotoligcol(repere[0] + AJUSTEMENT_LIGNE, repere[1] + AJUSTEMENT_COLONNE + (2*i));
         printf("%c",0x0C);

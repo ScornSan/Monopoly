@@ -14,30 +14,12 @@ void carre_couleur(int ligne, int colonne)
 
 void cases_couleur()
 {
-    /*
-    0 : Noir
-    1 : Bleu foncé
-    2 : Vert foncé
-    3 : Turquoise
-    4 : Rouge foncé
-    5 : Violet
-    6 : Vert caca d'oie
-    7 : Gris clair
-    8 : Gris foncé
-    9 : Bleu fluo
-    10 : Vert fluo
-    11 : Turquoise
-    12 : Rouge fluo
-    13 : Violet 2
-    14 : Jaune
-    15 : Blanc
-    */
     int lig = 14;
     int col = 15;
 
     /// Affichage rectangle et couleur terrain 1
 
-    Color(0,4); /// rouge foncé
+    Color(0,4);
     carre_couleur(lig,col);
     col = 28;
     carre_couleur(lig,col);
@@ -45,7 +27,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 2
 
-    Color(0,1); /// bleu foncé
+    Color(0,1);
     carre_couleur(lig,col);
     col = 54;
     carre_couleur(lig,col);
@@ -55,7 +37,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 3
 
-    Color(0,14); /// jaune
+    Color(0,14);
     carre_couleur(lig,col);
     col = 54;
     carre_couleur(lig,col);
@@ -63,7 +45,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 4
 
-    Color(0,8); /// gris foncé
+    Color(0,8);
     carre_couleur(lig,col);
     col = 15;
     carre_couleur(lig,col);
@@ -72,7 +54,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 5
 
-    Color(0,6); /// vert caca d'oie
+    Color(0,6);
     carre_couleur(lig,col);
     lig = 29;
     carre_couleur(lig,col);
@@ -82,7 +64,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 6
 
-    Color(0,13); /// violet 2
+    Color(0,13);
     carre_couleur(lig,col);
     lig = 44;
     carre_couleur(lig,col);
@@ -90,7 +72,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 7
 
-    Color(0,2); /// vert foncé
+    Color(0,2);
     carre_couleur(lig,col);
     lig = 34;
     carre_couleur(lig,col);
@@ -100,7 +82,7 @@ void cases_couleur()
 
     /// Affichage rectangle et couleur terrain 8
 
-    Color(0,11); ///turquoise
+    Color(0,11);
     carre_couleur(lig,col);
     lig = 19;
     carre_couleur(lig,col);

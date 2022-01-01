@@ -2,7 +2,7 @@
 
 void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs, t_carte terrain[][3], int a, int b, int identifiant_carte[])
 {
-     //////
+
     //carre_noir();
     char chaine[100] = "Vous etes dans la ";
     longueur = strlen(chaine) + strlen(terrain[a][b].nom);
@@ -15,7 +15,7 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
         longueur = strlen(chaine);
         placement_script(longueur,4);
         printf("%s",chaine);
-        position_choix(longueur,2,"Oui","Non","ENTRER","Autre Touche");
+        position_choix(longueur,2,"Oui", "Non", "ENTRER", "Autre Touche");
         if (getch() == TOUCHE_ENTER) // 13 est le numéro ascii pour retour charriot, ou ENTER
         {
             terrain[a][b].prop_achete = true;
@@ -27,22 +27,20 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
     }
     else if (terrain[a][b].prop_achete = true && terrain[a][b].hypotheque ==  false) // paiement du loyer car propriété possedé ou faire une maison / hotel
     {
-
         /// affichage a faire ici
-        if (id_joueurs == terrain[a][b].possession_carte && terrain[a][b].nb_maison < 5) //// condition du < 5 ne marchera pas
+        if (id_joueurs == terrain[a][b].possession_carte && terrain[a][b].nb_maison < 5)
         {
-            ajout_maisons(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b); //////
+            ajout_maisons(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);
         }
         else if (id_joueurs == terrain[a][b].possession_carte && terrain[a][b].nb_maison == 4)
         {
-            ajout_hotel(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);   //////
+            ajout_hotel(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);
         }
         else
         {
-            paiement_loyer(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);  //////
+            paiement_loyer(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);
             /// condition de rachat a faire avec condition hotel
         }
-
     }
     else if (pion_joueur[id_joueurs].argent < terrain[a][b].prix_achat)
     {
@@ -53,9 +51,8 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
     }
 }
 
-void tomber_sur_terrain(int repere[4], t_joueur pion_joueur[], int nb_joueurs, int id_joueurs_v1, t_carte terrain[][3], int id_carte[])
+void tomber_sur_terrain(int repere[4],t_joueur pion_joueur[], int nb_joueurs, int id_joueurs_v1, t_carte terrain[][3], int id_carte[])
 {
-     //////
     switch (pion_joueur[id_joueurs_v1].position)
     {
         // Chaque cas correspond à l'indice de la position du joueur, dans le tableau correspondant au plateau

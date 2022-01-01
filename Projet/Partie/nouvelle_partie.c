@@ -3,7 +3,6 @@
 
 void partie_en_cours(int repere[4])
 {
-     //////
     t_carte tab[GROUPES_CARTES][3];
     int fin_de_partie;
     int nombre_de_joueurs = demander_nb_joueur();
@@ -16,7 +15,7 @@ void partie_en_cours(int repere[4])
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
-            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte); //////
+            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte);
 
             if (fin_de_partie < 0)
             {
