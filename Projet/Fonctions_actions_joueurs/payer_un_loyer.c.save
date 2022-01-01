@@ -11,7 +11,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
     longueur = 31;
     placement_script(longueur,4);
     printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
-    sleep(1);
+    sleep(3);
 
     pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
     pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;
@@ -31,14 +31,12 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
     longueur = strlen(nb_de_maison) + strlen(chaine) + 1;
     placement_script(longueur,1);
     printf("%s%d%s", nb_de_maison, terrain[a][b].nb_maison, chaine);
-    char consigne[100] = "Appuyez sur ESPACE pour continuer ou sur ENTRER pour ajouter des maisons";  ////////
+    char consigne[100] = "Appuyez sur ESPACE pour continuer ou pressez la touche ENTER pour ajouter des maisons";
     placement_script(strlen(consigne),2);
-    printf("%s", consigne);
     position_choix(strlen(consigne),4,"Continuer","Ajouter une maison","ESPACE","ENTRER");
 
     if (getch() == TOUCHE_ENTER)
     {
-        carre_noir();
         char ajouter_ou_enlever_maisons [100] = "Appuyez sur z pour ajouter ou s pour enlever une maison a votre propriete.";
         longueur = strlen(ajouter_ou_enlever_maisons);
         placement_script(longueur,3);
@@ -88,34 +86,24 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
     char ajout_hotel[100] = "Appuyez sur ESPACE pour continuer ou pressez la touche ENTRER pour ajouter un hotel";
     placement_script(strlen(ajout_hotel),2);
     printf("%s", ajout_hotel);
-    position_choix(strlen(ajout_hotel),4,"Continuer","Ajouter un hotel","ESPACE","ENTRER");
+    position_choix(strlen(ajout_hotel),4,"Continuer","Ajouter un hotel","ESPACE","ENTRER");  
 
     if (getch() == TOUCHE_ENTER)
     {
-        /// meme beug que maison a regler
         fflush(stdin);
-        carre_noir();
-        char remplacer[100] = "Appuyez sur z pour remplacer les maisons par un hotel ou sur s pour annuler et continuer ";
-        placement_script(strlen(remplacer),0);
-        printf("%s", remplacer);
-        int valeur_tampon = terrain[a][b].nb_maison;
+        char remplacer[100] = "Appuyez sur z ou s pour remplacer ou non les maisons par un hotel sur la case : ";
+        placement_script(strlen(remplacer),4);
+        printf("%s%s", remplacer, terrain[a][b].nom);
+
         while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            liaison_memoire_affichage(repere,a,b);
-            if ((getch() == 'z' || getch() =='Z') && terrain[a][b].nb_maison < 5)
+            if (getch() == 'z' && getch() == 'Z' && terrain[a][b].nb_maison < 5)
             {
-                //terrain[a][b].nb_maison++;   // PROBLEME C PAS CA QUI BOUGE
-                terrain[a][b].nb_maison = 0;
-                Color(repere[2],repere[3]);
-                carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
-                affichage_hotel(repere,terrain[a][b].nb_maison);
+                terrain[a][b].nb_maison++;
             }
-            else if (getch() == 's' || getch() == 'S' && terrain[a][b].nb_maison > 4)
+            else if (getch() == 's' && getch() == 'S' && terrain[a][b].nb_maison > 4)
             {
-                terrain[a][b].nb_maison = valeur_tampon; // PROBLEME C PAS CA QUI BOUGE
-                Color(repere[2],repere[3]);
-                carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
-                affichage_maisons(repere,valeur_tampon);
+                terrain[a][b].nb_maison--;
             }
         }
     }

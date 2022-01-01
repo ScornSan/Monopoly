@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[])
+int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[])
 {
     int longueur;
     int longueur_2;
@@ -50,11 +50,12 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             printf("%s%s",  joueur_i[id_joueur].pseudo, chaine);
             key = getch();
         }
-
+        echap();
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
+            joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
             joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
-            //deplacement_pion_graph(de1, de2);
+            deplacement_joueur(joueur_i, nombre_joueurs, id_joueur);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
@@ -77,6 +78,7 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                     joueur_i[id_joueur].prison = true;
                     break;
                 }
+            echap();
             }
             else if (nb_lancer < 3 && joueur_i[id_joueur].prison == false)
             {
@@ -89,7 +91,6 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                     joueur_i[id_joueur].argent += 200;
                 }
                 joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
-
                 switch(joueur_i[id_joueur].position)
                 {
                     case 2:
@@ -141,9 +142,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
                         break;
 
                     default:
-                        tomber_sur_terrain(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+                        tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
                         break;
                 }
+                echap();
             }
         }
         else if ((key == 'h' || key == 'H') && nb_lancer == 0)
@@ -153,8 +155,10 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            hypothequer(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            //
         }
+
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {
             carre_noir();
@@ -162,9 +166,12 @@ int tour_joueur(t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte 
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo);
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            vente_maisons(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            //
         }
+        echap();
     }
+
     return joueur_i[id_joueur].argent;
 }
 

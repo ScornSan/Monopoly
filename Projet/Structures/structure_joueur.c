@@ -1,5 +1,6 @@
 #include "structure_joueur.h"
-/// ne pas faire la manip chaine de carac ici car debut donc pas centré
+#include "../Fonctions_affichage/affichage.h"
+
 int demander_nb_joueur()
 {
     couleur(12, 0);
