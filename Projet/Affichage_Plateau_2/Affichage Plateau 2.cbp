@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Affichage Plateau 2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Affichage Plateau 2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Affichage Plateau 2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Details.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Lignes .c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="affichage_plateau.h" />
+		<Unit filename="cases_chance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cases_commu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cases_couleur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cases_speciales_colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cases_speciales_lignes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lettreD_et_fleche.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lettreI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logo_prison.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="parking_gratuit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sepa_colonnes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sepa_lignes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
