@@ -11,7 +11,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
     longueur = 31;
     placement_script(longueur,4);
     printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
-    sleep(3);
+    sleep(1);
 
     pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
     pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;
@@ -31,13 +31,14 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
     longueur = strlen(nb_de_maison) + strlen(chaine) + 1;
     placement_script(longueur,1);
     printf("%s%d%s", nb_de_maison, terrain[a][b].nb_maison, chaine);
-    char consigne[100] = "Appuyez sur ESPACE pour continuer ou pressez la touche ENTER pour ajouter des maisons";
+    char consigne[100] = "Appuyez sur ESPACE pour continuer ou sur ENTRER pour ajouter des maisons";  ////////
     placement_script(strlen(consigne),2);
     printf("%s", consigne);
     position_choix(strlen(consigne),4,"Continuer","Ajouter une maison","ESPACE","ENTRER");
 
     if (getch() == TOUCHE_ENTER)
     {
+        carre_noir();
         char ajouter_ou_enlever_maisons [100] = "Appuyez sur z pour ajouter ou s pour enlever une maison a votre propriete.";
         longueur = strlen(ajouter_ou_enlever_maisons);
         placement_script(longueur,3);

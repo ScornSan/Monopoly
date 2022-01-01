@@ -1377,3 +1377,163 @@
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+	"affichage_plateau.h"
+
+1640972613 c:\depot\monopoly\projet\affichage_plateau\affichage_plateau.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\cases_chance.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\cases_commu.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\cases_couleur.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\cases_speciales_colonnes.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\cases_speciales_lignes.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\colonnes.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\details.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\lettred_et_fleche.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\lettrei.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\lignes .c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\lignes.c
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\logo_prison.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\parking_gratuit.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\sepa_colonnes.c
+	"affichage_plateau.h"
+
+1640972613 source:c:\depot\monopoly\projet\affichage_plateau\sepa_lignes.c
+	"affichage_plateau.h"
+
+1640973280 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\case_prison.c
+	"../Structures/structure_joueur.h"
+
+1640972614 c:\depot\monopoly\projet\structures\structure_joueur.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<conio.h>
+
+1641055050 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+	"actions.h"
+
+1640972613 c:\depot\monopoly\projet\fonctions_actions_joueurs\actions.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<conio.h>
+	<stdbool.h>
+
+1640974082 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1640976609 c:\depot\monopoly\projet\fonctions_affichage\affichage.h
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1640974876 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1640975139 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1640975375 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1640952836 source:c:\depot\monopoly\projet\fonctions_affichage\déclaration_position_cases.c
+	"affichage.h"
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+	"../Affichage_plateau/affichage_plateau.h"
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\fonctions_affichage\pion.c
+	"affichage.h"
+
+1640976401 source:c:\depot\monopoly\projet\main.c
+	"Structures/structure_joueur.h"
+	"Affichage_plateau/affichage_plateau.h"
+
+1640972614 source:c:\depot\monopoly\projet\menu\affichage_choix.c
+
+1640972614 source:c:\depot\monopoly\projet\menu\echap.c
+	<stdio.h>
+	<stdlib.h>
+	"echap.h"
+
+1640972614 c:\depot\monopoly\projet\menu\echap.h
+
+1640972614 source:c:\depot\monopoly\projet\menu\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\menu\nouvelle_partie.c
+	"nouvelle_partie.h"
+	"../Structures/structure_joueur.h"
+
+1640972614 c:\depot\monopoly\projet\menu\nouvelle_partie.h
+
+1640976033 source:c:\depot\monopoly\projet\partie\nouvelle_partie.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1640972614 source:c:\depot\monopoly\projet\sauvegardes\chargerpartieclass.c
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\sauvegardes\chargerpartieplus.c
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\sauvegardes\sauvegardeclassique.c
+	"../Structures/structure_joueur.h"
+
+1640972614 source:c:\depot\monopoly\projet\sauvegardes\sauvegardeenplus.c
+	"../Structures/structure_joueur.h"
+
+1640976145 source:c:\depot\monopoly\projet\structures\structure_joueur.c
+	"structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1640972614 source:c:\depot\monopoly\projet\structures\structures_cartes.c
+	"structure_joueur.h"
+
+1640976294 source:c:\depot\monopoly\projet\tour_joueur\tour_joueur.c
+	"../Fonctions_actions_joueurs/actions.h"
+	"../Structures/structure_joueur.h"
+
+1641057169 source:c:\depot\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
+	"../Structures/structure_joueur.h"
+
