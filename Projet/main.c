@@ -13,11 +13,14 @@ void affichage_Menu()
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
     t_carte cartes;
+    void affichage_choix();
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
+        system("cls");
+        affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
