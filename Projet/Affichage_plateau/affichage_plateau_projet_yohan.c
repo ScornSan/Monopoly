@@ -27,6 +27,9 @@ void affichage_plateau()
     Color(15,0);
     position(premiere_ligne, derniere_colonne + 20);
     printf("Appuyer sur [M] pour acceder au menu");
+    char debut[100] = "Appuyer sur une touche pour commencer";
+    placement_script(strlen(debut), 0);
+    printf("%s", debut);
     echap();
 
 }
