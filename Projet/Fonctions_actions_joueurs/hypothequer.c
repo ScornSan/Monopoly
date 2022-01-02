@@ -64,6 +64,30 @@ void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id
                     pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].val_hypotheque;
                     terrain[i][j].hypotheque ==  true;
                 }
+                else
+                {
+                    carre_noir();
+                    if ( touche != terrain[i][j].id_carte)
+                    {
+                        char non_possession[100] = "Vous ne possedez pas la propriete ";
+                        longueur = strlen(non_possession) + 10; // 10 correspond au nombre de caractere du nom d'une propriete
+                        placement_script(longueur,0);
+                        printf("%s%s",non_possession, terrain[i][j].nom);
+                    }
+                    if ( terrain[i][j].hypotheque == true)
+                    {
+                        char deja_hypotheque[100] = "Vous avez deja hypoteque ce terrain";
+                        placement_script(strlen(deja_hypotheque),0);
+                        char seconde_chance[100] = "Appuyer sur 'a' pour choisir un autre terrain a hypotequer";
+                        placement_script(strlen(seconde_chance),1);
+                        if (getch() == 'a' || getch() == 'A')
+                        {
+                            hypothequer(repere, pion_joueur, max_joueurs, id_joueur, terrain, identifiant_joueur_max);
+                        }
+
+                    }
+                    break;
+                 }
             }
             break;
             }
