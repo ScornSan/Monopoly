@@ -21,6 +21,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
+        affichage_argent_joueurs(joueur_i,id_joueur);
         fflush(stdin);
         if (nb_lancer == 0)
         {
@@ -39,6 +40,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
 
             placement_script(strlen(phrase_prop_hypotheque), 2);
             printf("%s", phrase_prop_hypotheque);
+            ///affichage_carte(35, 125,cartes_terrain,);
             key = getch();
         }
         else

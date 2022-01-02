@@ -59,7 +59,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
         joueur[x].argent = 1500;
         joueur[x].position = 0;
         joueur[x].prison = false;
-        identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
+        identifiant_carte[x] = 0; // on initialise les identifiants des cartes de chaque joueur à 1
         n = n+1;
     }
     system("cls");

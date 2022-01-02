@@ -80,6 +80,12 @@
 		<Unit filename="Affichage_plateau/sepa_lignes.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Banque de cartes/carteschance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Banque de cartes/cartescommu.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/actions.h" />
 		<Unit filename="Fonctions_actions_joueurs/case_prison.c">
 			<Option compilerVar="CC" />
@@ -106,6 +112,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
+		<Unit filename="Fonctions_affichage/affichage_profil_joueur.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_affichage/instructions_sur_plateau.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -125,6 +134,19 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pioche/affichage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pioche/bibli1.h" />
+		<Unit filename="Pioche/melangeurcarte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pioche/pioche.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pioche/remplissage.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sauvegardes/chargerpartieclass.c">

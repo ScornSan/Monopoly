@@ -18,6 +18,8 @@ void affichage_Menu()
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
+        system("cls");
+        affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
@@ -72,9 +74,7 @@ void affichage_Menu()
                     }
                     couleur(12, 0);
                     printf("Appuyez sur [ECHAP] pour revenir au menu");
-
                     }
-
             }
             break;
 
