@@ -1,5 +1,7 @@
 #include "../Structures/structure_joueur.h"
 
+
+
 void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauvegarde n°1
 {
     FILE* sauvegarde1 = NULL;
@@ -11,7 +13,7 @@ void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauv
 
     if (sauvegarde1 != NULL)
     {
-        for (int x = 0; x < nb_joueurs; x++) // Boucle pour lire les structures
+        for (int x = 0; x < nb_joueurs; x++) // Boucle pour lire les structures et les mettre en mémoire
         {
             fscanf(sauvegarde1, "%s", &joueur_x[x].pseudo);
             fscanf(sauvegarde1, "%d", &joueur_x[x].argent);
@@ -34,6 +36,6 @@ void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauv
         fclose(sauvegarde1);
         sauvegarde1 = NULL;
     }
-}
 
+}
 

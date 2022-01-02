@@ -60,19 +60,19 @@ void affichage_Menu()
                         printf("[1] Emplacement 1 ?\n");
                         printf("[2] Emplacement 2 ?\n");
                         scanf("%d", &choixsauv);
+                        if (choixsauv == 1)
+                        {
+                            sauvegardeclassique(nombre_de_joueurs, *joueur_x); // Passe en pointeur car c'est un tableau
+                        }
+                        if (choixsauv == 2)
+                        {
+                            sauvegardeenplus(nombre_de_joueurs, *joueur_x); // Passe en pointeur car c'est un tableau
+                        }
                     }
-                    if (choixsauv == 1)
-                    {
-                        sauvegardeclassique(nombre_de_joueurs, *joueur_x); // Passe en pointeur car c'est un tableau
-                        printf("Sauvegarde dans l'emplacement 1 faite avec succes !\n");
-                    }
-                    if (choixsauv == 2)
-                    {
-                        sauvegardeenplus(nombre_de_joueurs, *joueur_x);
-                        printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
-                    }
+
                     couleur(12, 0);
                     printf("Appuyez sur [M] pour revenir au menu");
+                    echap();
 
                     }
 
@@ -86,25 +86,29 @@ void affichage_Menu()
             printf("Voulez-vous charger une partie ?\n");
             printf("[1] Charge 1 ?\n");
             printf("[2] Charge 2 ?\n");
-            scanf("%d", &choixsauv);
+            scanf("%d", &choixcharge);
+            fflush(stdin);
 
             while (choixcharge != 1 && choixcharge != 2)
             {
+                fflush(stdin);
                 printf("ERREUR : Saisir le nom d'un fichier correct.\n");
                 printf("[1] Charge 1 ?\n");
                 printf("[2] Charge 2 ?\n");
                 scanf("%d", &choixsauv);
-                if (choixsauv == 1)
-                {
-                    chargerpartie1(nombre_de_joueurs, *joueur_x, cartes);
-                }
-                if (choixsauv == 2)
-                {
-                    chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
-                }
             }
+            if (choixcharge == 1)
+                {
+                chargerpartie1(nombre_de_joueurs, *joueur_x, cartes);
+                }
+            if (choixcharge == 2)
+                {
+                chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
+                }
+
             couleur(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            printf("Appuyez sur [M] pour revenir au menu");
+            echap();
             break;
 
         case 4 :
