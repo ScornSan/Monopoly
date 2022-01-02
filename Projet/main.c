@@ -13,14 +13,12 @@ void affichage_Menu()
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
     t_carte cartes;
-    void affichage_choix();
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
+
      while (choix < 1 || choix > 6)
      {
-        system("cls");
-        affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
@@ -74,7 +72,7 @@ void affichage_Menu()
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
                     couleur(12, 0);
-                    printf("Appuyez sur [ECHAP] pour revenir au menu");
+                    printf("Appuyez sur [M] pour revenir au menu");
 
                     }
 
@@ -113,7 +111,7 @@ void affichage_Menu()
             fflush(stdin);
             fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
             couleur(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            printf("Appuyez sur [M] pour revenir au menu");
 
             couleur(15, 0);
             if (fichier_regles == NULL)
@@ -133,7 +131,7 @@ void affichage_Menu()
         case 5 :
                 fflush(stdin);
                 couleur(12, 0);
-                printf("Appuyez sur [ECHAP] pour revenir au menu");
+                printf("Appuyez sur [M] pour revenir au menu");
                 couleur(15, 0);
                 gotoligcol(10,70);
                 printf("Programmeurs de ce jeu : \n");

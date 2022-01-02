@@ -1,20 +1,61 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b)
+void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b, int id_carte[])
 {
     // terrain[a][b].possession_carte est l'indice du joueur qui possède la carte
     carre_noir();
-    longueur = strlen(pion_joueur[id_joueurs_v1].pseudo) + strlen(terrain[a][b].nom) + strlen(pion_joueur[terrain[a][b].possession_carte].pseudo) + 36;
-    placement_script(longueur,2);
-    printf("%s, vous etes sur %s qui appartient a %s !",pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo);
-    longueur = 31;
-    placement_script(longueur,4);
-    printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
-    sleep(1);
+    if ( pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_loyer )
+    {
+        longueur = strlen(pion_joueur[id_joueurs_v1].pseudo) + strlen(terrain[a][b].nom) + strlen(pion_joueur[terrain[a][b].possession_carte].pseudo) + 36;
+        placement_script(longueur,2);
+        printf("%s, vous etes sur %s qui appartient a %s !",pion_joueur[id_joueurs_v1].pseudo, terrain[a][b].nom, pion_joueur[terrain[a][b].possession_carte].pseudo);
+        longueur = 31;
+        placement_script(longueur,4);
+        printf("Vous devez payer %d de loyer !", terrain[a][b].prix_loyer);
+        sleep(1);
 
-    pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
-    pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;
+        pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_loyer;
+        pion_joueur[terrain[a][b].possession_carte].argent = pion_joueur[terrain[a][b].possession_carte].argent + terrain[a][b].prix_loyer;
+    }
+    else
+    {
+        char manque_argent[50] = " Vous n avez pas assez d argent pour payez le loyer";
+        char phrase_prop_vente[50] = " Appuyez sur 'v' pour vendre une propriete";
+        char phrase_prop_hypotheque[50] = " Appuyez sur 'h' pour hypothequer une propriete";
+        placement_script(strlen(manque_argent), 0);
+        printf("%s", manque_argent);
+        placement_script(strlen(phrase_prop_vente), 1);
+        printf("%s", phrase_prop_vente);
+        placement_script(strlen(phrase_prop_hypotheque), 2);
+        printf("%s", phrase_prop_hypotheque);
+        int key = getch();
+
+        if (key == 'h' || key == 'H')
+        {
+            carre_noir();
+            char chaine[100] = " a demande une Hypotheque !";
+            int longueur = strlen(chaine) + strlen(pion_joueur[id_joueurs_v1].pseudo) ;
+            placement_script(longueur,0);
+            printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
+            hypothequer(repere, pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte);
+            //
+        }
+
+        if (key == 'v' || key == 'V')
+        {
+            carre_noir();
+            char chaine[100] = " a demande une Vente !";
+            int longueur = strlen(chaine) + strlen(pion_joueur[id_joueurs_v1].pseudo);
+            placement_script(longueur,0);
+            printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
+            vente_maisons(repere, pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte);
+            //
+        }
+    }
+
+
+
 }
 
 void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b)
@@ -47,28 +88,35 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
         longueur = strlen(validation);
         placement_script(longueur,4);
         fflush(stdin);
-            /// compteur a faire
         liaison_memoire_affichage(repere,a,b);
-        fleche1 = getch();
+
         while (fleche1 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            if (terrain[a][b].nb_maison < 4 && fleche1 == 'z' ) // z sert à augmenter de 1 le nombre
+            int nb = 0; //
+            fleche1 = getch();
+
+            if (terrain[a][b].nb_maison < 4 && terrain[a][b].nb_maison > 0 && (fleche1 == 'z' || fleche1 == 'Z') && nb < 4) // z sert à augmenter de 1 le nombre //
             {
                 terrain[a][b].nb_maison++;
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                //printf(" %c", fleche1);
+                nb++; //
             }
-            if (fleche1 == 's' && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire
+            if ((fleche1 == 's' || fleche1 == 'S') && terrain[a][b].nb_maison > 0 && terrain[a][b].nb_maison < 4 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire  //
             {
                 terrain[a][b].nb_maison--;
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                //printf(" %c", fleche1);
+                nb--; //
             }
-            fleche1 = getch();
+
+             carre_noir();
+             char nb_maison = "Nombre de maison ajoutees : %d";
+             longueur = strlen(nb_maison);
+             placement_script(longueur, 0);
+             printf("%s""%d", nb_maison, nb);
 
         }
     }
@@ -102,7 +150,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
         while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
             liaison_memoire_affichage(repere,a,b);
-            if (getch() == 'z' && terrain[a][b].nb_maison < 5)
+            if ((getch() == 'z' || getch() =='Z') && terrain[a][b].nb_maison < 5)
             {
                 //terrain[a][b].nb_maison++;   // PROBLEME C PAS CA QUI BOUGE
                 terrain[a][b].nb_maison = 0;
@@ -110,7 +158,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_hotel(repere,terrain[a][b].nb_maison);
             }
-            else if (getch() == 's' && terrain[a][b].nb_maison > 4)
+            else if (getch() == 's' || getch() == 'S' && terrain[a][b].nb_maison > 4)
             {
                 terrain[a][b].nb_maison = valeur_tampon; // PROBLEME C PAS CA QUI BOUGE
                 Color(repere[2],repere[3]);

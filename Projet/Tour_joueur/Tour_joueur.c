@@ -50,7 +50,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             printf("%s%s",  joueur_i[id_joueur].pseudo, chaine);
             key = getch();
         }
-
+        echap();
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
             joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
@@ -78,6 +78,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                     joueur_i[id_joueur].prison = true;
                     break;
                 }
+            echap();
             }
             else if (nb_lancer < 3 && joueur_i[id_joueur].prison == false)
             {
@@ -144,6 +145,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                         tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
                         break;
                 }
+                echap();
             }
         }
         else if ((key == 'h' || key == 'H') && nb_lancer == 0)
@@ -154,7 +156,9 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
             hypothequer(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            //
         }
+
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {
             carre_noir();
@@ -163,8 +167,11 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
             vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            //
         }
+        echap();
     }
+
     return joueur_i[id_joueur].argent;
 }
 
