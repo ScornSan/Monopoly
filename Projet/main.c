@@ -16,7 +16,11 @@ void affichage_Menu()
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
-     while (choix < 1 || choix > 6)
+    gotoligcol(16,70);
+    printf("Entrez votre selection : ");
+    scanf("%d", &choix);
+
+     while (choix != 1 && choix != 2 && choix != 3 && choix != 4 && choix != 5 && choix != 6 && choix != 7 )
      {
         system("cls");
         affichage_choix();
