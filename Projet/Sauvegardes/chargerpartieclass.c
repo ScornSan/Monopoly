@@ -1,19 +1,18 @@
 #include "../Structures/structure_joueur.h"
 
-
-
 void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauvegarde n°1
 {
     FILE* sauvegarde1 = NULL;
     sauvegarde1 = fopen("sauvegarde1.txt", "r"); // "r" pour LECTURE donc on voit SI IL YA UN FICHIER
     if (sauvegarde1 == NULL)
     {
-        printf("Fichier inexistant.");
+        gotoligcol(16,70);
+        printf("Fichier inexistant./n");
     }
 
     if (sauvegarde1 != NULL)
     {
-        for (int x = 0; x < nb_joueurs; x++) // Boucle pour lire les structures et les mettre en mémoire
+        for (int x = 0; x < nb_joueurs; x++) // Boucle pour lire les structures
         {
             fscanf(sauvegarde1, "%s", &joueur_x[x].pseudo);
             fscanf(sauvegarde1, "%d", &joueur_x[x].argent);
@@ -36,6 +35,6 @@ void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauv
         fclose(sauvegarde1);
         sauvegarde1 = NULL;
     }
-
 }
+
 

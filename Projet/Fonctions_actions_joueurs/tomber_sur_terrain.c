@@ -20,9 +20,10 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
         {
             terrain[a][b].prop_achete = true;
             terrain[a][b].possession_carte = id_joueurs;
-            terrain[a][b].id_carte = identifiant_carte[id_joueurs]; // on ajoute un identifiant a la carte acheté
+            terrain[a][b].id_carte[id_joueurs] = identifiant_carte[id_joueurs] ; // on ajoute un identifiant a la carte acheté
             identifiant_carte[id_joueurs]++; // on ajoute 1 à l'identifiant pour la prochaine carte a acheter du joueur i
             pion_joueur[id_joueurs].argent = pion_joueur[id_joueurs].argent - terrain[a][b].prix_achat;
+            affichage_carte(id_joueurs, terrain, terrain[a][b].id_carte, a, b);
         }
     }
     else if (terrain[a][b].prop_achete = true && terrain[a][b].hypotheque ==  false) // paiement du loyer car propriété possedé ou faire une maison / hotel
