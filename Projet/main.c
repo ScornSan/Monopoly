@@ -6,7 +6,7 @@ void affichage_Menu()
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
-    int choix = 0;
+    char choix[20]; // On prévoit que l'utilisateur puisse taper "1z" par exemple
     int repere[4]; //////
     int choixsauv = 0;
     int choixcharge = 0;
@@ -18,20 +18,26 @@ void affichage_Menu()
     // Blindage de la saisie
     gotoligcol(16,70);
     printf("Entrez votre selection : ");
-    scanf("%d", &choix);
+    fgets(choix,sizeof(choix),stdin);
+    char *p=strchr(choix,'\n');
+    if(p)
+        *p=0;
 
-     while (choix != 1 && choix != 2 && choix != 3 && choix != 4 && choix != 5 && choix != 6 && choix != 7 )
+     while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6)
      {
         system("cls");
         affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
-        fflush(stdin);
-        scanf("%d", &choix);
+        fgets(choix,sizeof(choix),stdin);
+        char *p=strchr(choix,'\n');
+        if(p)
+            *p=0;
+
      }
      system("cls");
 
-     switch(choix)
+     switch(*choix-'0')
      {
         case 1 :
 
