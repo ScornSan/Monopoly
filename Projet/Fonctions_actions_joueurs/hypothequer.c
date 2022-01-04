@@ -8,7 +8,7 @@ void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id
     int touche = 25; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int fleche2;
     int nb_cartes;
-    while (touche > identifiant_joueur_max[id_joueur] ) // On entre dans le blindage
+    while (touche > identifiant_joueur_max[id_joueur] && identifiant_joueur_max[id_joueur]!= 0) // On entre dans le blindage
     {
         char phrase_prop_hypotheque[100] = ", quelle propriete voulez vous hypotequer ?";
         longueur = strlen(phrase_prop_hypotheque) + strlen(pion_joueur[id_joueur].pseudo);
@@ -73,11 +73,13 @@ void hypothequer (int repere[4], t_joueur pion_joueur[], int max_joueurs, int id
                         longueur = strlen(non_possession) + 10; // 10 correspond au nombre de caractere du nom d'une propriete
                         placement_script(longueur,0);
                         printf("%s%s",non_possession, terrain[i][j].nom);
+                    break;
                     }
                     if ( terrain[i][j].hypotheque == true)
                     {
                         char deja_hypotheque[100] = "Vous avez deja hypoteque ce terrain";
                         placement_script(strlen(deja_hypotheque),0);
+                        break;
                     }
                     break;
                 }

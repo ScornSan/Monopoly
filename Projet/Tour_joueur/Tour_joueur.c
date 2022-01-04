@@ -17,8 +17,8 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
     char phrase_chance[100] = ", vous etes tombes sur une case chance!";
     char phrase_chance_2[100] = "Appuyez sur ESPACE pour piocher une carte chance";
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
-
     /// vérification tour suivant ou pas
+
     while ((nb_lancer == 0) || (de1 == de2))
     {
         affichage_argent_joueurs(joueur_i,id_joueur);

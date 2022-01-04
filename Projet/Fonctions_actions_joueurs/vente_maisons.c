@@ -42,11 +42,12 @@ void vente_maisons(int repere[4],t_joueur pion_joueur[], int max_joueurs, int id
                     placement_script(strlen(signification_z_et_s),4);
                     printf("%s", signification_z_et_s);
                     fflush(stdin);
+                    int nb = 0;
                     while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
                     {
                         fleche2 = getch();
-                        int nb = 0;
-                        if ((fleche2 == 'z' || fleche2 == 'Z') && terrain[i][j].nb_maison < 4 && terrain[i][j].nb_maison > 0 && nb < 4) // z sert à augmenter de 1 le nombre
+
+                        if ((fleche2 == 'z' || fleche2 == 'Z') && terrain[i][j].nb_maison < 4 && nb < 4) // z sert à augmenter de 1 le nombre
                         {
                             terrain[i][j].nb_maison--;
                             pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent - terrain[i][j].prix_maison; // rajout argent
@@ -66,11 +67,10 @@ void vente_maisons(int repere[4],t_joueur pion_joueur[], int max_joueurs, int id
                             nb--;
                         }
 
-                         carre_noir();
-                         char nb_maison = "Nombre de maison a vendre : ";
+                         char nb_maison[100] = "Nombre de maison a vendre : ";
                          longueur = strlen(nb_maison) + 1;
-                         placement_script(longueur, 0);
-                         printf("%s""%d", nb_maison, nb);
+                         placement_script(longueur, 6);
+                         printf("%s %d", nb_maison, nb);
                     }
                 }
                 else

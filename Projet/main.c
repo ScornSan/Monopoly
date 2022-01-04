@@ -39,8 +39,6 @@ void affichage_Menu()
             fflush(stdin);
             system("cls");
             partie_en_cours(repere);
-
-            /// AJOUTER FONCTION NOUVELLE PARTIE
             break;
 
         case 2 :
