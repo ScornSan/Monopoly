@@ -14,7 +14,7 @@ void placement_script(int longueur, int a)
 
 
 
-/*void connaissance_position_curseur()
+void connaissance_position_curseur(int* x, int* y)
 {
     HANDLE win;
 
@@ -24,10 +24,11 @@ void placement_script(int longueur, int a)
 
     GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 
-    int x = coninfo.dwCursorPosition.X;
-    int y = coninfo.dwCursorPosition.Y;
+    x = coninfo.dwCursorPosition.X;
+    y = coninfo.dwCursorPosition.Y;
 
-}*/
+}
+
 
 void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
 {
@@ -64,49 +65,3 @@ void carre_noir()
         }
     Color(15,0);
 }
-
-/*void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
-{
-    Color(0,7);
-    int lig = ligne;
-    for(int j = 0; j < 15 ; j++)
-        {
-            int col = colonne;
-            for (int j = 0; j< 22; j++)
-                {
-                    gotoligcol(lig,col);
-                    printf(" " );
-                    col++;
-                }
-            lig++;
-        }
-    lig = ligne;
-    for(int j = 0; j < 2 ; j++)
-        {
-            int col = colonne +1;
-            for (int j = 0; j< 11; j++)
-                {
-                    gotoligcol(lig,col);
-                    printf("%c", 0x10);
-                    col = col+2;
-                }
-            col = colonne;
-            for (int j = 0; j< 11; j++)
-                {
-                    gotoligcol(lig,col);
-                    printf("%c", 0x11);
-                    col = col +2;
-                }
-            lig = lig + 14;
-        }
-        Color(0,7);
-        gotoligcol(ligne +2, colonne+6);
-        printf("%s\n",terrain[a][b].nom);
-        gotoligcol(ligne +4, colonne+1);
-        printf("Loyer : %d$\n",terrain[a][b].prix_loyer);
-        gotoligcol(ligne +6, colonne+1);
-        printf("Hypotheque : %d$\n",terrain[a][b].val_hypotheque);
-        gotoligcol(ligne +8, colonne+1);
-        printf("Maisons : %d\n",terrain[a][b].nb_maison);
-        Color(15,0);
-}*/

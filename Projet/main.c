@@ -17,6 +17,8 @@ void affichage_Menu()
     // Blindage de la saisie
      while (choix < 1 || choix > 6)
      {
+        system("cls");
+        affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
@@ -69,7 +71,7 @@ void affichage_Menu()
                         sauvegardeenplus(nombre_de_joueurs, *joueur_x);
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
-                    couleur(12, 0);
+                    Color(12, 0);
                     printf("Appuyez sur [ECHAP] pour revenir au menu");
 
                     }
@@ -101,17 +103,17 @@ void affichage_Menu()
                     chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
                 }
             }
-            couleur(12, 0);
+            Color(12, 0);
             printf("Appuyez sur [ECHAP] pour revenir au menu");
             break;
 
         case 4 :
             fflush(stdin);
             fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
-            couleur(12, 0);
+            Color(12, 0);
             printf("Appuyez sur [ECHAP] pour revenir au menu");
 
-            couleur(15, 0);
+            Color(15, 0);
             if (fichier_regles == NULL)
             {
                 printf("Erreur d'ouverture fichier. Veuillez réesayer. \n");
@@ -128,9 +130,9 @@ void affichage_Menu()
 
         case 5 :
                 fflush(stdin);
-                couleur(12, 0);
+                Color(12, 0);
                 printf("Appuyez sur [ECHAP] pour revenir au menu");
-                couleur(15, 0);
+                Color(15, 0);
                 gotoligcol(10,70);
                 printf("Programmeurs de ce jeu : \n");
                 gotoligcol(12,70);
@@ -141,7 +143,7 @@ void affichage_Menu()
                 printf("Clement POMPEI \n");
                 gotoligcol(15,70);
                 printf("Benjamin GENDRY \n");
-                couleur(10, 0);
+                Color(10, 0);
                 break;
 
          case 6 :
