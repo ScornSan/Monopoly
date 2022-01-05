@@ -45,7 +45,6 @@ void affichage_Menu()
 
             system("cls");
             fflush(stdin);
-            system("cls");
             partie_en_cours(repere);
 
             /// AJOUTER FONCTION NOUVELLE PARTIE

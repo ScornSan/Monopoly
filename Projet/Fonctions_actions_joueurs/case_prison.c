@@ -49,7 +49,7 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
     }
     else if (joueur[id_joueur].argent < 50)
     {
-
+        nb_tour = 28;
     }
 
 }

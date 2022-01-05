@@ -15,13 +15,13 @@ void remplacement_position(int tab[])
         Color(0,3);
         printf(" ");
     }
-    if (tab[0] < 25 && tab[0] > 20 && tab[1] < 13 && tab[1] > 0 || tab[0] < 15 && tab[0] > 10 && tab[1] < 78 && tab[1] > 65)
+    if ((tab[0] > 20 && tab[0] < 25 && tab[1] > 0 && tab[1] < 13) || (tab[0] > 10 && tab[0] < 15 && tab[1] > 65 && tab[1] < 78))
     {
         // effacement gris
         Color(0,7);
         printf(" ");
     }
-    if (tab[0] < 40 && tab[0] > 35 && tab[1] < 104 && tab[1] > 91 || tab[0] < 50 && tab[0] > 45 && tab[1] < 39 && tab[1] > 26)
+    if ((tab[0] < 40 && tab[0] > 35 && tab[1] < 104 && tab[1] > 91) || (tab[0] < 50 && tab[0] > 45 && tab[1] < 39 && tab[1] > 26))
     {
         // effacement gris aussi
         Color(0,7);
@@ -30,7 +30,7 @@ void remplacement_position(int tab[])
     else
     {
         // effacement blanc
-        Color(0, 15);
+        Color(0,15);
         printf(" ");
     }
 }
@@ -52,7 +52,7 @@ void affichage_pion(int id_joueur)
 
 void affichage_pion_prison(int id_joueur)
 {
-    Color(id_joueur + 1, 15);
+    Color(, 15);
     if (id_joueur == 0)
     {
         gotoligcol(47,3);
@@ -69,7 +69,7 @@ void affichage_pion_prison(int id_joueur)
     {
         gotoligcol(49,5);
     }
-    printf("%c", 97);
+    printf(" ");
     Color(id_joueur + 1, 0);
 }
 

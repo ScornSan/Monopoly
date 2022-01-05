@@ -8,6 +8,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
     int de1, de2;
     int nb_lancer = 0;
     int key;
+    int tour_prison;
     int tab[2];
     char chaine[10] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
@@ -58,13 +59,16 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
+                tour_prison++;
                 if (joueur_i[id_joueur].prison == true)
                 {
                     char chaine[100] = ", vous etes deja en prison";
                     int longueur = (strlen(joueur_i[id_joueur].pseudo)+ strlen(chaine));
                     placement_script(longueur, 0);
                     printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2); // la fonction s'active s'il est deja en prison
+                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2,tour_prison); // la fonction s'active s'il est deja en prison
+                    Color(2,15);
+                    sleep(3);
                     break;
                 }
 
@@ -86,7 +90,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                 joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
                 joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
                 deplacement_joueur(joueur_i, nombre_joueurs, id_joueur);
-                connaissance_position_curseur(tab);
+                //connaissance_position_curseur(tab);
                 if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
                 {
                     char chaine[100] = ", vous etes passe par la case depart ! Vous recevez 200";

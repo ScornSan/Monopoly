@@ -52,7 +52,7 @@ void affichage_pion(int id_joueur)
 
 void affichage_pion_prison(int id_joueur)
 {
-    Color(id_joueur + 1, 15);
+    Color(0 , id_joueur + 1);
     if (id_joueur == 0)
     {
         gotoligcol(47,3);
@@ -69,8 +69,8 @@ void affichage_pion_prison(int id_joueur)
     {
         gotoligcol(49,5);
     }
-    printf("%c", 97);
-    Color(id_joueur + 1, 0);
+    printf(" ");
+    Color(0, id_joueur + 1);
 }
 
 void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_lancer)
