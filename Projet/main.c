@@ -6,9 +6,9 @@ void affichage_Menu()
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
-    int choix = 0;
-    int repere[4]; //////
+    char choix[150]; // On prévoit que l'utilisateur puisse taper "1z" par exemple    int repere[4];
     int choixsauv = 0;
+    int repere[4];
     int choixcharge = 0;
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
@@ -16,18 +16,30 @@ void affichage_Menu()
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
-     while (choix < 1 || choix > 6)
+    gotoligcol(16,70);
+    printf("Entrez votre selection : ");
+    fgets(choix,sizeof(choix),stdin);
+    char *p=strchr(choix,'\n');
+    if(p)
+    *p=0;
+
+    /// AJOUTER BLINDAGE CLEMENT
+
+
+     while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6)
      {
         system("cls");
         affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
-        fflush(stdin);
-        scanf("%d", &choix);
+        fgets(choix,sizeof(choix),stdin);
+        char *p=strchr(choix,'\n');
+        if(p)
+            *p=0;
      }
      system("cls");
 
-     switch(choix)
+      switch(*choix-'0')
      {
         case 1 :
 

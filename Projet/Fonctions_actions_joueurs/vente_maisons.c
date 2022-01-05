@@ -41,61 +41,41 @@ void vente_maisons(int repere[4],t_joueur pion_joueur[], int max_joueurs, int id
                     char signification_z_et_s[100] = "z pour augmenter et s pour diminuer";
                     placement_script(strlen(signification_z_et_s),4);
                     printf("%s", signification_z_et_s);
+                    int nb= 0;
                     fflush(stdin);
                     while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
                     {
                         fleche2 = getch();
                         int nb = 0;
-                        if (fleche2 == 'z' && fleche2 == 'Z' && terrain[i][j].nb_maison < 4 && terrain[i][j].nb_maison > 0 && nb >= 0) // z sert à augmenter de 1 le nombre
+                        if ((fleche2 == 'z' || fleche2 == 'Z') && terrain[i][j].nb_maison < 4 && nb < 4) // z sert à augmenter de 1 le nombre
                         {
                             terrain[i][j].nb_maison--;
+                            pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent - terrain[i][j].prix_maison; // rajout argent
+                            affichage_argent_joueurs(pion_joueur, id_joueur);
+                            pion_joueur[terrain[i][j].possession_carte].argent = pion_joueur[terrain[i][j].possession_carte].argent + terrain[i][j].prix_maison;
+                            // affichage_argent_joueurs(pion_joueur[terrain[i][j].possession_carte], pion_joueur[id_joueur]);
                             nb++;
+                            rafraichissement_nb_maison(id_joueur, terrain, identifiant_joueur_max, i, j);
 
                         }
-                        else if (fleche2 == 's' && fleche2 == 's' && terrain[i][j].nb_maison > 0 && terrain[i][j].nb_maison < 4 && nb>= 0) // s sert a diminuer de 1 le nombre de maisons à faire
+                        else if ((fleche2 == 's' || fleche2 == 'S') && terrain[i][j].nb_maison > 0 && terrain[i][j].nb_maison < 4 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire) // s sert a diminuer de 1 le nombre de maisons à faire
                         {
                             terrain[i][j].nb_maison++;
-                            nb++;
+                            pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].prix_maison; // rajout argent
+                            affichage_argent_joueurs(pion_joueur, id_joueur);
+                            pion_joueur[terrain[i][j].possession_carte].argent = pion_joueur[terrain[i][j].possession_carte].argent - terrain[i][j].prix_maison;
+                            // affichage_argent_joueurs(pion_joueur[terrain[i][j].possession_carte], pion_joueur[id_joueur]);
+                            nb--;
+                            //affichage_carte(id_joueur,terrain,identifiant_joueur_max, i , j);
+                            rafraichissement_nb_maison(id_joueur, terrain, identifiant_joueur_max, i, j);
+
                         }
 
-                         carre_noir();
-                         char nb_maison = "Nombre de maison a vendre : ";
+                         char nb_maison[100] = "Nombre de maison a vendre : ";
                          longueur = strlen(nb_maison) + 1;
-                         placement_script(longueur, 0);
-                         printf("%s""%d", nb_maison, nb);
+                         placement_script(longueur, 6);
+                         printf("%s %d", nb_maison, nb);
                     }
-                    /*
-                    char nombre_maison_avendre[100] = "Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre";
-                    placement_script(strlen(nombre_maison_avendre),3);
-                    printf("%s",nombre_maison_avendre);
-                    /// il faut rajouter la phrase qui explique  que z augmente et s diminue
-                    ///donc faudra rajouter un compteur qui commence a 0 qui s'affiche et qui est relié a la lecture de z et s
-                    /// ou sinn faire une saisi avec des chiffres et pas z et s
-                    fflush(stdin);
-                    while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
-                    {
-                        liaison_memoire_affichage(repere,i,j);  ////
-                        fleche2 = getch();
-                        if (fleche2 == 'z' && terrain[i][j].nb_maison < 4 ) // z sert à augmenter de 1 le nombre
-                        {
-                            terrain[i][j].nb_maison--;
-                            cases_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE); ////
-                            affichage_maisons(repere,terrain[i][j].nb_maison); ////
-                            carre_noir();
-                            placement_script(2, 0);
-                            printf("%c", fleche2);
-                        }
-                        else if (fleche2 == 's' && terrain[i][j].nb_maison > 0 ) // s sert a diminuer de 1 le nombre de maisons à faire
-                        {
-                            terrain[i][j].nb_maison++;
-                            cases_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE); ////
-                            affichage_maisons(repere,terrain[i][j].nb_maison); ////
-                            carre_noir();
-                            placement_script(2, 0);
-                            printf("%c", fleche2);
-                        }
-                    }
-                    */
                 }
                 else
                 {

@@ -22,6 +22,7 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
             terrain[a][b].possession_carte = id_joueurs;
             terrain[a][b].id_carte[id_joueurs] = identifiant_carte[id_joueurs] ; // on ajoute un identifiant a la carte acheté
             identifiant_carte[id_joueurs]++; // on ajoute 1 à l'identifiant pour la prochaine carte a acheter du joueur i
+            terrain[a][b].num_acqui += 1;
             pion_joueur[id_joueurs].argent = pion_joueur[id_joueurs].argent - terrain[a][b].prix_achat;
             affichage_carte(id_joueurs, terrain, terrain[a][b].id_carte, a, b);
         }
@@ -31,11 +32,11 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
         /// affichage a faire ici
         if (id_joueurs == terrain[a][b].possession_carte && terrain[a][b].nb_maison < 5)
         {
-            ajout_maisons(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);
+            ajout_maisons(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b, identifiant_carte,);
         }
         else if (id_joueurs == terrain[a][b].possession_carte && terrain[a][b].nb_maison == 4)
         {
-            ajout_hotel(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b);
+            ajout_hotel(repere, pion_joueur, max_joueurs, id_joueurs, terrain, a, b,identifiant_carte);
         }
         else
         {
