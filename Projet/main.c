@@ -6,9 +6,9 @@ void affichage_Menu()
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
-    char choix[20]; // On prévoit que l'utilisateur puisse taper "1z" par exemple
-    int repere[4]; //////
+    char choix[150]; // On prévoit que l'utilisateur puisse taper "1z" par exemple    int repere[4];
     int choixsauv = 0;
+    int repere[4];
     int choixcharge = 0;
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
@@ -21,7 +21,10 @@ void affichage_Menu()
     fgets(choix,sizeof(choix),stdin);
     char *p=strchr(choix,'\n');
     if(p)
-        *p=0;
+    *p=0;
+
+    /// AJOUTER BLINDAGE CLEMENT
+
 
      while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6)
      {
@@ -33,11 +36,10 @@ void affichage_Menu()
         char *p=strchr(choix,'\n');
         if(p)
             *p=0;
-
      }
      system("cls");
 
-     switch(*choix-'0')
+      switch(*choix-'0')
      {
         case 1 :
 
@@ -53,47 +55,35 @@ void affichage_Menu()
             // Sauvegarde d'une partie (2 Emplacements)
             while (nombre_de_joueurs == 0) // Verifier si une partie a été joué car on en peu pas sauvegarder à peine arrivé !
             {
-                gotoligcol(19,70);
-                printf("[!] Impossible ! Aucune partie n'est en cours !");
+                printf("Impossible ! Aucune partie n'est en cours !");
                 break;
 
                 if (nombre_de_joueurs != 0)
                 {
                     fflush(stdin);
                 // Ajout (Clément)
-                    gotoligcol(19,70);
                     printf("Voulez-vous sauvegarder votre partie ?\n");
-                    gotoligcol(20,70);
                     printf("[1] Emplacement 1 ?\n");
-                    gotoligcol(21,70);
                     printf("[2] Emplacement 2 ?\n");
-                    gotoligcol(22,70);
                     scanf("%d", &choixsauv);
 
                     while (choixsauv != 1 && choixsauv != 2)
                     {
-                        gotoligcol(19,70);
                         printf("ERREUR : Choisir un emplacement correct pour votre sauvegarde.\n");
-                        gotoligcol(20,70);
                         printf("[1] Emplacement 1 ?\n");
-                        gotoligcol(21,70);
                         printf("[2] Emplacement 2 ?\n");
-                        gotoligcol(22,70);
                         scanf("%d", &choixsauv);
                     }
                     if (choixsauv == 1)
                     {
                         sauvegardeclassique(nombre_de_joueurs, *joueur_x); // Passe en pointeur car c'est un tableau
-                        gotoligcol(16,70);
                         printf("Sauvegarde dans l'emplacement 1 faite avec succes !\n");
                     }
                     if (choixsauv == 2)
                     {
                         sauvegardeenplus(nombre_de_joueurs, *joueur_x);
-                        gotoligcol(16,70);
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
-                    gotoligcol(16,70);
                     couleur(12, 0);
                     printf("Appuyez sur [ECHAP] pour revenir au menu");
                     }
@@ -104,37 +94,27 @@ void affichage_Menu()
         case 3 :
             // Charge de partie
             fflush(stdin);
-            couleur(10, 0);
-            gotoligcol(19,70);
             printf("Voulez-vous charger une partie ?\n");
-            gotoligcol(20,70);
             printf("[1] Charge 1 ?\n");
-            gotoligcol(21,70);
             printf("[2] Charge 2 ?\n");
-            gotoligcol(22,70);
-            scanf("%d", &choixcharge);
+            scanf("%d", &choixsauv);
 
             while (choixcharge != 1 && choixcharge != 2)
             {
-                gotoligcol(19,70);
                 printf("ERREUR : Saisir le nom d'un fichier correct.\n");
-                gotoligcol(20,70);
                 printf("[1] Charge 1 ?\n");
-                gotoligcol(21,70);
                 printf("[2] Charge 2 ?\n");
-                gotoligcol(22,70);
                 scanf("%d", &choixsauv);
-                if (choixcharge == 1)
+                if (choixsauv == 1)
                 {
                     chargerpartie1(nombre_de_joueurs, *joueur_x, cartes);
                 }
-                if (choixcharge == 2)
+                if (choixsauv == 2)
                 {
                     chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
                 }
             }
             couleur(12, 0);
-            gotoligcol(16,70);
             printf("Appuyez sur [ECHAP] pour revenir au menu");
             break;
 
@@ -178,9 +158,7 @@ void affichage_Menu()
                 break;
 
          case 6 :
-                Color(15,0);
                 exit(0);
-
         }
     echap();
 }

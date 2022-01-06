@@ -11,6 +11,7 @@
 #define TOUCHE_ESPACE 32
 #define TOUCHE_ENTER 13
 #define VAL_NUL 5
+#include <time.h>
 
 int longueur;
 int chaine[100];
@@ -42,6 +43,7 @@ typedef struct cartes
     int id_carte[25];
 
 }t_carte;
+
 
 
 #endif // STRUCTURE_JOUEUR_H_INCLUDED

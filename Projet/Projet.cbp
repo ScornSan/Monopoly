@@ -139,7 +139,6 @@
 		<Unit filename="Pioche/affichage.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Pioche/bibli1.h" />
 		<Unit filename="Pioche/melangeurcarte.c">
 			<Option compilerVar="CC" />
 		</Unit>

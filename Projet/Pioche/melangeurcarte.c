@@ -1,9 +1,11 @@
 #include "bibli1.h"
+#include "../Structures/structure_joueur.h"
+#include "../Fonctions_affichage/affichage.h"
 
-void melangeurCarte(int tab[],int taille)
+void tab_cartes_c(int tab[],int taille)
 {
-    int i; // On initialise un compteur
-    int nbcompt; // On initalise un nombre temporaire
+    int i = 0; // On initialise un compteur
+    int nbcompt = 0; // On initalise un nombre temporaire
     nbcompt = taille; // On attribue la valeur de nb à nbcompt
     for(i=0;i<taille;i++) /// Boucle FOR pour parcourir le tableau
     {

@@ -6,8 +6,7 @@ void chargerpartie1(int nb_joueurs, t_joueur joueur_x[], t_carte cartes) // Sauv
     sauvegarde1 = fopen("sauvegarde1.txt", "r"); // "r" pour LECTURE donc on voit SI IL YA UN FICHIER
     if (sauvegarde1 == NULL)
     {
-        gotoligcol(16,70);
-        printf("Fichier inexistant./n");
+        printf("Fichier inexistant.");
     }
 
     if (sauvegarde1 != NULL)

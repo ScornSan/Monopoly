@@ -1,56 +1,154 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
 #include "../Structures/structure_joueur.h"
 
-void banquecommu(int x, int nb_joueurs, t_joueur joueur_x[x], int cartecommu, int banqueargent)
+void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int loto, int card)
 {
-    if (cartecommu == 0 || cartecommu == 1) // Case départ pour tout les joueurs
-    {
-            joueur_x[x].position = 0;
-            printf("Tout les joueurs vont a la case depart !");
-    }
+    int key;
+    int tailletabcartes = 16;
 
-    if (cartecommu == 2 || cartecommu == 3) // Case prison pour tout les joueurs
-    {
-       for (int x = 0; x < nb_joueurs; x++)
-        {
-            joueur_x[x].position = 7;
-            printf("Tout les joueurs vont en prison !");
-        }
-    }
-    if (cartecommu == 4 || cartecommu == 5) // Tout les joueurs donnent 100 EUROS à la banque
-    {
-       for (int x = 0; x < nb_joueurs; x++)
-        {
-            joueur_x[x].argent = joueur_x[x].argent-100;
-            banqueargent = banqueargent+100;
-            printf("Chaque joueur donne 100$ a la banque.");
-        }
-    }
-    if (cartecommu == 6 || cartecommu == 7) // Le joueur en question récupère toute la banque
-    {
-        joueur_x[x].argent = joueur_x[x].argent+ banqueargent;
-        banqueargent = 0;
-        printf("Le joueur remporte %d$ de la banque !", banqueargent);
-    }
-    if (cartecommu == 8 || cartecommu == 9 || cartecommu == 10 || cartecommu == 11) // Le joueur reçoit 50 euros
-    {
-        joueur_x[x].argent = joueur_x[x].argent+ 50;
-    }
-    if (cartecommu == 12 || cartecommu == 13) // Le joueur reçoit 500 euros
-    {
-        joueur_x[x].argent = joueur_x[x].argent+ 500;
-        printf("Le joueur recoit 500$ !");
-    }
-    if (cartecommu == 14 || cartecommu == 15) // Le joueur perd 200 euros
-    {
-        joueur_x[x].argent = joueur_x[x].argent- 200;
-        printf("Le joueur pert 200$ !");
-    }
+    tab_cartes_c(cartecommu, tailletabcartes);
 
+    int taille_pseudo = strlen(joueur[x].pseudo);
+    char* case_depart = ", placez vous sur la case départ";
+    char* impot_100 = ", vous devez payer 100$";
+    char* impot_50 = ", vous devez payer 50$";
+    char* impot_20 = ", vous devez payer 20$";
+    char* revenue_100 = ", vous avez gagne 100$ !";
+    char* revenue_50 = ", vous avez gagne 50$ !";
+    char* revenue_20 = ", vous avez gagne 20$ !";
+    char* prison = ", allez en prison !";
+    char* anniversaire = ", c'est votre anniversaire, chaque joueur doit vous donner 20$ !";
+    char* phrase_loto = ", vous avez gagne la loterie ! Vous remportez";
+    char* deplacement = ", retournez a la Maison 5.1";
+
+    key = getch();
+
+    if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
+        {
+    switch(cartecommu[card])
+    {
+        case 0:
+            gotoligcol(47, 94 + x * 2);
+            affichage_pion(x);
+            placement_script(strlen(case_depart) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, case_depart);
+            joueur[x].position = 0;
+            sleep(2);
+            break;
+
+        case 1:
+            placement_script(strlen(impot_100) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, impot_100);
+            joueur[x].argent-= 100;
+            loto+=100;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+
+        case 2:
+            placement_script(strlen(impot_100) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, impot_50);
+            joueur[x].argent-= 50;
+            loto+=50;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+        case 3:
+            placement_script(strlen(impot_100) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, impot_20);
+            joueur[x].argent-= 20;
+            loto+=20;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+        case 4:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);sleep(1);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+        case 5:
+            placement_script(strlen(anniversaire) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, anniversaire);
+            joueur[x].argent = 20 * nb_joueurs;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+
+        case 6:
+            placement_script(strlen(phrase_loto) + taille_pseudo + strlen(loto), 1);
+            printf("%s%s %d", joueur[x].pseudo, phrase_loto, loto);
+            joueur[x].argent += loto;
+            loto = 0;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+
+        case 7:
+            placement_script(strlen(revenue_100) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, revenue_100);
+            joueur[x].argent+= 100;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+
+        case 8:
+            placement_script(strlen(revenue_50) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, revenue_50);
+            joueur[x].argent+= 50;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+
+        case 9:
+            placement_script(strlen(revenue_20) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, revenue_20);
+            joueur[x].argent+= 20;
+            affichage_argent_joueurs(joueur, x);
+            sleep(2);
+            break;
+        case 10:
+            placement_script(strlen(deplacement) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, deplacement);
+            joueur[x].position = 15;
+            sleep(2);
+            break;
+
+            /// ici que des prisons pour tester si cela marche bien, et aussi trouver les idées
+        case 11:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+        case 12:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+        case 13:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+        case 14:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+        case 15:
+            placement_script(strlen(prison) + taille_pseudo, 1);
+            printf("%s%s", joueur[x].pseudo, prison);gotoligcol(47, 10);printf(" ");
+            joueur[x].position = 7;joueur[x].prison = true;
+            sleep(2);
+            break;
+    }
+        }
+    card++;
+    if (card == 15)
+    {
+        card = 0;
+    }
 }
-// ça peut paraitre bizarre mais j'ai regardé sur internet et askip les carte commu c'est très individuel donc chelou
-
-

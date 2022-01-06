@@ -20,7 +20,7 @@ void affichage_choix()
     position(12,70);
     printf("4- Afficher les regles \n");
     position(13,70);
-    printf("5- Afficher le nom des membres de l equipe du projet \n");
+    printf("5- Afficher le nom des membres de l'equipe du projet \n");
     position(14,70);
     printf("6- Quitter\n");
     position(15,70);
