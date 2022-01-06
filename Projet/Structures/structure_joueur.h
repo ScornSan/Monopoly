@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <conio.h>
+#include <windows.h>
 #define CASES 28
 #define GROUPES_CARTES 8
 #define TOUCHE_ESPACE 32

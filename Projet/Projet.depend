@@ -2020,12 +2020,13 @@
 	<stdbool.h>
 	"../Structures/structure_joueur.h"
 
-1641315306 c:\dossier yohan\monopoly-feature-sarah\projet\structures\structure_joueur.h
+1641501104 c:\dossier yohan\monopoly-feature-sarah\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 	<conio.h>
+	<windows.h>
 
 1641208924 source:c:\dossier yohan\monopoly-feature-sarah\projet\banque de cartes\cartescommu.c
 	<stdio.h>
@@ -2034,13 +2035,14 @@
 	<stdbool.h>
 	"../Structures/structure_joueur.h"
 
-1641389535 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\case_prison.c
+1641497081 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 
-1641388219 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1641507572 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
+	"../Affichage_plateau/affichage_plateau.h"
 
-1641390387 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\fonction_de.c
+1641507604 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1641208924 c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_actions_joueurs\actions.h
@@ -2075,7 +2077,7 @@
 	"affichage.h"
 	"../Structures/structure_joueur.h"
 
-1641331271 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_affichage\instructions_sur_plateau.c
+1641502186 source:c:\dossier yohan\monopoly-feature-sarah\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 
@@ -2108,7 +2110,7 @@
 
 1641208925 c:\dossier yohan\monopoly-feature-sarah\projet\menu\nouvelle_partie.h
 
-1641208925 source:c:\dossier yohan\monopoly-feature-sarah\projet\partie\nouvelle_partie.c
+1641501810 source:c:\dossier yohan\monopoly-feature-sarah\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
@@ -2149,7 +2151,7 @@
 1641208925 source:c:\dossier yohan\monopoly-feature-sarah\projet\structures\structures_cartes.c
 	"structure_joueur.h"
 
-1641395183 source:c:\dossier yohan\monopoly-feature-sarah\projet\tour_joueur\tour_joueur.c
+1641502341 source:c:\dossier yohan\monopoly-feature-sarah\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 

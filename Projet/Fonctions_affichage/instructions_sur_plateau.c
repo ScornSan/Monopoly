@@ -22,8 +22,7 @@ void connaissance_position_curseur(int tab[2])
     GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 
     tab[0] = coninfo.dwCursorPosition.Y;
-    tab[1] = coninfo.dwCursorPosition.X -1;
-
+    tab[1] = (coninfo.dwCursorPosition.X)-1;
 }
 
 void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])

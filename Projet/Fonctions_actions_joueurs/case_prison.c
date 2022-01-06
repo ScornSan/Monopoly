@@ -12,8 +12,9 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
         longueur = strlen(phrase_sortie_prison_double);
         placement_script(longueur,1);
         printf("%s",phrase_sortie_prison_double);
-        joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
+        ///joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
         joueur[id_joueur].prison = false;
+        usleep(500000);
     }
     // else if (carte sortie de prison)
     else if (joueur[id_joueur].argent > 50 && nb_tour < 3)
