@@ -164,7 +164,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo);
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            vente_maisons(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
         }
     }
     return joueur_i[id_joueur].argent;

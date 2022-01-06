@@ -17,14 +17,14 @@ void effacement_gris(int id_joueur)
 void affichage_pion(int id_joueur)
 {
     Color(id_joueur + 1, 15);
-    printf("%c", 97);
+    printf("%c", 0xFE);
     Color(id_joueur + 1, 0);
 }
 
 void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_lancer)
 {
     int placement_depart = 94;
-    int placement_colonne_gauche = 46;
+    int placement_colonne_gauche = 47;
     int placement_ligne_haut = 16;
     int placement_colonne_droite = 12;
     int i;

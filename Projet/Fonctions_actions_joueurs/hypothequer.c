@@ -27,7 +27,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
         {
             carre_noir();
             Color(id_joueur + 1, 0);
-            char echec_hypotheque[100] = "Ce terrain ne vous appartient pas";
+            char echec_hypotheque[100] = "Cette propriete ne vous appartient pas";
             placement_script(strlen(echec_hypotheque), 0);
             printf("%s", echec_hypotheque);
             usleep(3000000);

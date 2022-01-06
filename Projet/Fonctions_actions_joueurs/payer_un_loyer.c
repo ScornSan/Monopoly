@@ -39,7 +39,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
             int longueur = strlen(chaine) + strlen(pion_joueur[id_joueurs_v1].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
-            hypothequer(repere, pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte);
+            hypothequer(pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte, repere);
         }
 
         if (key == 'v' || key == 'V')
@@ -49,13 +49,13 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
             int longueur = strlen(chaine) + strlen(pion_joueur[id_joueurs_v1].pseudo);
             placement_script(longueur,0);
             printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
-            vente_maisons(repere, pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte);
+            hypothequer(pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte, repere);
 
         }
     }
 }
 
-void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b, int id_carte)
+void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b, int id_carte[])
 {
     // modification en chaine
     int fleche1;
@@ -77,7 +77,7 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
     if (getch() == TOUCHE_ENTER)
     {
         carre_noir();
-        char ajouter_ou_enlever_maisons [100] = "Appuyez sur z pour ajouter ou s pour enlever une maison a votre propriete.";
+        char ajouter_ou_enlever_maisons [100] = "Appuyez sur z ous s pour ajouter ou enlever une maison a votre propriete.";
         longueur = strlen(ajouter_ou_enlever_maisons);
         placement_script(longueur,3);
         printf(" %s", ajouter_ou_enlever_maisons);
@@ -91,31 +91,31 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
         int nb = 0; //
         while (fleche1 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            if (terrain[a][b].nb_maison < 4 && (fleche1 == 'z' || fleche1 == 'Z') /*&& nb < 4*/) // z sert à augmenter de 1 le nombre //
+            if (terrain[a][b].nb_maison < 4 && (fleche1 == 'z' || fleche1 == 'Z') && nb < 4) // z sert à augmenter de 1 le nombre //
             {
                 terrain[a][b].nb_maison++;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer + 20* terrain[a][b].nb_maison;
-                pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_maison; // ajout argent
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer * 2 + 50;
+                pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_maison; // retirer argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                affichage_carte(id_joueurs_v1 ,terrain, id_carte, a , b);
+                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
                 nb++;
 
             }
-            else if ((fleche1 == 's' || fleche1 == 'S') && terrain[a][b].nb_maison > 0) // s sert a diminuer de 1 le nombre de maisons à faire  //
+            else if ((fleche1 == 's' || fleche1 == 'S') && terrain[a][b].nb_maison > 0 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire  //
             {
                 terrain[a][b].nb_maison--;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer - 20* terrain[a][b].nb_maison;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer / 2 - 50;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent + terrain[a][b].prix_maison; // ajout argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                affichage_carte(id_joueurs_v1 ,terrain, id_carte, a , b);
+                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
                 nb--;
             }
             char nb_maison[100] = "Nombre de maison ajoutees :";
@@ -124,8 +124,6 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
             placement_script(longueur, 6);
             printf("%s %d", nb_maison, nb);
             fleche1 = getch();    // ajout du compteur fait
-
-
         }
     }
     // ajouter ou retirez maison avec fleches, verifier le prix également
