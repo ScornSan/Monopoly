@@ -72,7 +72,7 @@ void vente_maisons(int repere[], t_joueur pion_joueur[], int max_joueurs, int id
                          printf("%s%d", nb_maison, nb);
                          pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].prix_maison * nb;
                          affichage_argent_joueurs(pion_joueur, id_joueur);
-                         affichage_carte(id_joueur, terrain, id_carte, i, j);
+                         affichage_carte(id_joueur, terrain, id_carte, i, j, terrain[i][j].hypotheque);
                     }
                 }
                 else

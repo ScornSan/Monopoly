@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[])
+void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[] )
 {
     int ligne = 1;
     int i;
@@ -48,7 +48,6 @@ void affichage_argent_joueurs(t_joueur joueurs[], int id_joueurs)
     int ligne = 2;
     int colonne = 105;
     gotoligcol(ligne, colonne + 8 + (id_joueurs * 19));
-    carre_noir();
     printf("%d", joueurs[id_joueurs].argent);
 }
 
@@ -59,8 +58,8 @@ void affichage_carte(int repere[], int id_joueur, t_carte terrain[][3], int a , 
     /// fond
     Color(0,7);
     int colonne = 106;
-    int lig = 4 + (terrain[a][b].id_carte[id_joueur] * 10);
-    for(int j = 0; j < 8; j++)
+    int lig = 4 + (terrain[a][b].id_carte[id_joueur] * 14 - 10);
+    for(int j = 0; j < 12; j++)
         {
             int col = colonne + ( id_joueur * 19);
             for (int j = 0; j< 17; j++)
@@ -72,7 +71,7 @@ void affichage_carte(int repere[], int id_joueur, t_carte terrain[][3], int a , 
             lig++;
         }
     /// Caractere haut et bas
-    lig = 4 +(terrain[a][b].id_carte[id_joueur] * 10);
+    lig = 4 +(terrain[a][b].id_carte[id_joueur] * 14 - 10);
     switch(a)
     {
     case 0 :
@@ -116,20 +115,31 @@ void affichage_carte(int repere[], int id_joueur, t_carte terrain[][3], int a , 
                 printf("%c", 0x11);
                 col = col +2;
             }
-        lig = lig + 8;
+        lig = lig + 12;
     }
     Color(0,7);
     /// Fin du dessin de la carte
 
     /// Infos carte
     Color(0,7);
-    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 10) +1, colonne + ( id_joueur * 19)+6);
-    printf("%s\n",terrain[a][b].nom);
-    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 10) +3, colonne + ( id_joueur * 19)+1);
-    printf("Loyer: %d$\n",terrain[a][b].prix_loyer);
-    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 10) +5, colonne + ( id_joueur * 19)+1);
-    printf("Hypotheque: %d$\n",terrain[a][b].val_hypotheque);
-    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 10) +7, colonne + ( id_joueur * 19)+1);
-    printf("Maisons: %d\n", terrain[a][b].nb_maison);
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +1, colonne + ( id_joueur * 19)+6);
+    printf("%s",terrain[a][b].nom);
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +3, colonne + ( id_joueur * 19)+1);
+    printf("Loyer: %d$",terrain[a][b].prix_loyer);
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +5, colonne + ( id_joueur * 19)+1);
+    if (terrain[a][b].hypotheque == true)
+    {
+        printf("Prix Rachat: %d$",terrain[a][b].prix_rachat);
+    }
+    else
+    {
+        printf("Hypotheque: %d$",terrain[a][b].val_hypotheque);
+    }
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +7, colonne + ( id_joueur * 19)+1);
+    printf("Maisons: %d",terrain[a][b].nb_maison);
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +9, colonne + ( id_joueur * 19)+1);
+    printf("Prix Maison:%d$",terrain[a][b].prix_maison);
+    gotoligcol(4 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +11, colonne + ( id_joueur * 19)+1);
+    printf("Prix Hotel: %d",terrain[a][b].nb_maison);
     Color(15,0);
 }

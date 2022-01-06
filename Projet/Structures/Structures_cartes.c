@@ -20,7 +20,7 @@ void remplissages_cartes(t_carte carte[][3])
             // le prix de départ est calculé par rapport au groupe de la carte, puis son niveau dans le groupe
             // on parcours selon le groupe de quartier puis selon la carte, 0, 1 voir 2 du quartier i
             /// on définit le prix d'achat du terrain et du loyer nu
-            carte[i][j].prix_achat = (j * 10) + (i * 20) + 20;
+            carte[i][j].prix_achat = (j * 10) + (i * 40) + 20;
             carte[i][j].prop_achete = false;
             carte[i][j].hypotheque = false;
             carte[i][j].val_hypotheque = (int)(carte[i][j].prix_achat / 2); // valeur de l'hypotheque est le prix / 2

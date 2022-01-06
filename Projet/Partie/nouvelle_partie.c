@@ -17,7 +17,7 @@ void partie_en_cours()
     remplissage_chance_commu(tab_c);
     melangeurCarte(tab_c);
     affichage_plateau();
-    affichage_pseudo_joueurs(nombre_de_joueurs,joueur);
+    affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
     while (nombre_de_joueurs != 1)
     {
