@@ -1,24 +1,33 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void partie_en_cours(int repere[4])
+void partie_en_cours()
 {
-    t_carte tab[GROUPES_CARTES][3];
+    int repere[4]; // tableau qui configure les lignes, colonnes, couleur texte et couleur du fond
+    int tab_c[16]; // tzbleau de cartes chances et communautÃ©
+    t_carte tab[GROUPES_CARTES][3]; // initialisation structures de cartes de proprietes
     int fin_de_partie;
+    int sauvegarde_position[2];
     int nombre_de_joueurs = demander_nb_joueur();
     int identifiant_carte[nombre_de_joueurs];
-    t_joueur joueur[nombre_de_joueurs]; // on crée un tableau de structures de joueurs, de taille du nombre demandé
-    creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on crée les structures joueurs
+    int card_chance = 0; // va venir piocher la premiere carte chance
+    int card_commu = 0; // va venir piocher la premiere carte commmu
+    t_joueur joueur[nombre_de_joueurs]; // on crÃ©e un tableau de structures de joueurs, de taille du nombre demandï¿½
+    creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on crï¿½e les structures joueurs
     remplissages_cartes(tab); // on remplit les cartes terrains
+    remplissage_chance_commu(tab_c);
+    melangeurCarte(tab_c);
     affichage_plateau();
-    affichage_pseudo_joueurs(nombre_de_joueurs,joueur);
+    affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
+    int loto = 0;
     while (nombre_de_joueurs != 1)
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
-            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte);
+            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position);
             if (fin_de_partie < 0)
             {
+                printf("%s est elimine", joueur[i].pseudo);
                 break; // on sort de la boucle et on fait la fin du jeu
             }
         }

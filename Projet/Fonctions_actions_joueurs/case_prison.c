@@ -9,11 +9,11 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
         placement_script(longueur,0);
         printf("Vous avez fait %d et %d !", de1, de2);
         char phrase_sortie_prison_double[100] = "Vous sortez de prison en faisant un double !";
-        longueur = strlen(phrase_sortie_prison_double);
+        longueur = strlen(phrase_sortie_prison_double); //
         placement_script(longueur,1);
         printf("%s",phrase_sortie_prison_double);
-        joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
         joueur[id_joueur].prison = false;
+        usleep(500000);
     }
     // else if (carte sortie de prison)
     else if (joueur[id_joueur].argent > 50 && nb_tour < 3)
@@ -27,13 +27,13 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
         if (getch() == TOUCHE_ENTER)
         {
             carre_noir();
-            char phrase_sortie_prison[100] = "Felicitation ! Vous etes de nouveau libre !";
-            longueur = strlen(phrase_sortie_prison);
-            placement_script(longueur, 0);
-            printf("%s",phrase_sortie_prison);
-            ///printf("Vous avez fait %d et %d ! Vous sortez de prison en faisant un double !\n", de1, de2);
-            joueur[id_joueur].argent -= 50;
-            ///joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
+            char phrase_sortie_prison[100] = "Felicitation ! Vous etes de nouveau libre !"; //
+            longueur = strlen(phrase_sortie_prison); //
+            placement_script(longueur, 0); //
+            printf("%s",phrase_sortie_prison); //
+            ///printf("Vous avez fait %d et %d ! Vous sortez de prison en faisant un double !\n", de1, de2); //
+            joueur[id_joueur].argent -= 50; //
+            ///joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2; //
             joueur[id_joueur].prison = false;
         }
     }

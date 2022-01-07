@@ -118,9 +118,6 @@
 		<Unit filename="Fonctions_affichage/instructions_sur_plateau.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Fonctions_affichage/pion.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Menu/affichage_choix.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -134,9 +131,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Pioche/affichage.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Pioche/bibli1.h" />

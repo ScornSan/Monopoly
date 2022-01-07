@@ -1,11 +1,11 @@
 #include "affichage_plateau.h"
 
-void Color(int cT,int cF)
+/*void Color(int cT,int cF)
 {
     // fonction d'affichage de couleurs
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,cF*16+cT);
-}
+}*/
 
 void affichage_plateau()
 {
@@ -24,12 +24,15 @@ void affichage_plateau()
     cases_commu();
     lettreI();
     gotoligcol(0,premiere_colonne);
+    Color(12,0);
+    gotoligcol(0, premiere_colonne);
+    printf("Appuyer sur [M] pour acceder au menu");
     Color(15,0);
-    position(premiere_ligne, derniere_colonne + 20);
     char debut[100] = "Appuyer sur une touche pour commencer";
     placement_script(strlen(debut), 0);
     printf("%s", debut);
     echap();
+
 }
 /*
     0 : Noir
