@@ -1066,7 +1066,7 @@
 1641057263 source:c:\repos\monopoly-feature-sarah\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
-1641136484 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+1641541424 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
 
 1640900271 c:\repos\monopoly\projet\affichage_plateau\affichage_plateau.h
@@ -1118,7 +1118,7 @@
 1640900271 source:c:\repos\monopoly\projet\affichage_plateau\sepa_lignes.c
 	"affichage_plateau.h"
 
-1640900271 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\case_prison.c
+1641542853 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 
 1641314223 c:\repos\monopoly\projet\structures\structure_joueur.h
@@ -1128,10 +1128,11 @@
 	<stdbool.h>
 	<conio.h>
 
-1641490964 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1641545045 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
+	"../Affichage_plateau/affichage_plateau.h"
 
-1641494582 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+1641543720 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640900271 c:\repos\monopoly\projet\fonctions_actions_joueurs\actions.h
@@ -1152,21 +1153,21 @@
 1641474815 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
 	"../Structures/structure_joueur.h"
 
-1641498369 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+1641498582 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641295088 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+1641544935 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 
-1641151704 source:c:\repos\monopoly\projet\main.c
+1641541165 source:c:\repos\monopoly\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
 1641058694 source:c:\repos\monopoly\projet\menu\affichage_choix.c
 
-1640900271 source:c:\repos\monopoly\projet\menu\echap.c
+1641540940 source:c:\repos\monopoly\projet\menu\echap.c
 	<stdio.h>
 	<stdlib.h>
 	"echap.h"
@@ -1186,7 +1187,7 @@
 
 1640900271 c:\repos\monopoly\projet\menu\nouvelle_partie.h
 
-1641394814 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
+1641543132 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
@@ -1231,14 +1232,14 @@
 1641125343 source:c:\repos\monopoly\projet\pioche\remplissage.c
 	"bibli1.h"
 
-1641489089 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
+1641544660 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
 1641310529 source:c:\repos\monopoly\projet\banque de cartes\carteschance.c
 	"../Structures/structure_joueur.h"
 
-1641488934 source:c:\repos\monopoly\projet\fonctions_affichage\affichage_profil_joueur.c
+1641542147 source:c:\repos\monopoly\projet\fonctions_affichage\affichage_profil_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 

@@ -24,9 +24,10 @@ void affichage_plateau()
     cases_commu();
     lettreI();
     gotoligcol(0,premiere_colonne);
+    Color(12,0);
+    gotoligcol(0, premiere_colonne);
+    printf("Appuyer sur [M] pour acceder au menu");
     Color(15,0);
-    gotoligcol(premiere_ligne, derniere_colonne + 20);
-    printf("Appuyer sur [ECHAP] pour acceder au menu");
     char debut[100] = "Appuyer sur une touche pour commencer";
     placement_script(strlen(debut), 0);
     printf("%s", debut);

@@ -1,13 +1,14 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu)
+int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int sauvegarde_position[])
 {
     int longueur;
     int longueur_2;
     int de1, de2;
     int nb_lancer = 0;
     int key;
+    int tour_prison;
     char chaine[10] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
@@ -40,6 +41,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
 
             placement_script(strlen(phrase_prop_hypotheque), 2);
             printf("%s", phrase_prop_hypotheque);
+            ///affichage_carte(35, 125,cartes_terrain,);
             key = getch();
         }
         else
@@ -51,37 +53,46 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             printf("%s%s",  joueur_i[id_joueur].pseudo, chaine);
             key = getch();
         }
-
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
-            joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
-            joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
-            deplacement_joueur(joueur_i, nombre_joueurs, id_joueur, nb_lancer);
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
+                tour_prison++;
                 if (joueur_i[id_joueur].prison == true)
                 {
                     char chaine[100] = ", vous etes deja en prison";
                     int longueur = (strlen(joueur_i[id_joueur].pseudo)+ strlen(chaine));
                     placement_script(longueur, 0);
                     printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2); // la fonction s'active s'il est deja en prison
+                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2,tour_prison); // la fonction s'active s'il est deja en prison
+                    sleep(1);
                     break;
                 }
 
                 else // si c'est la premiere fois qu'il arrive en prison
                 {
-                    int longueur = (strlen(phrase_prison)+ strlen(joueur_i[id_joueur].pseudo));
-                    placement_script(longueur, 0);
-                    printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison); // "Aller en prison" !
-                    usleep(50000);
                     joueur_i[id_joueur].prison = true;
+                    affichage_pion_prison(id_joueur,joueur_i[id_joueur].prison);
+                    remplacement_position(sauvegarde_position ,joueur_i[id_joueur].position);
+                    joueur_i[id_joueur].ancienne_position = 7;
+                    joueur_i[id_joueur].position = 7;
+                    carre_noir();
+                    int longueur = (strlen(phrase_prison)+ strlen(joueur_i[id_joueur].pseudo));
+                    Color(id_joueur + 9, 0);
+                    placement_script(longueur, 0);
+                    printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison);
+                    usleep(5000000);
                     break;
                 }
             }
             else if (nb_lancer < 3 && joueur_i[id_joueur].prison == false)
             {
+                affichage_pion_prison(id_joueur, joueur_i[id_joueur].prison);
+                joueur_i[id_joueur].ancienne_position = joueur_i[id_joueur].position;
+                joueur_i[id_joueur].position += lancer_de(&de1, &de2); // on lance les dés
+                deplacement_joueur(joueur_i, nombre_joueurs, id_joueur);
+                connaissance_position_curseur(sauvegarde_position);
                 if (joueur_i[id_joueur].position >= 28) // on teste si le joueur arrive à la case départ ou non
                 {
                     char chaine[100] = ", vous etes passe par la case depart ! Vous recevez 200";
@@ -89,49 +100,47 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,1);
                     printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
                     joueur_i[id_joueur].argent += 200;
-                    affichage_argent_joueurs(joueur_i, id_joueur);
                 }
                 joueur_i[id_joueur].position = joueur_i[id_joueur].position % 28; // modulo 28, pour faire un tour du plateau
                 switch(joueur_i[id_joueur].position)
                 {
                     case 2:
-
                         longueur = strlen(joueur_i[id_joueur].pseudo)+strlen(phrase_impot);
                         placement_script(longueur,2);
                         printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
                         joueur_i[id_joueur].argent -= 200;
-                        usleep(3000000);
+                        usleep(3000);
                         break;
 
-                    case 5:
+                    //case 5:
                     case 19:
-                        /*longueur = strlen(phrase_chance) + strlen(joueur_i[id_joueur].pseudo);
+                        longueur = strlen(phrase_chance) + strlen(joueur_i[id_joueur].pseudo);
                         longueur_2 = strlen(phrase_chance_2);
                         placement_script(longueur,2);
                         printf("%s%s",joueur_i[id_joueur].pseudo, phrase_chance);
                         placement_script(longueur_2,3),
-                        printf("%s",phrase_chance_2);*/
-                        //banquechance(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_chance);
-                        usleep(300000);
+                        printf("%s",phrase_chance_2);
+                        usleep(3000);
+
                         break;
 
-                    case 12:
+                    //case 12:
                     case 26:
-                        /*longueur = strlen(phrase_commu);
+                        longueur = strlen(phrase_commu);
                         longueur_2 = strlen(phrase_commu_2);
                         placement_script(longueur,2);
                         printf("%s",phrase_commu);
                         placement_script(longueur_2,3),
-                        printf("%s",phrase_commu_2);*/
-                        //banquecommu(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_commu);
-                        usleep(300000);
+                        printf("%s",phrase_commu_2);
+                        usleep(3000);
+
                         break;
 
                     case 21:
                         longueur = strlen(phrase_prison) + strlen(joueur_i[id_joueur].pseudo);
                         placement_script(longueur,2);
                         printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
-                        usleep(3000000);
+                        usleep(3000);
 
                         break;
 
@@ -155,7 +164,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere);
+            hypothequer(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {

@@ -128,7 +128,7 @@ void affichage_carte(int repere[], int id_joueur, t_carte terrain[][3], int a , 
 
     /// Infos carte
     Color(0,7);
-    gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +1, colonne + ( id_joueur * 19)+6);
+    placement_script_carte(strlen(terrain[a][b].nom), id_joueur, terrain, a, b);
     printf("%s",terrain[a][b].nom);
     gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +3, colonne + ( id_joueur * 19)+1);
     printf("Loyer: %d$",terrain[a][b].prix_loyer);

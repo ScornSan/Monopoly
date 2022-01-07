@@ -72,7 +72,7 @@ void affichage_Menu()
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
                     Color(12, 0);
-                    printf("Appuyez sur [ECHAP] pour revenir au menu");
+                    printf("Appuyer sur [M] pour revenir au menu ");
 
                     }
 
@@ -104,14 +104,14 @@ void affichage_Menu()
                 }
             }
             Color(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            printf("Appuyer sur [M] pour revenir au menu ");
             break;
 
         case 4 :
             fflush(stdin);
             fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
             Color(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            printf("Appuyer sur [M] pour revenir au menu ");
 
             Color(15, 0);
             if (fichier_regles == NULL)
@@ -131,7 +131,7 @@ void affichage_Menu()
         case 5 :
                 fflush(stdin);
                 Color(12, 0);
-                printf("Appuyez sur [ECHAP] pour revenir au menu");
+                printf("Appuyer sur [M] pour revenir au menu ");
                 Color(15, 0);
                 gotoligcol(10,70);
                 printf("Programmeurs de ce jeu : \n");

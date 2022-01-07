@@ -4,26 +4,26 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
 {
     if (de1 == de2)
     {
-        carre_noir(); //
-        longueur = 23; //
-        placement_script(longueur,0); //
-        printf("Vous avez fait %d et %d !", de1, de2); //
-        char phrase_sortie_prison_double[100] = "Vous sortez de prison en faisant un double !"; //
+        carre_noir();
+        longueur = 23;
+        placement_script(longueur,0);
+        printf("Vous avez fait %d et %d !", de1, de2);
+        char phrase_sortie_prison_double[100] = "Vous sortez de prison en faisant un double !";
         longueur = strlen(phrase_sortie_prison_double); //
-        placement_script(longueur,1); //
-        printf("%s",phrase_sortie_prison_double); //
-        joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
+        placement_script(longueur,1);
+        printf("%s",phrase_sortie_prison_double);
         joueur[id_joueur].prison = false;
+        usleep(500000);
     }
     // else if (carte sortie de prison)
     else if (joueur[id_joueur].argent > 50 && nb_tour < 3)
     {
-        carre_noir(); //
-        char phrase_payement_prison[100] = "Voulez-vous payez 50$ pour sortir de prison ?"; //
-        longueur = strlen(phrase_payement_prison); //
-        placement_script(longueur,0); //
-        printf("%s",phrase_payement_prison); //
-        position_choix(longueur,2,"Oui","Non","ENTRER","Autre"); //
+        carre_noir();
+        char phrase_payement_prison[100] = "Voulez-vous payez 50$ pour sortir de prison ?";
+        longueur = strlen(phrase_payement_prison);
+        placement_script(longueur,0);
+        printf("%s",phrase_payement_prison);
+        position_choix(longueur,2,"Oui","Non","ENTRER","Autre");
         if (getch() == TOUCHE_ENTER)
         {
             carre_noir();
