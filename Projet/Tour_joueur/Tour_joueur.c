@@ -53,6 +53,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             printf("%s%s",  joueur_i[id_joueur].pseudo, chaine);
             key = getch();
         }
+
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
@@ -175,6 +176,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
             vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
         }
+        echap();
     }
     return joueur_i[id_joueur].argent;
 }

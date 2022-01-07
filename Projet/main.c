@@ -40,8 +40,12 @@ void affichage_Menu()
 
         case 2 :
             // Sauvegarde d'une partie (2 Emplacements)
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
             while (nombre_de_joueurs == 0) // Verifier si une partie a été joué car on en peu pas sauvegarder à peine arrivé !
             {
+                Color(15, 0);
+                gotoligcol(15, 65);
                 printf("Impossible ! Aucune partie n'est en cours !");
                 break;
 
@@ -71,10 +75,8 @@ void affichage_Menu()
                         sauvegardeenplus(nombre_de_joueurs, *joueur_x);
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
-                    Color(12, 0);
-                    printf("Appuyer sur [M] pour revenir au menu ");
 
-                    }
+                }
 
             }
             break;
