@@ -3,13 +3,12 @@
 #include "echap.h"
 #include <stdbool.h>
 
-void echap (appel_menu)
+void echap()
 {
-    if ( getch() == 'M' || getch() == 'm')
+    int key = getch();
+    while(key == 'M' || key == 'm')
     {
-        fflush(stdin);
         system("cls");
-        affichage_Menu(appel_menu);
+        affichage_Menu();
     }
-    fflush(stdin);
 }

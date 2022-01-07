@@ -1,7 +1,7 @@
 #include "Structures/structure_joueur.h"
 #include "Affichage_plateau/affichage_plateau.h"
 
-void affichage_Menu(bool appel_menu)
+void affichage_Menu()
 {
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
@@ -15,19 +15,21 @@ void affichage_Menu(bool appel_menu)
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
-     while (choix < 1 || choix > 6 || choix == 27)
-     {
+    while (choix < 1 || choix > 6 || choix == 27)
+    {
         system("cls");
         affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
         fflush(stdin);
         scanf("%d", &choix);
-     }
-     system("cls");
+    }
+    system("cls");
 
-     switch(choix)
-     {
+    do
+    {
+        switch(choix)
+        {
         case 1 :
 
             system("cls");
@@ -48,7 +50,7 @@ void affichage_Menu(bool appel_menu)
                 if (nombre_de_joueurs != 0)
                 {
                     fflush(stdin);
-                // Ajout (Clément)
+                    // Ajout (Clément)
                     printf("Voulez-vous sauvegarder votre partie ?\n");
                     printf("[1] Emplacement 1 ?\n");
                     printf("[2] Emplacement 2 ?\n");
@@ -74,7 +76,7 @@ void affichage_Menu(bool appel_menu)
                     Color(12, 0);
                     printf("Appuyer sur [M] pour revenir au menu ");
 
-                    }
+                }
 
             }
             break;
@@ -129,32 +131,34 @@ void affichage_Menu(bool appel_menu)
             break;
 
         case 5 :
-                fflush(stdin);
-                Color(12, 0);
-                printf("Appuyer sur [M] pour revenir au menu ");
-                Color(15, 0);
-                gotoligcol(10,70);
-                printf("Programmeurs de ce jeu : \n");
-                gotoligcol(12,70);
-                printf("Yohan MARCEL \n");
-                gotoligcol(13,70);
-                printf("Sarah BLIN \n");
-                gotoligcol(14,70);
-                printf("Clement POMPEI \n");
-                gotoligcol(15,70);
-                printf("Benjamin GENDRY \n");
-                Color(10, 0);
-                break;
+            fflush(stdin);
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
+            Color(15, 0);
+            gotoligcol(10,70);
+            printf("Programmeurs de ce jeu : \n");
+            gotoligcol(12,70);
+            printf("Yohan MARCEL \n");
+            gotoligcol(13,70);
+            printf("Sarah BLIN \n");
+            gotoligcol(14,70);
+            printf("Clement POMPEI \n");
+            gotoligcol(15,70);
+            printf("Benjamin GENDRY \n");
+            Color(10, 0);
+            break;
 
-         case 6 :
-                exit(0);
+        case 6 :
+            exit(0);
         }
-    //echap();
+        echap();
+    }
+    while(1);
+
 }
 
 int main()
 {
-    bool appel_menu = false;
-    affichage_Menu(appel_menu);
+    affichage_Menu();
     return 0;
 }

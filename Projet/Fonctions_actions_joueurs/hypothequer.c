@@ -1,7 +1,7 @@
 #include "../Structures/structure_joueur.h"
 /// HYPOTEQUER UNE MAISON :
 
-void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[], int repere[])
+void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[], int repere[], int banque_de_carte[])
 {
     int touche = 25; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int selection;
@@ -55,6 +55,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     while (terrain[i][j].nb_maison >= 1)
                     {
                         terrain[i][j].nb_maison--;
+                        banque_de_carte[0] = 1;
                         pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + (terrain[i][j].prix_maison/2);
                     }
                     carre_noir();
@@ -87,7 +88,13 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     usleep(3000000);
                     break;
                 }
+                gotoligcol(38,65);
+                Color(0,3);
+                printf("%d ", banque_de_carte[0]);
+                sleep(2);
             }
+
         }
     }
+
 }

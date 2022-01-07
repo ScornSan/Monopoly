@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int sauvegarde_position[])
+int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[])
 {
     int longueur;
     int longueur_2;
@@ -112,7 +112,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                         usleep(3000);
                         break;
 
-                    //case 5:
+                    case 5:
                     case 19:
                         longueur = strlen(phrase_chance) + strlen(joueur_i[id_joueur].pseudo);
                         longueur_2 = strlen(phrase_chance_2);
@@ -124,7 +124,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
 
                         break;
 
-                    //case 12:
+                    case 12:
                     case 26:
                         longueur = strlen(phrase_commu);
                         longueur_2 = strlen(phrase_commu_2);
@@ -152,7 +152,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                         break;
 
                     default:
-                        tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+                        tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
                         break;
                 }
             }
@@ -164,7 +164,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere);
+            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere, banque_de_carte);
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {
@@ -173,7 +173,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo);
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
         }
     }
     return joueur_i[id_joueur].argent;
