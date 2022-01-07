@@ -1,14 +1,13 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int sauvegarde_position[2])
+int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int sauvegarde_position[])
 {
     int longueur;
     int longueur_2;
     int de1, de2;
     int nb_lancer = 0;
     int key;
-    int tour_prison;
     char chaine[10] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
@@ -55,10 +54,14 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
         }
         if (key == TOUCHE_ESPACE) // On entre 32 en constante, correspondant à ESPACE
         {
+            gotoligcol(35,65);
+            Color(0,3);
+            printf("%d",nb_lancer);
+            sleep(2);
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
-                tour_prison++;
+                joueur_i[id_joueur].tour_prison++;
                 if (joueur_i[id_joueur].prison == true)
                 {
                     char chaine[100] = ", vous etes deja en prison";
@@ -77,10 +80,13 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
                     remplacement_position(sauvegarde_position ,joueur_i[id_joueur].position);
                     joueur_i[id_joueur].ancienne_position = 7;
                     joueur_i[id_joueur].position = 7;
+                    carre_noir();
                     int longueur = (strlen(phrase_prison)+ strlen(joueur_i[id_joueur].pseudo));
+                    Color(id_joueur + 9, 0);
                     placement_script(longueur, 0);
                     printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison);
                     usleep(500000);
+
                     break;
                 }
             }

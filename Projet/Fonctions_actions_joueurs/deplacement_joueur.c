@@ -15,11 +15,8 @@ void effacement_bleu(int id_joueur)
     Color(id_joueur + 9, 0);
 }
 
-void remplacement_position(int tab[2], int position)
+void remplacement_position(int tab[], int position)
 {
-    gotoligcol(35,65);
-    printf("%d %d",tab[0], tab[1]);
-    sleep(1);
     if (position == 14)
     {
         // effacement bleu
@@ -70,19 +67,19 @@ void affichage_pion_prison(int id_joueur, bool entree_sortie)
 
     if (id_joueur == 0)
     {
-        gotoligcol(47,3);
+        gotoligcol(47,11);
     }
     if (id_joueur == 1)
     {
-        gotoligcol(47,5);
+        gotoligcol(47,7);
     }
     if (id_joueur == 2)
     {
-        gotoligcol(49,3);
+        gotoligcol(49,11);
     }
     if (id_joueur == 3)
     {
-        gotoligcol(49,5);
+        gotoligcol(49,7);
     }
     printf(" ");
 }

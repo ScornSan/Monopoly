@@ -4,7 +4,7 @@
 
 void echap ()
 {
-    if ( getch() == 27)
+    if ( getch() == 'M' || getch() == 'm')
     {
         fflush(stdin);
         system("cls");

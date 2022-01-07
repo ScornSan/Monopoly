@@ -6,9 +6,8 @@ void affichage_Menu()
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
-    char choix[150]; // On prévoit que l'utilisateur puisse taper "1z" par exemple    int repere[4];
+    int choix = 0;
     int choixsauv = 0;
-    int repere[4];
     int choixcharge = 0;
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
@@ -16,36 +15,25 @@ void affichage_Menu()
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
-    gotoligcol(16,70);
-    printf("Entrez votre selection : ");
-    fgets(choix,sizeof(choix),stdin);
-    char *p=strchr(choix,'\n');
-    if(p)
-    *p=0;
-
-    /// AJOUTER BLINDAGE CLEMENT
-
-
-     while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6)
+     while (choix < 1 || choix > 6)
      {
         system("cls");
         affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
-        fgets(choix,sizeof(choix),stdin);
-        char *p=strchr(choix,'\n');
-        if(p)
-            *p=0;
+        fflush(stdin);
+        scanf("%d", &choix);
      }
      system("cls");
 
-      switch(*choix-'0')
+     switch(choix)
      {
         case 1 :
 
             system("cls");
             fflush(stdin);
-            partie_en_cours(repere);
+            system("cls");
+            partie_en_cours();
 
             /// AJOUTER FONCTION NOUVELLE PARTIE
             break;
@@ -83,9 +71,11 @@ void affichage_Menu()
                         sauvegardeenplus(nombre_de_joueurs, *joueur_x);
                         printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
                     }
-                    couleur(12, 0);
-                    printf("Appuyez sur [ECHAP] pour revenir au menu");
+                    Color(12, 0);
+                    printf("Appuyer sur [M] pour revenir au menu ");
+
                     }
+
             }
             break;
 
@@ -113,17 +103,17 @@ void affichage_Menu()
                     chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
                 }
             }
-            couleur(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
             break;
 
         case 4 :
             fflush(stdin);
             fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
-            couleur(12, 0);
-            printf("Appuyez sur [ECHAP] pour revenir au menu");
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
 
-            couleur(15, 0);
+            Color(15, 0);
             if (fichier_regles == NULL)
             {
                 printf("Erreur d'ouverture fichier. Veuillez réesayer. \n");
@@ -140,9 +130,9 @@ void affichage_Menu()
 
         case 5 :
                 fflush(stdin);
-                couleur(12, 0);
-                printf("Appuyez sur [ECHAP] pour revenir au menu");
-                couleur(15, 0);
+                Color(12, 0);
+                printf("Appuyer sur [M] pour revenir au menu ");
+                Color(15, 0);
                 gotoligcol(10,70);
                 printf("Programmeurs de ce jeu : \n");
                 gotoligcol(12,70);
@@ -153,7 +143,7 @@ void affichage_Menu()
                 printf("Clement POMPEI \n");
                 gotoligcol(15,70);
                 printf("Benjamin GENDRY \n");
-                couleur(10, 0);
+                Color(10, 0);
                 break;
 
          case 6 :
