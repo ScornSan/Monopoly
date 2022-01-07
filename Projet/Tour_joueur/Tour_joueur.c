@@ -9,14 +9,14 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
     int nb_lancer = 0;
     int key;
     int tour_prison;
-    char chaine[10] = "";
+    char chaine[2] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
-    char phrase_prison[100] = ", allez en Prison !";
-    char phrase_commu[100] = ", vous etes tombes sur une case communaute!";
-    char phrase_commu_2[100] = "Appuyez sur ESPACE pour piocher une carte communaute";
-    char phrase_chance[100] = ", vous etes tombes sur une case chance!";
-    char phrase_chance_2[100] = "Appuyez sur ESPACE pour piocher une carte chance";
+    char phrase_prison[50] = ", allez en Prison !";
+    char phrase_commu[70] = ", vous etes tombes sur une case communaute!";
+    char phrase_commu_2[70] = "Appuyez sur ESPACE pour piocher une carte communaute";
+    char phrase_chance[70] = ", vous etes tombes sur une case chance!";
+    char phrase_chance_2[70] = "Appuyez sur ESPACE pour piocher une carte chance";
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
 
     /// vérification tour suivant ou pas
@@ -164,7 +164,7 @@ int tour_joueur(int repere[4], t_joueur joueur_i[], int nombre_joueurs, int id_j
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            hypothequer(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte);
+            hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere);
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
         {

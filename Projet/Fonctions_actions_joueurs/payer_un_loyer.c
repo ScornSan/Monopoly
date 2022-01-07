@@ -94,7 +94,7 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
             if (terrain[a][b].nb_maison < 4 && (fleche1 == 'z' || fleche1 == 'Z') && nb < 4) // z sert à augmenter de 1 le nombre //
             {
                 terrain[a][b].nb_maison++;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer * 2 + 50;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer + 200;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_maison; // retirer argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
@@ -108,7 +108,7 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
             else if ((fleche1 == 's' || fleche1 == 'S') && terrain[a][b].nb_maison > 0 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire  //
             {
                 terrain[a][b].nb_maison--;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer / 2 - 50;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer - 200;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent + terrain[a][b].prix_maison; // ajout argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);

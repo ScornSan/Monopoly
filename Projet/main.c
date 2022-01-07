@@ -1,7 +1,7 @@
 #include "Structures/structure_joueur.h"
 #include "Affichage_plateau/affichage_plateau.h"
 
-void affichage_Menu()
+void affichage_Menu(bool appel_menu)
 {
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
@@ -15,7 +15,7 @@ void affichage_Menu()
     affichage_choix();
     // SAISIE DU CHOIX
     // Blindage de la saisie
-     while (choix < 1 || choix > 6)
+     while (choix < 1 || choix > 6 || choix == 27)
      {
         system("cls");
         affichage_choix();
@@ -149,11 +149,12 @@ void affichage_Menu()
          case 6 :
                 exit(0);
         }
-    echap();
+    //echap();
 }
 
 int main()
 {
-    affichage_Menu();
+    bool appel_menu = false;
+    affichage_Menu(appel_menu);
     return 0;
 }

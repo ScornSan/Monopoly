@@ -87,7 +87,7 @@ void vente_maisons(int repere[], t_joueur pion_joueur[], int max_joueurs, int id
                         Color(id_joueur + 1, 0);
                         char echec_vente2[100] = ", vous ne possedez aucune maison sur cete propriete !";
                         placement_script(strlen(echec_vente2), 0);
-                        printf("%s%s", pion_joueur[id_joueur].pseudo);
+                        printf("%s%s", pion_joueur[id_joueur].pseudo, echec_vente2);
                         sleep(2);
                         break;
                     }

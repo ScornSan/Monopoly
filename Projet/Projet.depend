@@ -1066,7 +1066,7 @@
 1641057263 source:c:\repos\monopoly-feature-sarah\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 
-1641541424 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+1641547004 source:c:\repos\monopoly\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
 
 1640900271 c:\repos\monopoly\projet\affichage_plateau\affichage_plateau.h
@@ -1132,7 +1132,7 @@
 	"../Structures/structure_joueur.h"
 	"../Affichage_plateau/affichage_plateau.h"
 
-1641543720 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+1641564731 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640900271 c:\repos\monopoly\projet\fonctions_actions_joueurs\actions.h
@@ -1146,14 +1146,14 @@
 1641489854 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
 	"../Structures/structure_joueur.h"
 
-1641498478 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
+1641566383 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
 1641474815 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
 	"../Structures/structure_joueur.h"
 
-1641498582 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+1641560740 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
@@ -1161,16 +1161,17 @@
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 
-1641541165 source:c:\repos\monopoly\projet\main.c
+1641547800 source:c:\repos\monopoly\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
 1641058694 source:c:\repos\monopoly\projet\menu\affichage_choix.c
 
-1641540940 source:c:\repos\monopoly\projet\menu\echap.c
+1641547805 source:c:\repos\monopoly\projet\menu\echap.c
 	<stdio.h>
 	<stdlib.h>
 	"echap.h"
+	<stdbool.h>
 
 1640900271 c:\repos\monopoly\projet\menu\echap.h
 
@@ -1232,7 +1233,7 @@
 1641125343 source:c:\repos\monopoly\projet\pioche\remplissage.c
 	"bibli1.h"
 
-1641544660 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
+1641566506 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 

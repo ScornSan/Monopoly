@@ -24,7 +24,7 @@ void remplissages_cartes(t_carte carte[][3])
             carte[i][j].prop_achete = false;
             carte[i][j].hypotheque = false;
             carte[i][j].val_hypotheque = (int)(carte[i][j].prix_achat / 2); // valeur de l'hypotheque est le prix / 2
-            carte[i][j].prix_rachat_hypotheque = carte[i][j].prix_achat * 1.1; // 10% du prix
+            carte[i][j].prix_rachat= (int)carte[i][j].prix_achat * 1.1; // 10% du prix
             carte[i][j].nb_maison = 0; // terrain nu au départ, 0 maisons
             carte[i][j].possession_carte = VAL_NUL;
             if (nb_cartes == 2 || i == 1)
