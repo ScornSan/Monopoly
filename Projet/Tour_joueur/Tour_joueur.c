@@ -1,14 +1,13 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[])
+int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[], int tour_prison[])
 {
     int longueur;
     int longueur_2;
     int de1, de2;
     int nb_lancer = 0;
     int key;
-    int tour_prison;
     char chaine[2] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
@@ -58,15 +57,17 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             nb_lancer++; // on augmente le nombre de 1 car les dés ont été lancé
             if (nb_lancer == 3 || joueur_i[id_joueur].prison == true)
             {
-                tour_prison++;
+                tour_prison[id_joueur]++;
                 if (joueur_i[id_joueur].prison == true)
                 {
+                     carre_noir();
                     char chaine[100] = ", vous etes deja en prison";
                     int longueur = (strlen(joueur_i[id_joueur].pseudo)+ strlen(chaine));
                     placement_script(longueur, 0);
                     printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2,tour_prison); // la fonction s'active s'il est deja en prison
+                    printf(" %d", tour_prison[id_joueur]);
                     sleep(1);
+                    case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2, tour_prison); // la fonction s'active s'il est deja en prison
                     break;
                 }
 
@@ -82,7 +83,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     Color(id_joueur + 9, 0);
                     placement_script(longueur, 0);
                     printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison);
-                    usleep(5000000);
+                    usleep(500000);
                     break;
                 }
             }
@@ -137,11 +138,16 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                         break;
 
                     case 21:
+                       carre_noir();
                         longueur = strlen(phrase_prison) + strlen(joueur_i[id_joueur].pseudo);
                         placement_script(longueur,2);
                         printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
-                        usleep(3000);
-
+                        joueur_i[id_joueur].prison = true;
+                        affichage_pion_prison(id_joueur,joueur_i[id_joueur].prison);
+                        remplacement_position(sauvegarde_position ,joueur_i[id_joueur].position);
+                        joueur_i[id_joueur].ancienne_position = 7;
+                        joueur_i[id_joueur].position = 7;
+                        usleep(300000);
                         break;
 
                     case 14:

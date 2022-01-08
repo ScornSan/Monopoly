@@ -55,7 +55,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     while (terrain[i][j].nb_maison >= 1)
                     {
                         terrain[i][j].nb_maison--;
-                        banque_de_carte[0] = 1;
+                        banque_de_carte[0]++;
                         pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + (terrain[i][j].prix_maison/2);
                     }
                     carre_noir();

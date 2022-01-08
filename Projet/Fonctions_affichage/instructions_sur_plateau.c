@@ -69,3 +69,21 @@ void carre_noir()
         }
     Color(15,0);
 }
+
+void effacement_noir(int nb_lignes, int nb_colonnes, int depart_lig, int depart_col)
+{
+    Color(0,0);
+    //int lig = depart_lig;
+    for(int j = 0; j < nb_lignes ; j++)
+        {
+            //int col = depart_col;
+            for (int j = 0; j< nb_colonnes; j++)
+                {
+                    gotoligcol(depart_lig, depart_col);
+                    printf(" " );
+                    depart_col++;
+                }
+            depart_lig++;
+        }
+    Color(15,0);
+}

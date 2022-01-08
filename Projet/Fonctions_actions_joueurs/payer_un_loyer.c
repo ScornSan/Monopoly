@@ -5,7 +5,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
 {
     // terrain[a][b].possession_carte est l'indice du joueur qui possède la carte
     carre_noir();
-    if ( pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_loyer )
+    if (pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_loyer)
     {
         longueur = strlen(pion_joueur[id_joueurs_v1].pseudo) + strlen(terrain[a][b].nom) + strlen(pion_joueur[terrain[a][b].possession_carte].pseudo) + 36;
         placement_script(longueur,2);
@@ -21,9 +21,13 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
     }
     else
     {
+        int nb_cartes;
+        int compteur = 0;
         char manque_argent[50] = " Vous n avez pas assez d argent pour payez le loyer";
         char phrase_prop_vente[50] = " Appuyez sur 'v' pour vendre une propriete";
         char phrase_prop_hypotheque[50] = " Appuyez sur 'h' pour hypothequer une propriete";
+        char possession_restant[50] = ", il vous reste la proprietete";
+        char possession_restant_nul[50] = ", il ne vous reste aucune proprietete";
         placement_script(strlen(manque_argent), 0);
         printf("%s", manque_argent);
         placement_script(strlen(phrase_prop_vente), 1);
@@ -31,7 +35,35 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
         placement_script(strlen(phrase_prop_hypotheque), 2);
         printf("%s", phrase_prop_hypotheque);
         int key = getch();
-
+        for (int i = 0; i < GROUPES_CARTES; i++)
+        {
+            if (i % 2 == 0 || i == 1)
+            {
+                nb_cartes = 2;
+            }
+            else
+            {
+                nb_cartes = 3;
+            }
+            for (int j = 0; j < nb_cartes; j++)
+            {
+                if (terrain[i][j].possession_carte == id_joueurs_v1)
+                {
+                    carre_noir();
+                    placement_script(strlen(possession_restant_nul), compteur);
+                    printf("%s%s",  pion_joueur[id_joueurs_v1].pseudo, possession_restant);
+                    compteur++;
+                }
+                else
+                {
+                    carre_noir();
+                    placement_script(strlen(possession_restant_nul), 0);
+                    printf("%s%s",  pion_joueur[id_joueurs_v1].pseudo, possession_restant_nul);
+                    pion_joueur[id_joueurs_v1].argent = 0;
+                    break;
+                }
+            }
+        }
         if (key == 'h' || key == 'H')
         {
             carre_noir();
@@ -103,7 +135,7 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
+                affichage_carte(repere, id_joueurs_v1,terrain, a, b);
                 nb++;
 
             }
@@ -119,7 +151,7 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,terrain[a][b].nb_maison);
-                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
+                affichage_carte(repere, id_joueurs_v1,terrain, a, b);
                 nb--;
             }
             char nb_maison[50] = "Nombre de maison ajoutees :";
@@ -182,7 +214,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
                 Color(repere[2],repere[3]);
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_hotel(repere);
-                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
+                affichage_carte(repere, id_joueurs_v1,terrain, a, b);
                 nb++;
 
             }
@@ -196,7 +228,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
                 banque_de_carte[1] = banque_de_carte[1] + 1;
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,valeur_tampon);
-                affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);
+                affichage_carte(repere, id_joueurs_v1,terrain, a, b);
                 nb--;
             }
             Color(15,0);
@@ -209,7 +241,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
         gotoligcol(35,65);
         Color(0,15);
         printf("%d %d", banque_de_carte[0], banque_de_carte[1]);
-        sleep(2);
+        sleep(1);
     }
     else if (getch() == TOUCHE_ESPACE)
     {

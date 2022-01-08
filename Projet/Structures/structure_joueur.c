@@ -35,18 +35,34 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
     // remplissage
     for (int x = 0; x < nombre_joueurs; x++)
     {
+        do
+        {
+            effacement_noir(1, 100, n, 72);
+            Color(15,0);
+            gotoligcol(n,72);
+            printf("Joueur %d, entrez votre pseudo : ", x + 1);
+            Color(12,0);
+            fflush(stdin);
+            gets(&joueur[x].pseudo);
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE)
+            {
+                effacement_noir(1, 100, n, 72);
+                Color(15,0);
+                gotoligcol(n,72);
+                printf("Joueur %d, entrez votre pseudo : ", x + 1);
+                Color(12,0);
+                fflush(stdin);
+                gets(&joueur[x].pseudo);
+            }
+        }
+        while (strlen(&joueur[x].pseudo) > 12 || strlen(&joueur[x].pseudo) <= 0);
 
-        Color(15,0);
-        gotoligcol(n,72);
-        printf("Joueur %d, entrez votre pseudo : ", x + 1);
-        Color(12,0);
-        fflush(stdin);
-        gets(&joueur[x].pseudo);
         joueur[x].argent = 1500;
         joueur[x].position = 0;
         joueur[x].prison = false;
         identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
         n = n+1;
     }
+
     system("cls");
 }

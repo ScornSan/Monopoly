@@ -22,6 +22,11 @@ void partie_en_cours()
     remplissages_cartes(tab); // on remplit les cartes terrains
     remplissage_chance_commu(tab_c);
     melangeurCarte(tab_c);
+    int tour_prison[nombre_de_joueurs];
+    tour_prison[0] = 0;
+    tour_prison[1] = 0;
+    tour_prison[2] = 0;
+    tour_prison[3] = 0;
     affichage_plateau();
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
@@ -29,8 +34,8 @@ void partie_en_cours()
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
-            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte);
-            if (fin_de_partie < 0)
+            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison);
+            if (fin_de_partie <= 0)
             {
                 printf("%s est elimine", joueur[i].pseudo);
                 break; // on sort de la boucle et on fait la fin du jeu
