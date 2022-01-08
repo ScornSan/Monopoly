@@ -135,14 +135,21 @@ void affichage_carte(int repere[], int id_joueur, t_carte terrain[][3], int a , 
     gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +5, colonne + ( id_joueur * 19)+1);
     if (terrain[a][b].hypotheque == true)
     {
-        printf("Prix Rachat: %d$",terrain[a][b].prix_rachat);
+        printf("Prix Rachat:%d$",terrain[a][b].prix_rachat);
     }
     else
     {
         printf("Hypotheque: %d$",terrain[a][b].val_hypotheque);
     }
     gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +7, colonne + ( id_joueur * 19)+1);
-    printf("Maisons: %d",terrain[a][b].nb_maison);
+    if (terrain[a][b].nb_maison < 5)
+    {
+        printf("Maisons: %d",terrain[a][b].nb_maison);
+    }
+    else
+    {
+        printf("Hotel : 1");
+    }
     gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +9, colonne + ( id_joueur * 19)+1);
     printf("Prix Maison:%d$",terrain[a][b].prix_maison);
     gotoligcol(8 +( terrain[a][b].id_carte[id_joueur] * 14 - 10) +11, colonne + ( id_joueur * 19)+1);

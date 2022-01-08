@@ -14,8 +14,8 @@ void placement_script(int longueur, int a)
 
 void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], int a , int b )
 {
-    int colonne =  106 + (18/2) - ((longueur)/2);
-    int ligne = (-1 +(terrain[a][b].id_carte[id_joueur] * 14)) ;
+    int colonne =  115 - longueur/2 - 1.5;
+    int ligne = ( -1 +(terrain[a][b].id_carte[id_joueur] * 14)) ;
     gotoligcol(ligne, colonne + (id_joueur * 19)+1);
 }
 

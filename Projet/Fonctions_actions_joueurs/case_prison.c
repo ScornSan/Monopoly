@@ -1,6 +1,6 @@
 #include "../Structures/structure_joueur.h"
 
-void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, int de2, int nb_tour)
+void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, int de2, int nb_tour[])
 {
     if (de1 == de2)
     {
@@ -16,7 +16,7 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
         usleep(500000);
     }
     // else if (carte sortie de prison)
-    else if (joueur[id_joueur].argent > 50 && nb_tour < 3)
+    else if (joueur[id_joueur].argent > 50 && nb_tour[id_joueur] < 3)
     {
         carre_noir();
         char phrase_payement_prison[100] = "Voulez-vous payez 50$ pour sortir de prison ?";
@@ -37,16 +37,15 @@ void case_prison(t_joueur joueur[], int nombre_joueurs, int id_joueur, int de1, 
             joueur[id_joueur].prison = false;
         }
     }
-    else if (joueur[id_joueur].argent > 50 && nb_tour == 3)
+    else if (joueur[id_joueur].argent > 50 && nb_tour[id_joueur] == 3)
     {
         carre_noir();
         char troisieme_tour[100] = "C'est votre troisieme tour en prison, vous sortez en payant 50$"; /// prblm pk il paye 50 en sortant alors qu'il pouvait deja les payer avant pas de sens
         placement_script(strlen(troisieme_tour),0);
         printf("%s",troisieme_tour);
-        ///printf("Vous avez fait %d et %d !", de1, de2);
-        joueur[id_joueur].position = joueur[id_joueur].position + de1 + de2;
+        nb_tour[id_joueur] = 0;
+        sleep(1);
         joueur[id_joueur].prison = false;
-        joueur[id_joueur].tour_prison = 0;
     }
     else if (joueur[id_joueur].argent < 50)
     {

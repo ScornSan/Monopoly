@@ -23,7 +23,6 @@ typedef struct players
     int position;
     int ancienne_position;
     bool prison;
-    int tour_prison;
 
 }t_joueur;
 

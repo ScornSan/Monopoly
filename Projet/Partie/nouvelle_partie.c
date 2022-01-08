@@ -7,6 +7,11 @@ void partie_en_cours()
     int tab_c[16]; // tzbleau de cartes chances et communauté
     t_carte tab[GROUPES_CARTES][3]; // initialisation structures de cartes de proprietes
     int fin_de_partie;
+
+    int banque_de_carte[2];
+    banque_de_carte[0] = 32;
+    banque_de_carte[1] = 12;
+
     int sauvegarde_position[2];
     int nombre_de_joueurs = demander_nb_joueur();
     int identifiant_carte[nombre_de_joueurs];
@@ -17,6 +22,11 @@ void partie_en_cours()
     remplissages_cartes(tab); // on remplit les cartes terrains
     remplissage_chance_commu(tab_c);
     melangeurCarte(tab_c);
+    int tour_prison[nombre_de_joueurs];
+    tour_prison[0] = 0;
+    tour_prison[1] = 0;
+    tour_prison[2] = 0;
+    tour_prison[3] = 0;
     affichage_plateau();
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
@@ -24,7 +34,7 @@ void partie_en_cours()
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
         {
-            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position);
+            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison);
             if (fin_de_partie < 0)
             {
                 printf("%s est elimine", joueur[i].pseudo);

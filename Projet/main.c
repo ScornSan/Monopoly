@@ -6,28 +6,34 @@ void affichage_Menu()
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
-    int choix = 0;
+    char choix[150]; // On prévoit que l'utilisateur puisse taper "1z" par exemple    int repere[4];
     int choixsauv = 0;
+    int repere[4];
     int choixcharge = 0;
     int nombre_de_joueurs = 0;
     t_joueur joueur_x[nombre_de_joueurs];
     t_carte cartes;
-    affichage_choix();
-    // SAISIE DU CHOIX
-    // Blindage de la saisie
-     while (choix < 1 || choix > 6)
-     {
+    /// AJOUTER BLINDAGE CLEMENT
+
+    do
+    {
         system("cls");
         affichage_choix();
         gotoligcol(16,70);
         printf("Entrez votre selection : ");
-        fflush(stdin);
-        scanf("%d", &choix);
-     }
-     system("cls");
+        fgets(choix,sizeof(choix),stdin);
+        char *p=strchr(choix,'\n');
+        if(p)
+            *p=0;
+    }
+    while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6);
 
-     switch(choix)
-     {
+    system("cls");
+
+    do
+    {
+        switch(*choix-'0')
+        {
         case 1 :
 
             system("cls");
@@ -48,7 +54,7 @@ void affichage_Menu()
                 if (nombre_de_joueurs != 0)
                 {
                     fflush(stdin);
-                // Ajout (Clément)
+                    // Ajout (Clément)
                     printf("Voulez-vous sauvegarder votre partie ?\n");
                     printf("[1] Emplacement 1 ?\n");
                     printf("[2] Emplacement 2 ?\n");
@@ -74,7 +80,7 @@ void affichage_Menu()
                     Color(12, 0);
                     printf("Appuyer sur [M] pour revenir au menu ");
 
-                    }
+                }
 
             }
             break;
@@ -129,27 +135,30 @@ void affichage_Menu()
             break;
 
         case 5 :
-                fflush(stdin);
-                Color(12, 0);
-                printf("Appuyer sur [M] pour revenir au menu ");
-                Color(15, 0);
-                gotoligcol(10,70);
-                printf("Programmeurs de ce jeu : \n");
-                gotoligcol(12,70);
-                printf("Yohan MARCEL \n");
-                gotoligcol(13,70);
-                printf("Sarah BLIN \n");
-                gotoligcol(14,70);
-                printf("Clement POMPEI \n");
-                gotoligcol(15,70);
-                printf("Benjamin GENDRY \n");
-                Color(10, 0);
-                break;
+            fflush(stdin);
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
+            Color(15, 0);
+            gotoligcol(10,70);
+            printf("Programmeurs de ce jeu : \n");
+            gotoligcol(12,70);
+            printf("Yohan MARCEL \n");
+            gotoligcol(13,70);
+            printf("Sarah BLIN \n");
+            gotoligcol(14,70);
+            printf("Clement POMPEI \n");
+            gotoligcol(15,70);
+            printf("Benjamin GENDRY \n");
+            Color(10, 0);
+            break;
 
-         case 6 :
-                exit(0);
+        case 6 :
+            exit(0);
         }
-    echap();
+        echap();
+    }
+    while(1);
+
 }
 
 int main()
