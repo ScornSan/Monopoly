@@ -31,7 +31,6 @@ void affichage_plateau()
     char debut[100] = "Appuyer sur une touche pour commencer";
     placement_script(strlen(debut), 0);
     printf("%s", debut);
-    echap();
 
 }
 /*
