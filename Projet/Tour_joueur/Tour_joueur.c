@@ -175,6 +175,10 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
             vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
         }
+        else if ((key == 'm' || key == 'M' ) && nb_lancer == 0)
+        {
+            echap();
+        }
     }
     return joueur_i[id_joueur].argent;
 }

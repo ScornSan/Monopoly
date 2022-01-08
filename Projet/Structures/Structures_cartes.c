@@ -55,24 +55,24 @@ void remplissages_cartes(t_carte carte[][3])
     }
     /// On va maintenant définir en dur le nombre de chaque terrain
     //chaine = p_carte;
-    carte[0][0].nom = "Maison 1.1";
-    carte[0][1].nom = "Maison 1.2";
-    carte[1][0].nom = "Maison 2.1";
-    carte[1][1].nom = "Maison 2.2";
-    carte[2][0].nom = "Maison 3.1";
-    carte[2][1].nom = "Maison 3.2";
-    carte[3][0].nom = "Maison 4.1";
-    carte[3][1].nom = "Maison 4.2";
-    carte[3][2].nom = "Maison 4.3";
-    carte[4][0].nom = "Maison 5.1";
-    carte[4][1].nom = "Maison 5.2";
-    carte[5][0].nom = "Maison 6.1";
-    carte[5][1].nom = "Maison 6.2";
-    carte[5][2].nom = "Maison 6.3";
-    carte[6][0].nom = "Maison 7.1";
-    carte[6][1].nom = "Maison 7.2";
-    carte[7][0].nom = "Maison 8.1";
-    carte[7][1].nom = "Maison 8.2";
-    carte[7][2].nom = "Maison 8.3";
+    carte[0][0].nom = "Eiffel 1";
+    carte[0][1].nom = "Ile aux cygnes";
+    carte[1][0].nom = "Eiffel 2";
+    carte[1][1].nom = "Bir hakeim";
+    carte[2][0].nom = "Eiffel 4";
+    carte[2][1].nom = "Eiffel cafe";
+    carte[3][0].nom = "Eiffel 3";
+    carte[3][1].nom = "Beaugrenelle";
+    carte[3][2].nom = "Gaumont Pathe";
+    carte[4][0].nom = "Monoprix";
+    carte[4][1].nom = "Auchan";
+    carte[5][0].nom = "Boulangerie";
+    carte[5][1].nom = "Chipotle";
+    carte[5][2].nom = "Marche Grenelle";
+    carte[6][0].nom = "Coccimarket";
+    carte[6][1].nom = "Macdo";
+    carte[7][0].nom = "Duplex";
+    carte[7][1].nom = "Pharmacie";
+    carte[7][2].nom = "Fnac";
 }
 

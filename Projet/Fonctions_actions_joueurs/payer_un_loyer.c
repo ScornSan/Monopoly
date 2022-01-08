@@ -91,12 +91,12 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
         int nb = 0; //
         while (fleche1 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
+            /// On ajoute des maisons
             if (terrain[a][b].nb_maison < 4 && (fleche1 == 'z' || fleche1 == 'Z') && nb < 4) // z sert à augmenter de 1 le nombre //
             {
-                banque_de_carte[0]++;
+                banque_de_carte[0]--;
                 terrain[a][b].nb_maison++;
-                banque_de_carte[0] = banque_de_carte[0] -1;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer + 200;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer + 150;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_maison; // retirer argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
@@ -107,12 +107,12 @@ void ajout_maisons(int repere[4], t_joueur pion_joueur[], int max_joueurs, int i
                 nb++;
 
             }
+            /// On enleve des maisons
             else if ((fleche1 == 's' || fleche1 == 'S') && terrain[a][b].nb_maison > 0 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire  //
             {
-                banque_de_carte[0]--;
+                banque_de_carte[0]++;
                 terrain[a][b].nb_maison--;
-                banque_de_carte[0] = banque_de_carte[0] +1;
-                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer - 200;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer - 150;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent + terrain[a][b].prix_maison; // ajout argent
                 usleep(50000);
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
@@ -156,7 +156,6 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
 
     if (getch() == TOUCHE_ENTER)
     {
-        /// meme beug que maison a regler
         fflush(stdin);
         carre_noir();
         char remplacer[100] = "Appuyez sur z pour ajouter un hotel ou sur s pour annuler et continuer ";
@@ -171,10 +170,12 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
         int nb = 0; //
         while (fleche3 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
+            /// On ajoute un hotel, retire 4 maisons
             if ((fleche3 == 'z' || fleche3 == 'Z') && nb < 1)
             {
-                terrain[a][b].nb_maison = 0;
-                banque_de_carte[0] = banque_de_carte[0] -4;
+                terrain[a][b].nb_maison = 5;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer + 200;
+                banque_de_carte[0] = banque_de_carte[0] + 4;
                 banque_de_carte[1] = banque_de_carte[1] - 1;
                 pion_joueur[id_joueurs_v1].argent = pion_joueur[id_joueurs_v1].argent - terrain[a][b].prix_maison ; // ajout argent
                 affichage_argent_joueurs(pion_joueur, id_joueurs_v1);
@@ -185,12 +186,14 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
                 nb++;
 
             }
+            /// On retire un hotel, rajoute 4 maisons
             else if ((fleche3 == 's' || fleche3 == 'S')&& nb > 0)
             {
-                terrain[a][b].nb_maison = 4; // PROBLEME C PAS CA QUI BOUGE
+                terrain[a][b].nb_maison = 4;
+                terrain[a][b].prix_loyer = terrain[a][b].prix_loyer - 200;
                 Color(repere[2],repere[3]);
-                banque_de_carte[0] = banque_de_carte[0] +4;
-                banque_de_carte[1] = banque_de_carte[1] +1;
+                banque_de_carte[0] = banque_de_carte[0] - 4;
+                banque_de_carte[1] = banque_de_carte[1] + 1;
                 carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
                 affichage_maisons(repere,valeur_tampon);
                 affichage_carte(repere, id_joueurs_v1 ,terrain, a , b);

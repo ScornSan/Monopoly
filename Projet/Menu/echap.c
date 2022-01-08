@@ -5,10 +5,6 @@
 
 void echap()
 {
-    int key = getch();
-    while(key == 'M' || key == 'm')
-    {
         system("cls");
         affichage_Menu();
-    }
 }
