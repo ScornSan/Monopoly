@@ -60,7 +60,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                 tour_prison[id_joueur]++;
                 if (joueur_i[id_joueur].prison == true)
                 {
-                    carre_noir();
+                     carre_noir();
                     char chaine[100] = ", vous etes deja en prison";
                     int longueur = (strlen(joueur_i[id_joueur].pseudo)+ strlen(chaine));
                     placement_script(longueur, 0);
@@ -68,9 +68,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     printf(" %d", tour_prison[id_joueur]);
                     sleep(1);
                     case_prison(joueur_i, nombre_joueurs, id_joueur, de1, de2, tour_prison); // la fonction s'active s'il est deja en prison
-                    break;
                 }
-
                 else // si c'est la premiere fois qu'il arrive en prison
                 {
                     joueur_i[id_joueur].prison = true;
@@ -83,8 +81,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     Color(id_joueur + 9, 0);
                     placement_script(longueur, 0);
                     printf("%s%s", joueur_i[id_joueur].pseudo, phrase_prison);
-                    usleep(5000000);
-                    break;
+                    usleep(500000);
                 }
             }
             else if (nb_lancer < 3 && joueur_i[id_joueur].prison == false)
@@ -138,7 +135,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                         break;
 
                     case 21:
-                        carre_noir();
+                       carre_noir();
                         longueur = strlen(phrase_prison) + strlen(joueur_i[id_joueur].pseudo);
                         placement_script(longueur,2);
                         printf("%s%s",joueur_i[id_joueur].pseudo, phrase_prison);
@@ -148,9 +145,6 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                         joueur_i[id_joueur].ancienne_position = 7;
                         joueur_i[id_joueur].position = 7;
                         usleep(300000);
-
-                    break;
-
                         break;
 
                     case 14:

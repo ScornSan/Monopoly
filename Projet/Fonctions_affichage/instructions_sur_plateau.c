@@ -1,5 +1,6 @@
 #include "../Affichage_plateau/affichage_plateau.h"
 #include "../Structures/structure_joueur.h"
+#include "affichage.h"
 
 void placement_script(int longueur, int a)
 {
@@ -19,6 +20,49 @@ void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], in
     gotoligcol(ligne, colonne + (id_joueur * 19)+1);
 }
 
+void affichage_prix_terrain(int repere[], t_carte terrain[][3])
+{
+    Color(0,15);
+    int nb_cartes;
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            liaison_memoire_affichage(repere, i, j);
+            if (terrain[i][j].hypotheque == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                printf("Hypothequee");
+            }
+            else if (terrain[i][j].prop_achete == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +2);
+                printf("ACHETE");
+            }
+            else
+            {
+                if (terrain[i][j].prix_achat < 100)
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +4);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+                else
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +3);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+            }
+        }
+    }
+}
 
 void connaissance_position_curseur(int tab[])
 {
@@ -66,6 +110,24 @@ void carre_noir()
                     col++;
                 }
             lig++;
+        }
+    Color(15,0);
+}
+
+void effacement_noir(int nb_lignes, int nb_colonnes, int depart_lig, int depart_col)
+{
+    Color(0,0);
+    //int lig = depart_lig;
+    for(int j = 0; j < nb_lignes ; j++)
+        {
+            //int col = depart_col;
+            for (int j = 0; j< nb_colonnes; j++)
+                {
+                    gotoligcol(depart_lig, depart_col);
+                    printf(" " );
+                    depart_col++;
+                }
+            depart_lig++;
         }
     Color(15,0);
 }

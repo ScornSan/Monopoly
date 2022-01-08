@@ -55,7 +55,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     while (terrain[i][j].nb_maison >= 1)
                     {
                         terrain[i][j].nb_maison--;
-                        banque_de_carte[0] = 1;
+                        banque_de_carte[0]++;
                         pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + (terrain[i][j].prix_maison/2);
                     }
                     carre_noir();
@@ -72,6 +72,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     placement_script(longueur,3);
                     printf("%s", phrase_perception_loyer);
                     terrain[i][j].hypotheque =  true;
+                     affichage_prix_terrain(repere, terrain);
                     affichage_carte(repere, id_joueur, terrain, i, j);
                     usleep(3000000);
                     break;
@@ -93,7 +94,6 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                 printf("%d ", banque_de_carte[0]);
                 sleep(2);
             }
-
         }
     }
 

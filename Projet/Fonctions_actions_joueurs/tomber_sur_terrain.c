@@ -23,6 +23,7 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
             pion_joueur[id_joueurs].argent = pion_joueur[id_joueurs].argent - terrain[a][b].prix_achat;
             affichage_carte(repere, id_joueurs, terrain, a, b, terrain[a][b].hypotheque);
             affichage_argent_joueurs(pion_joueur, id_joueurs);
+            affichage_prix_terrain(repere, terrain);
         }
     }
     else if (terrain[a][b].prop_achete = true && terrain[a][b].hypotheque ==  false) // paiement du loyer car propriété possedé ou faire une maison / hotel
