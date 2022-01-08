@@ -173,7 +173,7 @@ void ajout_hotel(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_
         int nb = 0; //
         while (fleche3 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
         {
-            if ((fleche3 == 'z' || fleche3 == 'Z') && nb < 1 && pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_maison && terrain[a][b].nb_maison = 4)
+            if ((fleche3 == 'z' || fleche3 == 'Z') && nb < 1 && pion_joueur[id_joueurs_v1].argent > terrain[a][b].prix_maison )
             {
                 terrain[a][b].nb_maison = 0;
                 banque_de_carte[0] = banque_de_carte[0] - 4;

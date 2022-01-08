@@ -3,6 +3,7 @@
 
 int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[])
 {
+    srand(time(NULL));
     int longueur;
     int longueur_2;
     int de1, de2;
@@ -19,9 +20,15 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     char phrase_chance_2[70] = "Appuyez sur ESPACE pour piocher une carte chance";
     /// On demande au joueur les autres actions qu'il veut effectuer avant de lancer les dés et commencer le tour
 
+    int y;
+    y = (rand()%(nombre_joueurs - 0))+ 0;
+    id_joueur = y;
+
+
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
+
         affichage_argent_joueurs(joueur_i,id_joueur);
         fflush(stdin);
         if (nb_lancer == 0)
