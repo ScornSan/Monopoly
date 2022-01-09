@@ -1,5 +1,6 @@
 #include "../Affichage_plateau/affichage_plateau.h"
 #include "../Structures/structure_joueur.h"
+#include "affichage.h"
 
 void placement_script(int longueur, int a)
 {
@@ -12,24 +13,118 @@ void placement_script(int longueur, int a)
     gotoligcol(ligne + a,colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
 }
 
+void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], int a , int b )
+{
+    int colonne =  115 - longueur/2 - 1.5;
+    int ligne = ( -1 +(terrain[a][b].id_carte[id_joueur] * 14)) ;
+    gotoligcol(ligne, colonne + (id_joueur * 19)+1);
+}
 
 
-/*void connaissance_position_curseur()
+void affichage_prix_terrain(int repere[], t_carte terrain[][3])
+{
+    Color(0,15);
+    int nb_cartes;
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            liaison_memoire_affichage(repere, i, j);
+            if (terrain[i][j].hypotheque == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                Color(0,15);
+                printf("Hypothequee");
+            }
+            else if (terrain[i][j].prop_achete == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +2);
+                effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE -1);
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +2);
+                Color(0,15);
+                printf("ACHETE");
+            }
+            else
+            {
+                if (terrain[i][j].prix_achat < 100)
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +4);
+                    effacement_perso(15, 1, 10, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +4);
+                    Color(0,15);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+                else
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +3);
+                    effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +3);
+                    Color(0,15);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+            }
+        }
+    }
+}
+
+void affichage_nom_terrain(int repere[], t_carte terrain[][3])
+{
+    Color(0,15);
+    int nb_cartes;
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            liaison_memoire_affichage(repere, i, j);
+            if (terrain[i][j].hypotheque == true)
+            {
+                char nom[15];
+                nom[15]= terrain[i][j].nom;
+                longueur = strlen(nom);
+                gotoligcol(repere[0] + 1 , repere[1] + 6 - (longueur/2));
+                effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                Color(0,15);
+                printf("Hypothequee");
+            }
+
+            }
+        }
+}
+
+void connaissance_position_curseur(int tab[])
 {
     HANDLE win;
 
     CONSOLE_SCREEN_BUFFER_INFO coninfo;
 
-    printf ("\n\n\n\ABCDEF");
-
     GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 
-    int x = coninfo.dwCursorPosition.X;
-    int y = coninfo.dwCursorPosition.Y;
+    tab[1] = (coninfo.dwCursorPosition.X)-1;
+    tab[0] = coninfo.dwCursorPosition.Y;
 
-}*/
+}
 
-void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
+
+void position_choix(int longueur,int a, char chaine1[], char chaine2[], char chaine3[], char chaine4[])
 {
     //int x = coninfo.dwCursorPosition.X;
     //int y = coninfo.dwCursorPosition.Y;
@@ -41,7 +136,7 @@ void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], ch
     printf("-->[%s]",chaine3);
     colonne = 51+((longueur/4)-2);
     gotoligcol(ligne,colonne);
-    printf("%s"chaine2);
+    printf("%s",chaine2);
     gotoligcol(ligne+1,colonne-4);
     printf("-->[%s]",chaine4);
 }
@@ -65,48 +160,20 @@ void carre_noir()
     Color(15,0);
 }
 
-/*void affichage_carte(int ligne, int colonne, t_carte terrain[][3],int a , int b)
+void effacement_perso(int color, int nb_lignes, int nb_colonnes, int depart_lig, int depart_col)
 {
-    Color(0,7);
-    int lig = ligne;
-    for(int j = 0; j < 15 ; j++)
+    Color(0,color);
+    //int lig = depart_lig;
+    for(int j = 0; j < nb_lignes ; j++)
         {
-            int col = colonne;
-            for (int j = 0; j< 22; j++)
+            //int col = depart_col;
+            for (int j = 0; j< nb_colonnes; j++)
                 {
-                    gotoligcol(lig,col);
+                    gotoligcol(depart_lig, depart_col);
                     printf(" " );
-                    col++;
+                    depart_col++;
                 }
-            lig++;
+            depart_lig++;
         }
-    lig = ligne;
-    for(int j = 0; j < 2 ; j++)
-        {
-            int col = colonne +1;
-            for (int j = 0; j< 11; j++)
-                {
-                    gotoligcol(lig,col);
-                    printf("%c", 0x10);
-                    col = col+2;
-                }
-            col = colonne;
-            for (int j = 0; j< 11; j++)
-                {
-                    gotoligcol(lig,col);
-                    printf("%c", 0x11);
-                    col = col +2;
-                }
-            lig = lig + 14;
-        }
-        Color(0,7);
-        gotoligcol(ligne +2, colonne+6);
-        printf("%s\n",terrain[a][b].nom);
-        gotoligcol(ligne +4, colonne+1);
-        printf("Loyer : %d$\n",terrain[a][b].prix_loyer);
-        gotoligcol(ligne +6, colonne+1);
-        printf("Hypotheque : %d$\n",terrain[a][b].val_hypotheque);
-        gotoligcol(ligne +8, colonne+1);
-        printf("Maisons : %d\n",terrain[a][b].nb_maison);
-        Color(15,0);
-}*/
+    Color(15,0);
+}

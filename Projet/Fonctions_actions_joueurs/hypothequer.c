@@ -12,16 +12,16 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
     {
         char phrase_prop_hypotheque[100] = ", quelle propriete voulez vous hypotequer ?";
         longueur = strlen(phrase_prop_hypotheque) + strlen(pion_joueur[id_joueur].pseudo);
-        placement_script(longueur,5);
+        placement_script(longueur,6);
         printf("%s%s", pion_joueur[id_joueur].pseudo, phrase_prop_hypotheque);
         char phrase_maison_hypotheque[100] = "Si vous avez des maisons sur cette propriete,";
         char phrase_suite[100] = "elles seront automatiquement TOUTES revendues a moitie prix";
-        placement_script(strlen(phrase_maison_hypotheque),2);
+        placement_script(strlen(phrase_maison_hypotheque),3);
         printf("%s", phrase_maison_hypotheque, phrase_suite);
-        placement_script(strlen(phrase_suite),3);
+        placement_script(strlen(phrase_suite),4);
         printf("%s", phrase_suite);
         fflush(stdin);
-        gotoligcol(35,51);
+        gotoligcol(35,52);
         scanf("%d", &touche);
         if (touche >= identifiant_joueur_max[id_joueur] || touche <= 0)
         {
@@ -72,7 +72,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     placement_script(longueur,3);
                     printf("%s", phrase_perception_loyer);
                     terrain[i][j].hypotheque =  true;
-                     affichage_prix_terrain(repere, terrain);
+                    affichage_prix_terrain(repere, terrain);
                     affichage_carte(repere, id_joueur, terrain, i, j);
                     usleep(3000000);
                     break;
@@ -94,7 +94,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                 printf("%d ", banque_de_carte[0]);
                 sleep(2);
             }
+
         }
     }
-
 }

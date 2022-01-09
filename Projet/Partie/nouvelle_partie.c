@@ -29,6 +29,7 @@ void partie_en_cours()
     tour_prison[3] = 0;
     affichage_plateau();
     affichage_prix_terrain(repere, tab);
+    affichage_nom_terrain(repere, tab);
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
     while (nombre_de_joueurs != 1)

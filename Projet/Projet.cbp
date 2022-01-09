@@ -102,6 +102,9 @@
 		<Unit filename="Fonctions_actions_joueurs/payer_un_loyer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/rachat_terrain.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/tomber_sur_terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -128,6 +131,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Menu/nouvelle_partie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Partie/faillite.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
