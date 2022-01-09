@@ -1,7 +1,7 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b,  int id_carte[])
+void paiement_loyer(int repere[], t_joueur pion_joueur[], int max_joueurs, int id_joueurs_v1, t_carte terrain[][3], int a, int b,  int id_carte[])
 {
     // terrain[a][b].possession_carte est l'indice du joueur qui possède la carte
     carre_noir();
@@ -21,6 +21,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
     }
     else
     {
+        int dette = terrain[a][b].prix_loyer;
         int nb_cartes;
         int compteur = 0;
         char manque_argent[50] = " Vous n avez pas assez d argent pour payez le loyer";
@@ -81,7 +82,7 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
             int longueur = strlen(chaine) + strlen(pion_joueur[id_joueurs_v1].pseudo);
             placement_script(longueur,0);
             printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
-            hypothequer(pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte, repere);
+            //vente_maisons(pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte, repere);
         }
     }
 }

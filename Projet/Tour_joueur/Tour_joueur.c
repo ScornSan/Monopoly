@@ -166,23 +166,39 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
         }
         else if ((key == 'h' || key == 'H') && nb_lancer == 0)
         {
-            carre_noir();
-            char chaine[100] = " a demande une hypotheque / rachat !";
-            int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
-            placement_script(longueur,0);
-            printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            char chaine_rachat_hypo[75] = "Appuyez sur 'R' pour racheter ou sur 'H' pour hypothequer une propriete !";
-            longueur = strlen(chaine_rachat_hypo) ;
-            placement_script(longueur,1);
-            printf("%s", chaine_rachat_hypo);
-            key_h = getch();
-            if (key_h == 'r' || key_h == 'R')
+            gotoligcol(60, 60);
+            printf("%d", id_carte[id_joueur]);
+            if (id_carte[id_joueur] - 1 != 0)
             {
-                rachat_terrain(joueur_i, id_joueur, cartes_terrain, id_carte, banque_de_carte, repere);
+                carre_noir();
+                char chaine[100] = " a demande une hypotheque / rachat !";
+                int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
+                placement_script(longueur,0);
+                printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+                char chaine_rachat_hypo[75] = "Appuyez sur 'R' pour racheter ou sur 'H' pour hypothequer une propriete !";
+                longueur = strlen(chaine_rachat_hypo) ;
+                placement_script(longueur,1);
+                printf("%s", chaine_rachat_hypo);
+                key_h = getch();
+                if ((key_h == 'r' || key_h == 'R'))
+                {
+                    gotoligcol(60, 60);
+                    printf("%d", id_carte[id_joueur]);
+                    rachat_terrain(joueur_i, id_joueur, cartes_terrain, id_carte, banque_de_carte, repere);
+                }
+                else if(key_h == 'h' || key_h == 'H')
+                {
+                    hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere, banque_de_carte);
+                }
             }
-            else if(key_h == 'h' || key_h == 'H')
+            else
             {
-                hypothequer(joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, repere, banque_de_carte);
+                carre_noir();
+                char chaine[100] = ", vous ne possedez aucun terrain !";
+                int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
+                placement_script(longueur,0);
+                printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+                sleep(1);
             }
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)

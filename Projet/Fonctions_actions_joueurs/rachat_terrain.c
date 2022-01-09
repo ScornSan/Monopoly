@@ -16,7 +16,9 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
     longueur = strlen(phrase_vente_maison) + strlen(pion_joueur[id_joueur].pseudo);
     placement_script(longueur,0);
     printf("%s%s", pion_joueur[id_joueur].pseudo, phrase_vente_maison);
-    placement_script(17,2);
+    char chaine_choix[70] = "Appuyez sur 'Z' ou 'S' pour choisir la maison a racheter";
+    placement_script(strlen(chaine_choix),2);
+    printf("%s", chaine_choix);
     fflush(stdin);
     fleche = getch();
 
