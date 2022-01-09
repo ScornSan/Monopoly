@@ -11,7 +11,7 @@ void partie_en_cours()
     int banque_de_carte[2];
     banque_de_carte[0] = 32;
     banque_de_carte[1] = 12;
-
+    int i, j, nb_cartes;
     int sauvegarde_position[2];
     int nombre_de_joueurs = demander_nb_joueur();
     int identifiant_carte[nombre_de_joueurs];
@@ -28,6 +28,7 @@ void partie_en_cours()
     tour_prison[2] = 0;
     tour_prison[3] = 0;
     affichage_plateau();
+    affichage_prix_terrain(repere, tab);
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
     while (nombre_de_joueurs != 1)

@@ -7,7 +7,7 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
     placement_script(longueur,2);
     printf("%s %s",chaine, terrain[a][b].nom);
     usleep(300000);
-    if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs].argent > terrain[a][b].prix_achat)
+    if (terrain[a][b].prop_achete == false && pion_joueur[id_joueurs].argent > terrain[a][b].prix_achat && terrain[a][b].hypotheque == false)
     {
         char chaine[100] = "Voulez-vous acheter ce terrain?";
         longueur = strlen(chaine);
@@ -23,6 +23,7 @@ void identification_terrain(int repere[4], t_joueur pion_joueur[], int max_joueu
             pion_joueur[id_joueurs].argent = pion_joueur[id_joueurs].argent - terrain[a][b].prix_achat;
             affichage_carte(repere, id_joueurs, terrain, a, b, terrain[a][b].hypotheque);
             affichage_argent_joueurs(pion_joueur, id_joueurs);
+            affichage_prix_terrain(repere, terrain);
         }
     }
     else if (terrain[a][b].prop_achete = true && terrain[a][b].hypotheque ==  false) // paiement du loyer car propriété possedé ou faire une maison / hotel

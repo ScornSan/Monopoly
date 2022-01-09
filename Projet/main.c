@@ -158,7 +158,6 @@ void affichage_Menu()
         echap();
     }
     while(1);
-
 }
 
 int main()

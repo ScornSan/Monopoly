@@ -82,7 +82,6 @@ void paiement_loyer(int repere[4], t_joueur pion_joueur[], int max_joueurs, int 
             placement_script(longueur,0);
             printf("%s%s",pion_joueur[id_joueurs_v1].pseudo, chaine);
             hypothequer(pion_joueur, max_joueurs, id_joueurs_v1, terrain, id_carte, repere);
-
         }
     }
 }

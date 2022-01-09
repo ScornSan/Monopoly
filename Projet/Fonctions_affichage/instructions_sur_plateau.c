@@ -1,5 +1,6 @@
 #include "../Affichage_plateau/affichage_plateau.h"
 #include "../Structures/structure_joueur.h"
+#include "affichage.h"
 
 void placement_script(int longueur, int a)
 {
@@ -19,6 +20,61 @@ void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], in
     gotoligcol(ligne, colonne + (id_joueur * 19)+1);
 }
 
+void affichage_prix_terrain(int repere[], t_carte terrain[][3])
+{
+    Color(0,15);
+    int nb_cartes;
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            liaison_memoire_affichage(repere, i, j);
+            if (terrain[i][j].hypotheque == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE -1);
+                Color(0,15);
+                printf("Hypothequee");
+            }
+            else if (terrain[i][j].prop_achete == true)
+            {
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +2);
+                effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE -1);
+                gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +2);
+                Color(0,15);
+                printf("ACHETE");
+            }
+            else
+            {
+                if (terrain[i][j].prix_achat < 100)
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +4);
+                    effacement_perso(15, 1, 10, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +4);
+                    Color(0,15);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+                else
+                {
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +3);
+                    effacement_perso(15, 1, 11, repere[0] + AJUSTEMENT_LIGNE -1, repere[1] + AJUSTEMENT_COLONNE-1);
+                    gotoligcol(repere[0] + AJUSTEMENT_LIGNE -1 , repere[1] + AJUSTEMENT_COLONNE +3);
+                    Color(0,15);
+                    printf("%d$", terrain[i][j].prix_achat);
+                }
+            }
+        }
+    }
+}
 
 void connaissance_position_curseur(int tab[])
 {
@@ -34,7 +90,7 @@ void connaissance_position_curseur(int tab[])
 }
 
 
-void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
+void position_choix(int longueur,int a, char chaine1[], char chaine2[], char chaine3[], char chaine4[])
 {
     //int x = coninfo.dwCursorPosition.X;
     //int y = coninfo.dwCursorPosition.Y;
@@ -70,9 +126,9 @@ void carre_noir()
     Color(15,0);
 }
 
-void effacement_noir(int nb_lignes, int nb_colonnes, int depart_lig, int depart_col)
+void effacement_perso(int color, int nb_lignes, int nb_colonnes, int depart_lig, int depart_col)
 {
-    Color(0,0);
+    Color(0,color);
     //int lig = depart_lig;
     for(int j = 0; j < nb_lignes ; j++)
         {

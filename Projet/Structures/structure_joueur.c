@@ -37,7 +37,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
     {
         do
         {
-            effacement_noir(1, 100, n, 72);
+            effacement_perso(0, 1, 100, n, 72);
             Color(15,0);
             gotoligcol(n,72);
             printf("Joueur %d, entrez votre pseudo : ", x + 1);
@@ -46,7 +46,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
             gets(&joueur[x].pseudo);
             while (joueur[x].pseudo[0] == TOUCHE_ESPACE)
             {
-                effacement_noir(1, 100, n, 72);
+                effacement_perso(0, 1, 100, n, 72);
                 Color(15,0);
                 gotoligcol(n,72);
                 printf("Joueur %d, entrez votre pseudo : ", x + 1);

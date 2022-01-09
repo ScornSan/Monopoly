@@ -1118,7 +1118,7 @@
 1640900271 source:c:\repos\monopoly\projet\affichage_plateau\sepa_lignes.c
 	"affichage_plateau.h"
 
-1641542853 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\case_prison.c
+1641669542 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 
 1641314223 c:\repos\monopoly\projet\structures\structure_joueur.h
@@ -1128,11 +1128,11 @@
 	<stdbool.h>
 	<conio.h>
 
-1641545045 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1641671186 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 	"../Affichage_plateau/affichage_plateau.h"
 
-1641564731 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+1641669620 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640900271 c:\repos\monopoly\projet\fonctions_actions_joueurs\actions.h
@@ -1143,25 +1143,26 @@
 	<conio.h>
 	<stdbool.h>
 
-1641580514 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
+1641670965 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
 	"../Structures/structure_joueur.h"
 
-1641637146 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
-
-1641579678 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
-	"../Structures/structure_joueur.h"
-
-1641579423 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+1641670830 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641634499 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+1641670845 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1641670993 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1641724042 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
+	"affichage.h"
 
-1641636822 source:c:\repos\monopoly\projet\main.c
+1641719727 source:c:\repos\monopoly\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
@@ -1188,7 +1189,7 @@
 
 1640900271 c:\repos\monopoly\projet\menu\nouvelle_partie.h
 
-1641580945 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
+1641671112 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
@@ -1204,7 +1205,7 @@
 1640900271 source:c:\repos\monopoly\projet\sauvegardes\sauvegardeenplus.c
 	"../Structures/structure_joueur.h"
 
-1641636899 source:c:\repos\monopoly\projet\structures\structure_joueur.c
+1641724085 source:c:\repos\monopoly\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
 1641636568 source:c:\repos\monopoly\projet\structures\structures_cartes.c
@@ -1233,7 +1234,7 @@
 1641125343 source:c:\repos\monopoly\projet\pioche\remplissage.c
 	"bibli1.h"
 
-1641636354 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
+1641721839 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
@@ -1252,4 +1253,8 @@
 1641575371 source:c:\repos\monopoly\projet\fonctions_affichage\déclaration_position_cases.c
 	"affichage.h"
 	"../Structures/structure_joueur.h"
+
+1641724125 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\rachat_terrain.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
 

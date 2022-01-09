@@ -72,6 +72,7 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
                     placement_script(longueur,3);
                     printf("%s", phrase_perception_loyer);
                     terrain[i][j].hypotheque =  true;
+                    affichage_prix_terrain(repere, terrain);
                     affichage_carte(repere, id_joueur, terrain, i, j);
                     usleep(3000000);
                     break;
@@ -96,5 +97,4 @@ void hypothequer (t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_cart
 
         }
     }
-
 }
