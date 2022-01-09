@@ -1,13 +1,12 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void vente_maisons(int repere[4],t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[])
+void vente_maisons(int repere[], t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[], int banque_de_carte[])
 {
     int touche = 25; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int fleche2;
     int nb_cartes;
-
-    while (touche > identifiant_joueur_max[id_joueur]) // On entre dans le blindage
+    while (touche >= identifiant_joueur_max[id_joueur] || touche <= 0) // On entre dans le blindage
     {
         carre_noir();
         char phrase_vente_maison[100] = ", sur quel propriete voulez-vous vendre vos maisons ?";
@@ -15,80 +14,98 @@ void vente_maisons(int repere[4],t_joueur pion_joueur[], int max_joueurs, int id
         placement_script(longueur,0);
         printf("%s%s", pion_joueur[id_joueur].pseudo, phrase_vente_maison);
         placement_script(17,1);
-        printf("l id max est de %d", identifiant_joueur_max[id_joueur]);
         fflush(stdin);
         scanf("%d", &touche);
-    }                                                                                       // ajouter blindage
-    while (touche <= identifiant_joueur_max[id_joueur] && (touche > 0 && touche < 6))
-    {
-        for (int i = 0; i < GROUPES_CARTES; i++)
+        if (touche >= identifiant_joueur_max[id_joueur] || touche <= 0)
         {
-            if (i % 2 == 0 || i == 1)
-            {
-                nb_cartes = 2;
-            }
-            else
-            {
-                nb_cartes = 3;
-            }
-            for (int j = 0; j < nb_cartes; j++)
-            {
-                if (terrain[i][j].nb_maison >= 1 && touche == terrain[i][j].id_carte)
-                {
-                     char nombre_maison_avendre[100] = "Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre";
-                    placement_script(strlen(nombre_maison_avendre),3);
-                    printf("%s",nombre_maison_avendre);
-                    char signification_z_et_s[100] = "z pour augmenter et s pour diminuer";
-                    placement_script(strlen(signification_z_et_s),4);
-                    printf("%s", signification_z_et_s);
-                    int nb= 0;
-                    fflush(stdin);
-                    while (getch() != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
-                    {
-                        fleche2 = getch();
-                        int nb = 0;
-                        if ((fleche2 == 'z' || fleche2 == 'Z') && terrain[i][j].nb_maison < 4 && nb < 4) // z sert à augmenter de 1 le nombre
-                        {
-                            terrain[i][j].nb_maison--;
-                            pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent - terrain[i][j].prix_maison; // rajout argent
-                            affichage_argent_joueurs(pion_joueur, id_joueur);
-                            pion_joueur[terrain[i][j].possession_carte].argent = pion_joueur[terrain[i][j].possession_carte].argent + terrain[i][j].prix_maison;
-                            // affichage_argent_joueurs(pion_joueur[terrain[i][j].possession_carte], pion_joueur[id_joueur]);
-                            nb++;
-                            rafraichissement_nb_maison(id_joueur, terrain, identifiant_joueur_max, i, j);
-
-                        }
-                        else if ((fleche2 == 's' || fleche2 == 'S') && terrain[i][j].nb_maison > 0 && terrain[i][j].nb_maison < 4 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à faire) // s sert a diminuer de 1 le nombre de maisons à faire
-                        {
-                            terrain[i][j].nb_maison++;
-                            pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].prix_maison; // rajout argent
-                            affichage_argent_joueurs(pion_joueur, id_joueur);
-                            pion_joueur[terrain[i][j].possession_carte].argent = pion_joueur[terrain[i][j].possession_carte].argent - terrain[i][j].prix_maison;
-                            // affichage_argent_joueurs(pion_joueur[terrain[i][j].possession_carte], pion_joueur[id_joueur]);
-                            nb--;
-                            //affichage_carte(id_joueur,terrain,identifiant_joueur_max, i , j);
-                            rafraichissement_nb_maison(id_joueur, terrain, identifiant_joueur_max, i, j);
-
-                        }
-
-                         char nb_maison[100] = "Nombre de maison a vendre : ";
-                         longueur = strlen(nb_maison) + 1;
-                         placement_script(longueur, 6);
-                         printf("%s %d", nb_maison, nb);
-                    }
-                }
-                else
-                {
-                    char maison_sur_prop[100] = "Vous n'avez pas de maisons sur la propriete!";
-                    longueur = strlen(maison_sur_prop) + 10; // 10 correspond au nombre de caractere du nom d'une propriete
-                    placement_script(longueur,3);
-                    printf("%s%s",maison_sur_prop, terrain[i][j].nom);
-                    break;
-                }
-                break;
-            }
+            carre_noir();
+            Color(id_joueur + 1, 0);
+            char echec_vente[100] = "Vous ne possedez pas cette propriete";
+            placement_script(strlen(echec_vente), 0);
+            printf("%s", echec_vente);
+            usleep(3000000);
             break;
         }
-        break;
     }
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            // le joueur selectione sa propriete et elle contient des maisons
+            if (terrain[i][j].id_carte[id_joueur] == touche && terrain[i][j].possession_carte == id_joueur)
+            {
+                char nombre_maison_avendre[100] = "Appuyez sur 'z' ou 's' pour choisir le nombre de maisons a vendre";
+                placement_script(strlen(nombre_maison_avendre),3);
+                printf("%s",nombre_maison_avendre);
+                fflush(stdin);
+
+                int nb = 0;
+                fleche2 = getch();
+                while (fleche2 != TOUCHE_ENTER) // Tant que ENTER n'est pas pressé, on boucle à l'infini
+                {
+                    // On peut enlever des maisons si il en reste (> 0) et rester bloquer au minimum a 0
+                    if ((fleche2 == 'z' || fleche2 == 'Z') && terrain[i][j].nb_maison > 0) // z sert à augmenter de 1 le nombre de maison a vendre
+                    {
+                        terrain[i][j].nb_maison--;
+                        banque_de_carte[0] = banque_de_carte[0] +1;
+                        terrain[i][j].prix_loyer = terrain[i][j].prix_loyer - 200;
+                        pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent + terrain[i][j].prix_maison; // ajout argent
+                        usleep(50000);
+                        affichage_argent_joueurs(pion_joueur, id_joueur);
+                        Color(repere[2],repere[3]);
+                        carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
+                        affichage_maisons(repere,terrain[i][j].nb_maison);
+                        affichage_carte(repere, id_joueur, terrain, i , j);
+                        nb++;
+
+
+                    }
+                    // On peut enlever des maisons si il en reste (> 0) et rester bloquer au maximum a 4
+                    else if ((fleche2 == 's' || fleche2 == 's') && terrain[i][j].nb_maison < 4 && nb > 0) // s sert a diminuer de 1 le nombre de maisons à vendre
+                    {
+                        terrain[i][j].nb_maison++;
+                        banque_de_carte[0] = banque_de_carte[0] -1;
+                        terrain[i][j].prix_loyer = terrain[i][j].prix_loyer + 200;
+                        pion_joueur[id_joueur].argent = pion_joueur[id_joueur].argent - terrain[i][j].prix_maison; // retirer argent
+                        usleep(50000);
+                        affichage_argent_joueurs(pion_joueur, id_joueur);
+                        Color(repere[2],repere[3]);
+                        carre_couleur(repere[0]+AJUSTEMENT_LIGNE,repere[1]+ AJUSTEMENT_COLONNE);
+                        affichage_maisons(repere, terrain[i][j].nb_maison);
+                        affichage_carte(repere, id_joueur, terrain, i , j);
+                        nb--;
+                    }
+
+                    char nb_maison[100] = "Nombre de maison vendues :";
+                    longueur = strlen(nb_maison);
+                    Color(15,0);
+                    placement_script(longueur, 6);
+                    printf("%s %d", nb_maison, nb);
+                    fleche2 = getch();    // ajout du compteur fait
+                }
+            }
+            /*else
+            {
+                carre_noir();
+                Color(id_joueur + 1, 0);
+                char echec_vente2[100] = ", vous ne possedez aucune maison sur cete propriete !";
+                placement_script(strlen(echec_vente2), 0);
+                printf("%s%s", pion_joueur[id_joueur].pseudo, echec_vente2);
+                sleep(2);
+                break;
+            }*/
+        }
+    }
+    gotoligcol(37,65);
+        Color(0,15);
+        printf("%d     %d", banque_de_carte[0], banque_de_carte[1]);
+        sleep(2);
 }

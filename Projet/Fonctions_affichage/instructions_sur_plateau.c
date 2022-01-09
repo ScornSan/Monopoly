@@ -12,19 +12,27 @@ void placement_script(int longueur, int a)
     gotoligcol(ligne + a,colonne);    /// place le curseur pour que le texte en sortie de fonction s'affiche au bon endroit
 }
 
+void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], int a , int b )
+{
+    int colonne =  115 - longueur/2 - 1.5;
+    int ligne = ( -1 +(terrain[a][b].id_carte[id_joueur] * 14)) ;
+    gotoligcol(ligne, colonne + (id_joueur * 19)+1);
+}
 
 
-void connaissance_position_curseur(int tab[2])
+void connaissance_position_curseur(int tab[])
 {
     HANDLE win;
 
     CONSOLE_SCREEN_BUFFER_INFO coninfo;
+
     GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
 
+    tab[1] = (coninfo.dwCursorPosition.X)-1;
     tab[0] = coninfo.dwCursorPosition.Y;
-    tab[1] = coninfo.dwCursorPosition.X -1;
 
 }
+
 
 void position_choix(int longueur,int a, char chaine1[100], char chaine2[100], char chaine3[100], char chaine4[100])
 {
@@ -61,4 +69,3 @@ void carre_noir()
         }
     Color(15,0);
 }
-

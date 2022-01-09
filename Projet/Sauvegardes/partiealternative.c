@@ -1,10 +1,12 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void partie_en_cours()
+// Ce sousprog se lance après le lancement d'une charge de partie !
+
+void partiealternative(int nombre_de_joueurs, t_joueur joueur[], t_carte cartes)
 {
     int repere[4]; // tableau qui configure les lignes, colonnes, couleur texte et couleur du fond
-    int tab_c[16]; // tzbleau de cartes chances et communautÃ©
+    int tab_c[16]; // tzbleau de cartes chances et communauté
     t_carte tab[GROUPES_CARTES][3]; // initialisation structures de cartes de proprietes
     int fin_de_partie;
 
@@ -13,12 +15,9 @@ void partie_en_cours()
     banque_de_carte[1] = 12;
 
     int sauvegarde_position[2];
-    int nombre_de_joueurs = demander_nb_joueur();
     int identifiant_carte[nombre_de_joueurs];
     int card_chance = 0; // va venir piocher la premiere carte chance
     int card_commu = 0; // va venir piocher la premiere carte commmu
-    t_joueur joueur[nombre_de_joueurs]; // on crÃ©e un tableau de structures de joueurs, de taille du nombre demandï¿½
-    creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on crï¿½e les structures joueurs
     remplissages_cartes(tab); // on remplit les cartes terrains
     remplissage_chance_commu(tab_c);
     melangeurCarte(tab_c);
@@ -30,6 +29,7 @@ void partie_en_cours()
     affichage_plateau();
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
     int loto = 0;
+
     while (nombre_de_joueurs != 1)
     {
         for (int i = 0; i < nombre_de_joueurs; i++)
@@ -43,5 +43,5 @@ void partie_en_cours()
         }
     }
     printf("fin de jeu");
-    //deplacement_joueur();*/
+
 }

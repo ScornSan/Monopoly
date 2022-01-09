@@ -1,9 +1,9 @@
 #include "bibli1.h"
 
-void remplissage(int tab[],int taille)
+void remplissage_chance_commu(int tab[])
 {
     int i;
-    for(i=0;i<taille;i++)
+    for(i=0;i<TAILLE_CARTES;i++)
         tab[i] = i;
 }
 

@@ -1,7 +1,7 @@
 #include "affichage.h"
 #include "../Structures/structure_joueur.h"
 
-void liaison_memoire_affichage(int repere[4]/*t_carte terrain[][3]*/,int a,int b)
+void liaison_memoire_affichage(int repere[4] ,int a, int b)
 {
     switch(a)
     {
@@ -140,12 +140,12 @@ void liaison_memoire_affichage(int repere[4]/*t_carte terrain[][3]*/,int a,int b
     }
 }
 
-void affichage_maisons(int repere[4],int a)
+void affichage_maisons(int repere[], int a)
 {
     Color(repere[2],repere[3]);
     for (int i = 0 ; i < a ;i++)
     {
-        gotoligcol(repere[0] + AJUSTEMENT_LIGNE, repere[1] + AJUSTEMENT_COLONNE + (2*i));
+        gotoligcol(repere[0] + AJUSTEMENT_LIGNE, repere[1] + AJUSTEMENT_COLONNE + (2*i) +1);
         printf("%c",0x0C);
     }
     Color(0,15);
@@ -154,8 +154,8 @@ void affichage_maisons(int repere[4],int a)
 void affichage_hotel(int repere[4]/*,t_carte terrain[][3]*/)
 {
     Color(repere[2],repere[3]);
-    gotoligcol(repere[0] + AJUSTEMENT_LIGNE , repere[1] + AJUSTEMENT_COLONNE) ;
-    printf("%c",0x0F);
+    gotoligcol(repere[0] + AJUSTEMENT_LIGNE , repere[1] + AJUSTEMENT_COLONNE +3) ;
+    printf("**%c**",0x0F);
     Color(0,15);
 }
 

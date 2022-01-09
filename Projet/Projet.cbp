@@ -118,9 +118,6 @@
 		<Unit filename="Fonctions_affichage/instructions_sur_plateau.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Fonctions_affichage/pion.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Menu/affichage_choix.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -136,9 +133,7 @@
 		<Unit filename="Partie/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Pioche/affichage.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="Pioche/bibli1.h" />
 		<Unit filename="Pioche/melangeurcarte.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -151,13 +146,10 @@
 		<Unit filename="Sauvegardes/chargerpartieclass.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sauvegardes/chargerpartieplus.c">
+		<Unit filename="Sauvegardes/partiealternative.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sauvegardes/sauvegardeclassique.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Sauvegardes/sauvegardeenplus.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">
