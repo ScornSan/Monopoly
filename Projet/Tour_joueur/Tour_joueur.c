@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[], int tour_prison[])
+int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[], int tour_prison[], bool elimination[])
 {
     int longueur;
     int longueur_2;
@@ -121,7 +121,12 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,2);
                     printf("%s%s",joueur_i[id_joueur].pseudo, phrase_chance);
                     placement_script(longueur_2,3),
-                                     printf("%s",phrase_chance_2);
+                    printf("%s",phrase_chance_2);
+                    banquechance(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_chance, sauvegarde_position);
+                    if(joueur_i[id_joueur].argent < loto)
+                    {
+                        faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
+                    }
                     usleep(3000);
 
                     break;
@@ -133,7 +138,12 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,2);
                     printf("%s",phrase_commu);
                     placement_script(longueur_2,3),
-                                     printf("%s",phrase_commu_2);
+                    printf("%s",phrase_commu_2);
+                    banquecommu(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_commu, sauvegarde_position);
+                    if(joueur_i[id_joueur].argent < loto)
+                    {
+                        faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
+                    }
                     usleep(3000);
 
                     break;
@@ -159,7 +169,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     break;
 
                 default:
-                    tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
+                    tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte, elimination);
                     break;
                 }
             }

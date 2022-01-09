@@ -45,8 +45,8 @@ void lettreD_et_fleche()
     }
 
     /// FLECHE
-    lig = 48;
-    col =  110;
+    lig = 48 + 5;
+    col =  110 -11;
     for (j = 0; j< 6; j++)
     {
         Color(0,9);
