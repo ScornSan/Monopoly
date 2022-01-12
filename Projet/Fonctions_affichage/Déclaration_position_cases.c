@@ -146,7 +146,7 @@ void affichage_maisons(int repere[], int a)
     for (int i = 0 ; i < a ;i++)
     {
         gotoligcol(repere[0] + AJUSTEMENT_LIGNE, repere[1] + AJUSTEMENT_COLONNE + (2*i) +1);
-        printf("%c",0x0C);
+        printf("%c",0x0F);
     }
     Color(0,15);
 }
@@ -154,8 +154,8 @@ void affichage_maisons(int repere[], int a)
 void affichage_hotel(int repere[4]/*,t_carte terrain[][3]*/)
 {
     Color(repere[2],repere[3]);
-    gotoligcol(repere[0] + AJUSTEMENT_LIGNE , repere[1] + AJUSTEMENT_COLONNE +3) ;
-    printf("**%c**",0x0F);
+    gotoligcol(repere[0] + AJUSTEMENT_LIGNE , repere[1] + AJUSTEMENT_COLONNE +4);
+    printf("%c",0x05);
     Color(0,15);
 }
 

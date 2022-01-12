@@ -4,7 +4,7 @@
 void partie_en_cours()
 {
     int repere[4]; // tableau qui configure les lignes, colonnes, couleur texte et couleur du fond
-    int tab_c[16]; // tzbleau de cartes chances et communauté
+    int tab_c[12]; // tzbleau de cartes chances et communauté
     t_carte tab[GROUPES_CARTES][3]; // initialisation structures de cartes de proprietes
     int fin_de_partie;
 
@@ -20,8 +20,8 @@ void partie_en_cours()
     t_joueur joueur[nombre_de_joueurs]; // on crée un tableau de structures de joueurs, de taille du nombre demand�
     creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on cr�e les structures joueurs
     remplissages_cartes(tab); // on remplit les cartes terrains
-    remplissage_chance_commu(tab_c);
-    melangeurCarte(tab_c);
+    remplissage_chance_commu(tab_c, 12); // on remplit les cartes chance et commu
+    //melangeurCarte(tab_c, 16);
     int tour_prison[nombre_de_joueurs];
     tour_prison[0] = 0;
     tour_prison[1] = 0;
@@ -29,18 +29,27 @@ void partie_en_cours()
     tour_prison[3] = 0;
     affichage_plateau();
     affichage_prix_terrain(repere, tab);
-    affichage_nom_terrain(repere, tab);
     affichage_pseudo_joueurs(nombre_de_joueurs, joueur);
+    affichage_nom_terrain(repere, tab);
     int loto = 0;
+    bool elimination[nombre_de_joueurs];
+    for (int a = 0; a < nombre_de_joueurs; a++)
+    {
+        elimination[a] = false;
+    }
+
     while (nombre_de_joueurs != 1)
     {
-        for (int i = 0; i < nombre_de_joueurs; i++)
+        for (int id = 0; id < nombre_de_joueurs; id++)
         {
-            fin_de_partie = tour_joueur(repere, joueur, nombre_de_joueurs, i, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison);
-            if (fin_de_partie <= 0)
+            if (elimination[id] == false)
             {
-                printf("%s est elimine", joueur[i].pseudo);
-                break; // on sort de la boucle et on fait la fin du jeu
+                tour_joueur(repere, joueur, nombre_de_joueurs, id, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison, elimination);
+            }
+            else
+            {
+                printf("%s est elimine", joueur[id].pseudo);
+                continue; // on sort de la boucle et on fait la fin du jeu
             }
         }
     }

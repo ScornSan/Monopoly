@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[])
+void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[] )
 {
     int ligne = 10;
     int i;
@@ -13,12 +13,11 @@ void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[])
         printf("%s", joueur[i].pseudo);
         colonne += 19;
     }
-    ligne = 10;
+    ligne = 3;
     colonne = 124;
     for (i = 0; i < nb_joueurs -1; i++)
     {
-        ligne = 10;
-        for(int j = 0; j < 45; j++)
+        for(int j = 0; j < 49; j++)
         {
             gotoligcol(ligne,colonne + i*19);
             printf("%c",0xB3);

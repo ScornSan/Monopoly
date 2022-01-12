@@ -84,6 +84,36 @@ void affichage_pion_prison(int id_joueur, bool entree_sortie)
     printf(" ");
 }
 
+void affichage_pion_prison_c(int id_joueur, bool entree_sortie)
+{
+    if (entree_sortie == true)
+    {
+        Color(0 , id_joueur + 9);
+    }
+    else
+    {
+        Color(0 ,15);
+    }
+
+    if (id_joueur == 0)
+    {
+        gotoligcol(47,11 - 1);
+    }
+    if (id_joueur == 1)
+    {
+        gotoligcol(47,7 - 1);
+    }
+    if (id_joueur == 2)
+    {
+        gotoligcol(49,11 - 1);
+    }
+    if (id_joueur == 3)
+    {
+        gotoligcol(49,7 - 1);
+    }
+    printf(" ");
+}
+
 void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_lancer)
 {
     int placement_depart = 94;
@@ -99,7 +129,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
         switch(i)
         {
             case 0:
-            case 28:
+            case 28:usleep(500000);
                 gotoligcol(placement_colonne_droite + 5 * 6, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(47, placement_depart + id_joueur * 2 -1);
@@ -107,14 +137,14 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                 break;
 
             case 1:
-            case 29:
+            case 29:usleep(500000);
                 gotoligcol(47, placement_depart + id_joueur * 2 -1);
                 effacement(id_joueur);
                 gotoligcol(47, placement_depart - 13 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
 
             case 2:
-            case 30:
+            case 30:usleep(500000);
                 gotoligcol(47, placement_depart - 13 + id_joueur * 2);
                 effacement(id_joueur);
                 if (id_joueur == 0 || id_joueur == 2)
@@ -128,7 +158,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                     affichage_pion(id_joueur);break;
                 }
             case 3:
-            case 31:
+            case 31:usleep(500000);
                 if (id_joueur == 2 || id_joueur == 0)
                 {
                     gotoligcol(47, placement_depart - 13 * 2 + id_joueur * 2 +1);
@@ -145,28 +175,28 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                 }
 
             case 4:
-            case 32:
+            case 32:usleep(500000);
                 gotoligcol(47, placement_depart - 13 * 3 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(47, placement_depart - 13 * 4 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
 
             case 5:
-            case 33:
+            case 33:usleep(500000);
                 gotoligcol(47, placement_depart - 13 * 4 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(49, placement_depart - 13 * 5 + id_joueur * 2 +1);
                 affichage_pion(id_joueur);break;
 
             case 6: // case après communauté
-            case 34:
+            case 34:usleep(500000);
                 gotoligcol(49, placement_depart - 13 * 5 + id_joueur * 2 +1);
                 effacement_gris(id_joueur);
                 gotoligcol(47, placement_depart - 13 * 6 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
 
             case 7:
-            case 35:
+            case 35:usleep(500000);
                 gotoligcol(47, placement_depart - 13 * 6 + id_joueur * 2);
                 effacement(id_joueur);
                 if (id_joueur == 0 || id_joueur == 1)
@@ -181,7 +211,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                 }
 
             case 8:
-            case 36:
+            case 36:usleep(500000);
                 if (id_joueur == 0 || id_joueur == 1)
                 {
                     gotoligcol(placement_colonne_gauche, 2 + id_joueur * 2);
@@ -196,36 +226,36 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                 affichage_pion(id_joueur);break;
 
             case 9:
-            case 37:
+            case 37:usleep(500000);
                 gotoligcol(placement_colonne_gauche - 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_gauche - 2 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
 
             case 10:
-            case 38:
+            case 38:usleep(500000);
                 gotoligcol(placement_colonne_gauche - 2 * 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_gauche - 3 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
 
             case 11:
-            case 39:
+            case 39:usleep(500000);
                 gotoligcol(placement_colonne_gauche - 3 * 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_gauche - 4 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 12:
+            case 12:usleep(500000);
                 gotoligcol(placement_colonne_gauche - 4 * 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_gauche - 5 * 5 +1, 1+ id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 13:
+            case 13:usleep(500000);
                 gotoligcol(placement_colonne_gauche - 5 * 5 +1, 1 + id_joueur * 2);
                 effacement_gris(id_joueur);
                 gotoligcol(placement_colonne_gauche - 6 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 14: // case parking gratuit
+            case 14:usleep(500000); // case parking gratuit
                 gotoligcol(placement_colonne_gauche - 6 * 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
                 if (id_joueur == 0 || id_joueur == 2)
@@ -239,7 +269,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                     affichage_pion(id_joueur);break;
                 }
 
-            case 15:
+            case 15:usleep(500000);
                 if (id_joueur == 0 || id_joueur == 2)
                 {
                     gotoligcol(11 + id_joueur, 10);
@@ -255,62 +285,62 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                     affichage_pion(id_joueur);break;
                 }
 
-            case 16:
+            case 16:usleep(500000);
                 gotoligcol(12, placement_ligne_haut + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(12, placement_ligne_haut + 13 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 17:
+            case 17:usleep(500000);
                 gotoligcol(12, placement_ligne_haut + 13 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(12, placement_ligne_haut + 13 * 2 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 18:
+            case 18:usleep(500000);
                 gotoligcol(12, placement_ligne_haut + 13 * 2 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(12, placement_ligne_haut + 13 * 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 19: // carte chance
+            case 19:usleep(500000); // carte chance
                 gotoligcol(12, placement_ligne_haut + 13 * 3+ id_joueur * 2 );
                 effacement(id_joueur);
                 gotoligcol(14, placement_ligne_haut + 13 * 4 + id_joueur * 2 +1);
                 affichage_pion(id_joueur);break;
-            case 20:
+            case 20:usleep(500000);
                 gotoligcol(14, placement_ligne_haut + 13 * 4+ id_joueur * 2 +1);
                 effacement_gris(id_joueur);
                 gotoligcol(12, placement_ligne_haut + 13 * 5 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 21:
+            case 21:usleep(500000);
                 gotoligcol(12, placement_ligne_haut + 13 * 5+ id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 22:
+            case 22:usleep(500000);
                 gotoligcol(placement_colonne_droite, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite + 5, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 23:
+            case 23:usleep(500000);
                 gotoligcol(placement_colonne_droite + 5, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 2, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 24:
+            case 24:usleep(500000);
                 gotoligcol(placement_colonne_droite + 5 * 2, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 3, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 25:
+            case 25:usleep(500000);
                 gotoligcol(placement_colonne_droite + 5 * 3, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 4, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
-            case 26: // commu
+            case 26:usleep(500000); // commu
                 gotoligcol(placement_colonne_droite + 5 * 4, 93 + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 5 , 93 + id_joueur * 2 +1);
                 affichage_pion(id_joueur);break;
-            case 27:
+            case 27:usleep(500000);
                 gotoligcol(placement_colonne_droite + 5 * 5 , 93 + id_joueur * 2 +1);
                 effacement_gris(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 6, 93 + id_joueur * 2);

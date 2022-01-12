@@ -151,7 +151,6 @@ void vente_maisons(int repere[], t_joueur pion_joueur[], int max_joueurs, int id
         }
         gotoligcol(37,65);
         Color(0,15);
-        printf("%d     %d", banque_de_carte[0], banque_de_carte[1]);
         sleep(1);
     }
 }

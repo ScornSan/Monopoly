@@ -1,44 +1,36 @@
 #include "../Structures/structure_joueur.h"
-#include "../Affichage_plateau/affichage_plateau.h"
 
 void effacement(int id_joueur)
 {
-    Color(id_joueur + 9, 15);
+    Color(id_joueur + 1, 15);
     printf(" ");
-    Color(id_joueur + 9, 0);
+    Color(id_joueur + 1, 0);
 }
 
-void effacement_bleu(int id_joueur)
+void remplacement_position(int tab[])
 {
-    Color(id_joueur + 9, 3);
-    printf(" ");
-    Color(id_joueur + 9, 0);
-}
-
-void remplacement_position(int tab[2], int position)
-{
-    gotoligcol(35,65);
-    printf("%d %d",tab[0], tab[1]);
-    sleep(1);
-    if (position == 14)
+    if (tab[0] < 15 && tab[0] > 10 && tab[1] < 13 && tab[1] > 0)
     {
         // effacement bleu
-        gotoligcol(tab[0],tab[1]);
         Color(0,3);
         printf(" ");
     }
-    else if (position == 5 || position == 12 || position == 19 || position == 26)
+    if (tab[0] < 25 && tab[0] > 20 && tab[1] < 13 && tab[1] > 0 || tab[0] < 15 && tab[0] > 10 && tab[1] < 78 && tab[1] > 65)
     {
         // effacement gris
-        gotoligcol(tab[0],tab[1]);
+        Color(0,7);
+        printf(" ");
+    }
+    if (tab[0] < 40 && tab[0] > 35 && tab[1] < 104 && tab[1] > 91 || tab[0] < 50 && tab[0] > 45 && tab[1] < 39 && tab[1] > 26)
+    {
+        // effacement gris aussi
         Color(0,7);
         printf(" ");
     }
     else
     {
         // effacement blanc
-        gotoligcol(tab[0],tab[1]);
-        Color(0,15);
+        Color(0, 15);
         printf(" ");
     }
 }
@@ -46,28 +38,21 @@ void remplacement_position(int tab[2], int position)
 
 void effacement_gris(int id_joueur)
 {
-    Color(id_joueur + 9, 7);
+    Color(id_joueur + 1, 7);
     printf(" ");
-    Color(id_joueur + 9, 0);
+    Color(id_joueur + 1, 0);
 }
 
 void affichage_pion(int id_joueur)
 {
-    Color(0 , id_joueur + 9);
+    Color(id_joueur + 1, 9);
     printf(" ");
+    Color(id_joueur + 1, 0);
 }
 
-void affichage_pion_prison(int id_joueur, bool entree_sortie)
+void affichage_pion_prison(int id_joueur)
 {
-    if (entree_sortie == true)
-    {
-        Color(0 , id_joueur + 9);
-    }
-    else
-    {
-        Color(0 ,15);
-    }
-
+    Color(id_joueur + 1, 15);
     if (id_joueur == 0)
     {
         gotoligcol(47,3);
@@ -84,7 +69,8 @@ void affichage_pion_prison(int id_joueur, bool entree_sortie)
     {
         gotoligcol(49,5);
     }
-    printf(" ");
+    printf("%c", 97);
+    Color(id_joueur + 1, 0);
 }
 
 void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_lancer)
@@ -94,7 +80,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
     int placement_ligne_haut = 16;
     int placement_colonne_droite = 12;
     int i;
-    Color(0, id_joueur + 9);
+
     // on déplace graphiquement le pion en prison si il a fait 3 lancers
 
     for (i = pion[id_joueur].ancienne_position; i <= pion[id_joueur].position; i++)
@@ -105,13 +91,13 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
             case 28:
                 gotoligcol(placement_colonne_droite + 5 * 6, 93 + id_joueur * 2);
                 effacement(id_joueur);
-                gotoligcol(47, placement_depart + id_joueur * 2 -1);
+                gotoligcol(47, placement_depart + id_joueur * 2);
                 affichage_pion(id_joueur);
                 break;
 
             case 1:
             case 29:
-                gotoligcol(47, placement_depart + id_joueur * 2 -1);
+                gotoligcol(47, placement_depart + id_joueur * 2);
                 effacement(id_joueur);
                 gotoligcol(47, placement_depart - 13 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
@@ -120,16 +106,9 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
             case 30:
                 gotoligcol(47, placement_depart - 13 + id_joueur * 2);
                 effacement(id_joueur);
-                if (id_joueur == 0 || id_joueur == 2)
-                {
-                    gotoligcol(47, placement_depart - 13 * 2 + id_joueur * 2 +1);
-                    affichage_pion(id_joueur);break;
-                }
-                else
-                {
-                    gotoligcol(48, placement_depart - 13 * 2 + id_joueur * 2 );
-                    affichage_pion(id_joueur);break;
-                }
+                gotoligcol(47, placement_depart - 13 * 2 + id_joueur * 2);
+                affichage_pion(id_joueur);break;
+
             case 3:
             case 31:
                 if (id_joueur != 2)
@@ -221,11 +200,11 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
             case 12:
                 gotoligcol(placement_colonne_gauche - 4 * 5, 3 + id_joueur * 2);
                 effacement(id_joueur);
-                gotoligcol(placement_colonne_gauche - 5 * 5 +1, 1+ id_joueur * 2);
+                gotoligcol(placement_colonne_gauche - 5 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
             case 13:
-                gotoligcol(placement_colonne_gauche - 5 * 5 +1, 1 + id_joueur * 2);
-                effacement_gris(id_joueur);
+                gotoligcol(placement_colonne_gauche - 5 * 5, 3 + id_joueur * 2);
+                effacement(id_joueur);
                 gotoligcol(placement_colonne_gauche - 6 * 5, 3 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
             case 14: // case parking gratuit
@@ -233,7 +212,7 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
                 effacement(id_joueur);
                 if (id_joueur == 0 || id_joueur == 2)
                 {
-                    gotoligcol(11 + id_joueur, 10);
+                    gotoligcol(12 + id_joueur, 10);
                     affichage_pion(id_joueur);break;
                 }
                 else
@@ -245,15 +224,14 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
             case 15:
                 if (id_joueur == 0 || id_joueur == 2)
                 {
-                    gotoligcol(11 + id_joueur, 10);
-                    effacement_bleu(id_joueur);
+                    gotoligcol(12 + id_joueur, 10);
                     gotoligcol(12, placement_ligne_haut + id_joueur * 2);
                     affichage_pion(id_joueur);break;
                 }
                 else
                 {
                     gotoligcol(10 + id_joueur, 3);
-                    effacement_bleu(id_joueur);
+                    effacement(id_joueur);
                     gotoligcol(12, placement_ligne_haut + id_joueur * 2);
                     affichage_pion(id_joueur);break;
                 }
@@ -311,14 +289,13 @@ void deplacement_joueur(t_joueur pion[], int max_joueurs, int id_joueur, int nb_
             case 26: // commu
                 gotoligcol(placement_colonne_droite + 5 * 4, 93 + id_joueur * 2);
                 effacement(id_joueur);
-                gotoligcol(placement_colonne_droite + 5 * 5 +1, 93 + id_joueur * 2 -1);
+                gotoligcol(placement_colonne_droite + 5 * 5, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
             case 27:
-                gotoligcol(placement_colonne_droite + 5 * 5 +1, 93 + id_joueur * 2- 1);
+                gotoligcol(placement_colonne_droite + 5 * 5, 93 + id_joueur * 2);
                 effacement_gris(id_joueur);
                 gotoligcol(placement_colonne_droite + 5 * 6, 93 + id_joueur * 2);
                 affichage_pion(id_joueur);break;
         }
     }
-    Color(id_joueur + 9,0);
 }

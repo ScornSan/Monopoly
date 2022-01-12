@@ -82,8 +82,10 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
         affichage_argent_joueurs(pion_joueur, id_joueur);
         affichage_carte(repere, id_joueur, terrain, groupe, prop);
         affichage_prix_terrain(repere, terrain);
+        identifiant_joueur_max[id_joueur]++;
         usleep(5000000);
     }
+    // Il ne peut pas racheter un terrain non hypotheque
     else if (terrain[groupe][prop].hypotheque == false)
     {
         carre_noir();
@@ -93,6 +95,7 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
         affichage_argent_joueurs(pion_joueur, id_joueur);
         usleep(5000000);
     }
+    // Il ne peut pas racheter un terrain sans argent
     else
     {
         carre_noir();
