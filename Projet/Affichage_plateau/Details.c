@@ -49,28 +49,28 @@ void details()
     /// details pixels fleche de "lettreD_et_fleche"
 
     Color(0,9);
-    gotoligcol(46 +5,109 - 11);
+    gotoligcol(46,109);
     printf(" " );
-    gotoligcol(46 +5,110- 11);
-    printf(" " );
-
-    gotoligcol(50 +5,109- 11);
-    printf(" " );
-    gotoligcol(50 +5,110- 11);
+    gotoligcol(46,110);
     printf(" " );
 
-    gotoligcol(47 +5,109- 11);
+    gotoligcol(50,109);
     printf(" " );
-    gotoligcol(47 +5,108- 11);
-    printf(" " );
-
-    gotoligcol(49 +5,108- 11);
-    printf(" " );
-    gotoligcol(48 +5,107- 11);
+    gotoligcol(50,110);
     printf(" " );
 
-    gotoligcol(49 +5,109- 11);
+    gotoligcol(47,109);
     printf(" " );
-    gotoligcol(48 +5,108- 11);
+    gotoligcol(47,108);
+    printf(" " );
+
+    gotoligcol(49,108);
+    printf(" " );
+    gotoligcol(48,107);
+    printf(" " );
+
+    gotoligcol(49,109);
+    printf(" " );
+    gotoligcol(48,108);
     printf(" " );
 }

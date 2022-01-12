@@ -1092,10 +1092,10 @@
 1640900271 source:c:\repos\monopoly\projet\affichage_plateau\colonnes.c
 	"affichage_plateau.h"
 
-1641768238 source:c:\repos\monopoly\projet\affichage_plateau\details.c
+1640900271 source:c:\repos\monopoly\projet\affichage_plateau\details.c
 	"affichage_plateau.h"
 
-1641768262 source:c:\repos\monopoly\projet\affichage_plateau\lettred_et_fleche.c
+1640900271 source:c:\repos\monopoly\projet\affichage_plateau\lettred_et_fleche.c
 	"affichage_plateau.h"
 
 1640900271 source:c:\repos\monopoly\projet\affichage_plateau\lettrei.c
@@ -1128,11 +1128,11 @@
 	<stdbool.h>
 	<conio.h>
 
-1641768673 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1641671186 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 	"../Affichage_plateau/affichage_plateau.h"
 
-1641763317 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
+1641669620 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
 1640900271 c:\repos\monopoly\projet\fonctions_actions_joueurs\actions.h
@@ -1143,21 +1143,21 @@
 	<conio.h>
 	<stdbool.h>
 
-1641754487 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
+1641670965 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\hypothequer.c
 	"../Structures/structure_joueur.h"
 
-1641768346 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
-
-1641756905 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
-	"../Structures/structure_joueur.h"
-
-1641768541 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+1641670830 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641758544 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
+1641670845 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+	"../Structures/structure_joueur.h"
+
+1641670993 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\vente_maisons.c
+	"../Structures/structure_joueur.h"
+	"../Fonctions_affichage/affichage.h"
+
+1641724042 source:c:\repos\monopoly\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 	"affichage.h"
@@ -1189,7 +1189,7 @@
 
 1640900271 c:\repos\monopoly\projet\menu\nouvelle_partie.h
 
-1641763971 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
+1641671112 source:c:\repos\monopoly\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
@@ -1208,10 +1208,10 @@
 1641724085 source:c:\repos\monopoly\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1641757679 source:c:\repos\monopoly\projet\structures\structures_cartes.c
+1641636568 source:c:\repos\monopoly\projet\structures\structures_cartes.c
 	"structure_joueur.h"
 
-1641768457 source:c:\repos\monopoly\projet\banque de cartes\cartescommu.c
+1641144126 source:c:\repos\monopoly\projet\banque de cartes\cartescommu.c
 	"../Structures/structure_joueur.h"
 
 1641063401 source:c:\repos\monopoly\projet\pioche\affichage.c
@@ -1225,22 +1225,20 @@
 1641059783 source:c:\repos\monopoly\projet\pioche\main.c
 	"bibli1.h"
 
-1641763175 source:c:\repos\monopoly\projet\pioche\melangeurcarte.c
+1641124512 source:c:\repos\monopoly\projet\pioche\melangeurcarte.c
 	"bibli1.h"
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
 
 1641124500 source:c:\repos\monopoly\projet\pioche\pioche.c
 	"bibli1.h"
 
-1641763084 source:c:\repos\monopoly\projet\pioche\remplissage.c
+1641125343 source:c:\repos\monopoly\projet\pioche\remplissage.c
 	"bibli1.h"
 
-1641765573 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
+1641721839 source:c:\repos\monopoly\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1641768575 source:c:\repos\monopoly\projet\banque de cartes\carteschance.c
+1641310529 source:c:\repos\monopoly\projet\banque de cartes\carteschance.c
 	"../Structures/structure_joueur.h"
 
 1641634821 source:c:\repos\monopoly\projet\fonctions_affichage\affichage_profil_joueur.c
@@ -1252,98 +1250,90 @@
 	<stdlib.h>
 	<windows.h>
 
-1641760211 source:c:\repos\monopoly\projet\fonctions_affichage\déclaration_position_cases.c
+1641575371 source:c:\repos\monopoly\projet\fonctions_affichage\déclaration_position_cases.c
 	"affichage.h"
 	"../Structures/structure_joueur.h"
 
-1641754752 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\rachat_terrain.c
+1641724125 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\rachat_terrain.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641757627 source:c:\repos\monopoly\projet\partie\faillite.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_actions_joueurs/actions.h"
-	"../Affichage_plateau/affichage_plateau.h"
-
-1641768526 source:c:\repos\monopoly\projet\fonctions_actions_joueurs\loto.c
-	<time.h>
-
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\affichage_plateau_projet_yohan.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\affichage_plateau_projet_yohan.c
 	"affichage_plateau.h"
 
-1641982499 c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\affichage_plateau.h
+1641768802 c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\affichage_plateau.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\cases_chance.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\cases_chance.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\cases_commu.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\cases_commu.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\cases_couleur.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\cases_couleur.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\cases_speciales_colonnes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\cases_speciales_colonnes.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\cases_speciales_lignes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\cases_speciales_lignes.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\colonnes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\colonnes.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\details.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\details.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\lettred_et_fleche.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\lettred_et_fleche.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\lettrei.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\lettrei.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\lignes .c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\lignes .c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\lignes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\lignes.c
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\logo_prison.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\logo_prison.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\parking_gratuit.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\parking_gratuit.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\sepa_colonnes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\sepa_colonnes.c
 	"affichage_plateau.h"
 
-1641982499 source:c:\dossier yohan\monopoly-feature-clement\projet\affichage_plateau\sepa_lignes.c
+1641768802 source:c:\dossier yohan\monopoly-feature-yohan\projet\affichage_plateau\sepa_lignes.c
 	"affichage_plateau.h"
 
-1642006581 source:c:\dossier yohan\monopoly-feature-clement\projet\banque de cartes\carteschance.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\banque de cartes\carteschance.c
 	"../Structures/structure_joueur.h"
 
-1642012798 c:\dossier yohan\monopoly-feature-clement\projet\structures\structure_joueur.h
+1641768804 c:\dossier yohan\monopoly-feature-yohan\projet\structures\structure_joueur.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 	<conio.h>
 
-1642006589 source:c:\dossier yohan\monopoly-feature-clement\projet\banque de cartes\cartescommu.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\banque de cartes\cartescommu.c
 	"../Structures/structure_joueur.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\case_prison.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\case_prison.c
 	"../Structures/structure_joueur.h"
 
-1642011929 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\deplacement_joueur.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\deplacement_joueur.c
 	"../Structures/structure_joueur.h"
 	"../Affichage_plateau/affichage_plateau.h"
 
-1642020183 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\fonction_de.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\fonction_de.c
 	"actions.h"
 
-1641982500 c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\actions.h
+1641768803 c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\actions.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -1351,122 +1341,106 @@
 	<conio.h>
 	<stdbool.h>
 
-1642007976 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\hypothequer.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\hypothequer.c
+	"../Structures/structure_joueur.h"
+
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\payer_un_loyer.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641982496 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\loto.c
-	<time.h>
-
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\payer_un_loyer.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
-
-1641982500 c:\dossier yohan\monopoly-feature-clement\projet\fonctions_affichage\affichage.h
+1641768803 c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_affichage\affichage.h
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1642012043 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\rachat_terrain.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\rachat_terrain.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\tomber_sur_terrain.c
 	"../Structures/structure_joueur.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_actions_joueurs\vente_maisons.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_actions_joueurs\vente_maisons.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641983932 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_affichage\affichage_profil_joueur.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_affichage\affichage_profil_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_affichage\déclaration_position_cases.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_affichage\déclaration_position_cases.c
 	"affichage.h"
 	"../Structures/structure_joueur.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\fonctions_affichage\instructions_sur_plateau.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\fonctions_affichage\instructions_sur_plateau.c
 	"../Affichage_plateau/affichage_plateau.h"
 	"../Structures/structure_joueur.h"
 	"affichage.h"
 
-1642019947 source:c:\dossier yohan\monopoly-feature-clement\projet\main.c
+1641768801 source:c:\dossier yohan\monopoly-feature-yohan\projet\main.c
 	"Structures/structure_joueur.h"
 	"Affichage_plateau/affichage_plateau.h"
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\menu\affichage_choix.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\menu\affichage_choix.c
 
-1642012082 source:c:\dossier yohan\monopoly-feature-clement\projet\menu\echap.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\menu\echap.c
 	<stdio.h>
 	<stdlib.h>
 	"echap.h"
 	<stdbool.h>
-	"../Structures/structure_joueur.h"
 
-1641982500 c:\dossier yohan\monopoly-feature-clement\projet\menu\echap.h
+1641768803 c:\dossier yohan\monopoly-feature-yohan\projet\menu\echap.h
 
-1641982500 source:c:\dossier yohan\monopoly-feature-clement\projet\menu\menu.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\menu\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<conio.h>
 	"../Structures/structure_joueur.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\menu\nouvelle_partie.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\menu\nouvelle_partie.c
 	"nouvelle_partie.h"
 	"../Structures/structure_joueur.h"
 
-1641982501 c:\dossier yohan\monopoly-feature-clement\projet\menu\nouvelle_partie.h
+1641768803 c:\dossier yohan\monopoly-feature-yohan\projet\menu\nouvelle_partie.h
 
-1641982497 source:c:\dossier yohan\monopoly-feature-clement\projet\partie\faillite.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_actions_joueurs/actions.h"
-	"../Affichage_plateau/affichage_plateau.h"
-
-1642012216 source:c:\dossier yohan\monopoly-feature-clement\projet\partie\nouvelle_partie.c
+1641768803 source:c:\dossier yohan\monopoly-feature-yohan\projet\partie\nouvelle_partie.c
 	"../Structures/structure_joueur.h"
 	"../Fonctions_affichage/affichage.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\pioche\melangeurcarte.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\pioche\melangeurcarte.c
 	"bibli1.h"
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
 
-1641982501 c:\dossier yohan\monopoly-feature-clement\projet\pioche\bibli1.h
+1641768804 c:\dossier yohan\monopoly-feature-yohan\projet\pioche\bibli1.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\pioche\pioche.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\pioche\pioche.c
 	"bibli1.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\pioche\remplissage.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\pioche\remplissage.c
 	"bibli1.h"
 
-1642012284 source:c:\dossier yohan\monopoly-feature-clement\projet\sauvegardes\chargerpartieclass.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\sauvegardes\chargerpartieclass.c
 	"../Structures/structure_joueur.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\sauvegardes\chargerpartieplus.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\sauvegardes\chargerpartieplus.c
 	"../Structures/structure_joueur.h"
 
-1642012417 source:c:\dossier yohan\monopoly-feature-clement\projet\sauvegardes\sauvegardeclassique.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\sauvegardes\sauvegardeclassique.c
 	"../Structures/structure_joueur.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\sauvegardes\sauvegardeenplus.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\sauvegardes\sauvegardeenplus.c
 	"../Structures/structure_joueur.h"
 
-1642012647 source:c:\dossier yohan\monopoly-feature-clement\projet\structures\structure_joueur.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\structures\structure_joueur.c
 	"structure_joueur.h"
 
-1641982501 source:c:\dossier yohan\monopoly-feature-clement\projet\structures\structures_cartes.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\structures\structures_cartes.c
 	"structure_joueur.h"
 
-1642012835 source:c:\dossier yohan\monopoly-feature-clement\projet\tour_joueur\tour_joueur.c
+1641768804 source:c:\dossier yohan\monopoly-feature-yohan\projet\tour_joueur\tour_joueur.c
 	"../Fonctions_actions_joueurs/actions.h"
 	"../Structures/structure_joueur.h"
-
-1642012390 source:c:\dossier yohan\monopoly-feature-clement\projet\sauvegardes\partie_alternative.c
-	"../Structures/structure_joueur.h"
-	"../Fonctions_affichage/affichage.h"
 

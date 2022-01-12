@@ -1,9 +1,8 @@
 #include "Structures/structure_joueur.h"
 #include "Affichage_plateau/affichage_plateau.h"
 
-void affichage_Menu(int pouvoirsauv, int nombre_de_joueurs, t_joueur joueur_x[], t_carte cartes[][3], int id_max_cartes[])
+void affichage_Menu()
 {
-    int keych;
     HWND hwnd=GetForegroundWindow();
     ShowWindow(hwnd,SW_MAXIMIZE);
     FILE * fichier_regles; // pointeur sur le fichier qui contient les règles
@@ -11,6 +10,9 @@ void affichage_Menu(int pouvoirsauv, int nombre_de_joueurs, t_joueur joueur_x[],
     int choixsauv = 0;
     int repere[4];
     int choixcharge = 0;
+    int nombre_de_joueurs = 0;
+    t_joueur joueur_x[nombre_de_joueurs];
+    t_carte cartes;
     /// AJOUTER BLINDAGE CLEMENT
 
     do
@@ -26,108 +28,140 @@ void affichage_Menu(int pouvoirsauv, int nombre_de_joueurs, t_joueur joueur_x[],
     }
     while (strlen(choix) != 1 && *choix != 1 && *choix != 2 && *choix != 3 && *choix != 4 && *choix != 5 && *choix != 6);
 
-
     system("cls");
 
-    // do
-    // {
-
-
-    switch(*choix-'0')
+    do
     {
-    case 1 :
-
-        system("cls");
-        fflush(stdin);
-        system("cls");
-        partie_en_cours(pouvoirsauv, nombre_de_joueurs, joueur_x, cartes, id_max_cartes);
-
-        /// AJOUTER FONCTION NOUVELLE PARTIE
-        break;
-
-    case 2 :
-        // Sauvegarde d'une partie (2 Emplacements)
-        printf("%d", pouvoirsauv);
-        if (pouvoirsauv == 0) // Verifier si une partie a été joué car on en peu pas sauvegarder à peine arrivé !
+        switch(*choix-'0')
         {
-            printf("Impossible ! Aucune partie n'est en cours !\n");
-            printf("-> Redirection vers le menu... ");
+        case 1 :
+
+            system("cls");
+            fflush(stdin);
+            system("cls");
+            partie_en_cours();
+
+            /// AJOUTER FONCTION NOUVELLE PARTIE
+            break;
+
+        case 2 :
+            // Sauvegarde d'une partie (2 Emplacements)
+            while (nombre_de_joueurs == 0) // Verifier si une partie a été joué car on en peu pas sauvegarder à peine arrivé !
+            {
+                printf("Impossible ! Aucune partie n'est en cours !");
+                break;
+
+                if (nombre_de_joueurs != 0)
+                {
+                    fflush(stdin);
+                    // Ajout (Clément)
+                    printf("Voulez-vous sauvegarder votre partie ?\n");
+                    printf("[1] Emplacement 1 ?\n");
+                    printf("[2] Emplacement 2 ?\n");
+                    scanf("%d", &choixsauv);
+
+                    while (choixsauv != 1 && choixsauv != 2)
+                    {
+                        printf("ERREUR : Choisir un emplacement correct pour votre sauvegarde.\n");
+                        printf("[1] Emplacement 1 ?\n");
+                        printf("[2] Emplacement 2 ?\n");
+                        scanf("%d", &choixsauv);
+                    }
+                    if (choixsauv == 1)
+                    {
+                        sauvegardeclassique(nombre_de_joueurs, *joueur_x); // Passe en pointeur car c'est un tableau
+                        printf("Sauvegarde dans l'emplacement 1 faite avec succes !\n");
+                    }
+                    if (choixsauv == 2)
+                    {
+                        sauvegardeenplus(nombre_de_joueurs, *joueur_x);
+                        printf("Sauvegarde dans l'emplacement 2 faite avec succes !\n");
+                    }
+                    Color(12, 0);
+                    printf("Appuyer sur [M] pour revenir au menu ");
+
+                }
+
+            }
+            break;
+
+
+        case 3 :
+            // Charge de partie
+            fflush(stdin);
+            printf("Voulez-vous charger une partie ?\n");
+            printf("[1] Charge 1 ?\n");
+            printf("[2] Charge 2 ?\n");
+            scanf("%d", &choixsauv);
+
+            while (choixcharge != 1 && choixcharge != 2)
+            {
+                printf("ERREUR : Saisir le nom d'un fichier correct.\n");
+                printf("[1] Charge 1 ?\n");
+                printf("[2] Charge 2 ?\n");
+                scanf("%d", &choixsauv);
+                if (choixsauv == 1)
+                {
+                    chargerpartie1(nombre_de_joueurs, *joueur_x, cartes);
+                }
+                if (choixsauv == 2)
+                {
+                    chargerpartie2(nombre_de_joueurs, *joueur_x, cartes);
+                }
+            }
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
+            break;
+
+        case 4 :
+            fflush(stdin);
+            fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
+
+            Color(15, 0);
+            if (fichier_regles == NULL)
+            {
+                printf("Erreur d'ouverture fichier. Veuillez réesayer. \n");
+            }
+
+            char c = fgetc(fichier_regles);
+            while( c != EOF) // EOF detecte le dernier caractere du fichier
+            {
+                printf("%c", c);
+                c = fgetc(fichier_regles);
+            }
+            fclose(fichier_regles); // on ferme le fichier
+            break;
+
+        case 5 :
+            fflush(stdin);
+            Color(12, 0);
+            printf("Appuyer sur [M] pour revenir au menu ");
+            Color(15, 0);
+            gotoligcol(10,70);
+            printf("Programmeurs de ce jeu : \n");
+            gotoligcol(12,70);
+            printf("Yohan MARCEL \n");
+            gotoligcol(13,70);
+            printf("Sarah BLIN \n");
+            gotoligcol(14,70);
+            printf("Clement POMPEI \n");
+            gotoligcol(15,70);
+            printf("Benjamin GENDRY \n");
+            Color(10, 0);
+            break;
+
+        case 6 :
+            exit(0);
         }
-        if (pouvoirsauv == 1)
-        {
-            // Ajout (Clément)
-            gotoligcol(16,70);
-            printf("Partie en cours de sauvegarde...\n");
-            sauvegardeclassique(nombre_de_joueurs, joueur_x, cartes, id_max_cartes);
-            printf("Sauvegarde reussie!\n");
-            printf("-> Redirection vers le menu... ");
-        }
-        sleep(2);
-        break;
-
-    case 3 :
-        // Charge de partie
-        fflush(stdin);
-        printf("Chargement de la partie precedente... \n");
-        Color(12, 0);
-        chargerpartie1(nombre_de_joueurs, joueur_x, cartes, id_max_cartes);
-        sleep(2);
-        break;
-
-    case 4 :
-        fflush(stdin);
-        fichier_regles = fopen("Menu/reglesDuJeu.txt", "r");
-        Color(12, 0);
-        printf("Appuyer sur [M] pour revenir au menu ");
-
-        Color(15, 0);
-        if (fichier_regles == NULL)
-        {
-            printf("Erreur d'ouverture fichier. Veuillez réesayer. \n");
-        }
-
-        char c = fgetc(fichier_regles);
-        while( c != EOF) // EOF detecte le dernier caractere du fichier
-        {
-            printf("%c", c);
-            c = fgetc(fichier_regles);
-        }
-        fclose(fichier_regles); // on ferme le fichier
-        break;
-
-    case 5 :
-        fflush(stdin);
-        Color(12, 0);
-        printf("Appuyer sur [M] pour revenir au menu ");
-        Color(15, 0);
-        gotoligcol(10,70);
-        printf("Programmeurs de ce jeu : \n");
-        gotoligcol(12,70);
-        printf("Yohan MARCEL \n");
-        gotoligcol(13,70);
-        printf("Sarah BLIN \n");
-        gotoligcol(14,70);
-        printf("Clement POMPEI \n");
-        gotoligcol(15,70);
-        printf("Benjamin GENDRY \n");
-        Color(10, 0);
-        break;
-
-    case 6 :
-        exit(0);
+        echap();
     }
-    keych = getch();
-    echap(keych, pouvoirsauv, nombre_de_joueurs, joueur_x, cartes, id_max_cartes);
+    while(1);
 }
-
 
 int main()
 {
-    int pouvoirsauv = 0;
-    int nombre_de_joueurs = 0;
-    int id_max_carte[25];
-    t_joueur joueur_x[4];
-    t_carte cartes[8][3];
-    affichage_Menu(pouvoirsauv, nombre_de_joueurs, joueur_x, cartes, id_max_carte);
+    affichage_Menu();
     return 0;
 }

@@ -13,11 +13,11 @@ void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[] )
         printf("%s", joueur[i].pseudo);
         colonne += 19;
     }
-    ligne = 10;
+    ligne = 3;
     colonne = 124;
     for (i = 0; i < nb_joueurs -1; i++)
     {
-        for(int j = 0; j < 43; j++)
+        for(int j = 0; j < 49; j++)
         {
             gotoligcol(ligne,colonne + i*19);
             printf("%c",0xB3);
@@ -27,7 +27,7 @@ void affichage_pseudo_joueurs(int nb_joueurs, t_joueur joueur[] )
             colonne++;
             ligne++;
         }
-        ligne = 10;
+        ligne = 3;
     }
 }
 

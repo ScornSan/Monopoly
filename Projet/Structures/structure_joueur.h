@@ -9,7 +9,6 @@
 #define CASES 28
 #define GROUPES_CARTES 8
 #define TOUCHE_ESPACE 32
-#define TOUCHE_TAB 9
 #define TOUCHE_ENTER 13
 #define VAL_NUL 5 // constante qui permet de savoir qu'un joueur ne possede pas une carte
 #define TAILLE_CARTES 15

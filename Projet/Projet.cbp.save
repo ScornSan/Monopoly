@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Affichage_Plateau_2/cases_chance.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Affichage_plateau/Colonnes.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -44,16 +47,10 @@
 		<Unit filename="Affichage_plateau/affichage_plateau_projet_yohan.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Affichage_plateau/cases_chance.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Affichage_plateau/cases_commu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Affichage_plateau/cases_couleur.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Affichage_plateau/cases_speciales_colonnes.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Affichage_plateau/cases_speciales_lignes.c">
@@ -80,32 +77,14 @@
 		<Unit filename="Affichage_plateau/sepa_lignes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Banque de cartes/carteschance.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Banque de cartes/cartescommu.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/actions.h" />
-		<Unit filename="Fonctions_actions_joueurs/case_prison.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/deplacement_joueur.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/fonction_de.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Fonctions_actions_joueurs/hypothequer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Fonctions_actions_joueurs/loto.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/payer_un_loyer.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Fonctions_actions_joueurs/rachat_terrain.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/tomber_sur_terrain.c">
@@ -114,14 +93,8 @@
 		<Unit filename="Fonctions_actions_joueurs/vente_maisons.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Fonctions_affichage/Déclaration_position_cases.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Fonctions_affichage/affichage.h" />
-		<Unit filename="Fonctions_affichage/affichage_profil_joueur.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Fonctions_affichage/instructions_sur_plateau.c">
+		<Unit filename="Fonctions_affichage/pion.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Menu/affichage_choix.c">
@@ -136,29 +109,7 @@
 		<Unit filename="Menu/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Partie/faillite.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Pioche/bibli1.h" />
-		<Unit filename="Pioche/melangeurcarte.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Pioche/pioche.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Pioche/remplissage.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Sauvegardes/chargerpartieclass.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Sauvegardes/partie_alternative.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Sauvegardes/sauvegardeclassique.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">

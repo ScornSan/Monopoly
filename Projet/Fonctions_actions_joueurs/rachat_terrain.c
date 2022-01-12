@@ -3,7 +3,7 @@
 
 void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3], int identifiant_joueur_max[], int banque_de_carte[], int repere[])
 {
-    int touche = 0;
+    int touche = 0; // un joueur ne pourra jamais avoir 25 propriete, donc jamais un identifiant de 25
     int fleche;
     int groupe;
     int prop;
@@ -25,7 +25,7 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
     while (fleche != TOUCHE_ENTER)
     {
         // On peut racheter seulement les proprietes que l'on possede, sinon c'est qu'on ne la possede pas
-        if ((fleche == 'z' || fleche == 'Z') && touche < identifiant_joueur_max[id_joueur]) // z sert à augmenter de 1 le nombre de maison a vendre
+        if ((fleche == 'z' || fleche == 'Z') && touche < identifiant_joueur_max[id_joueur] - 1) // z sert à augmenter de 1 le nombre de maison a vendre
         {
             touche++;
             usleep(50000);
@@ -56,7 +56,7 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
                 {
                     if (touche == terrain[a][b].id_carte[id_joueur])
                     {
-                        effacement_perso(0, 1, 20, 35, 64);
+                        effacement_perso(15, 1, 20, 35, 64);
                         char nb_maison[50] = "Propriete selectionne :";
                         longueur = strlen(nb_maison);
                         Color(15,0);
@@ -82,26 +82,23 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
         affichage_argent_joueurs(pion_joueur, id_joueur);
         affichage_carte(repere, id_joueur, terrain, groupe, prop);
         affichage_prix_terrain(repere, terrain);
-        identifiant_joueur_max[id_joueur]++;
         usleep(5000000);
     }
-    // Il ne peut pas racheter un terrain non hypotheque
     else if (terrain[groupe][prop].hypotheque == false)
     {
         carre_noir();
         char echec_rachat[50] = "n'est pas hypotheque !";
         placement_script(strlen(echec_rachat) + strlen(terrain[groupe][prop].nom) + 2, 0);
-        printf("'%s' %s", terrain[groupe][prop].nom, echec_rachat);
+        printf("'%s' %s", echec_rachat, terrain[groupe][prop].nom);
         affichage_argent_joueurs(pion_joueur, id_joueur);
         usleep(5000000);
     }
-    // Il ne peut pas racheter un terrain sans argent
     else
     {
         carre_noir();
         char echec_rachat[70] = ", vous n'avez pas assez d'argent !";
         placement_script(strlen(echec_rachat) + strlen(pion_joueur[id_joueur].pseudo), 0);
-        printf("'%s' %s", terrain[groupe][prop].nom, echec_rachat);
+        printf("%s %s", echec_rachat, pion_joueur[id_joueur].pseudo);
         affichage_argent_joueurs(pion_joueur, id_joueur);
         usleep(5000000);
     }
