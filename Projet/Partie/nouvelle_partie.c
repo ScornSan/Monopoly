@@ -1,24 +1,23 @@
 #include "../Structures/structure_joueur.h"
 #include "../Fonctions_affichage/affichage.h"
 
-void partie_en_cours()
+void partie_en_cours(int pouvoirsauv, int nombre_de_joueurs, t_joueur joueur_x[], t_carte cartes[][3], int id_max_cartes[])
 {
     int repere[4]; // tableau qui configure les lignes, colonnes, couleur texte et couleur du fond
     int tab_c[12]; // tzbleau de cartes chances et communauté
     t_carte tab[GROUPES_CARTES][3]; // initialisation structures de cartes de proprietes
     int fin_de_partie;
-
+    pouvoirsauv = 1;
     int banque_de_carte[2];
     banque_de_carte[0] = 32;
     banque_de_carte[1] = 12;
     int i, j, nb_cartes;
     int sauvegarde_position[2];
-    int nombre_de_joueurs = demander_nb_joueur();
-    int identifiant_carte[nombre_de_joueurs];
+    nombre_de_joueurs = demander_nb_joueur();
     int card_chance = 0; // va venir piocher la premiere carte chance
     int card_commu = 0; // va venir piocher la premiere carte commmu
     t_joueur joueur[nombre_de_joueurs]; // on crée un tableau de structures de joueurs, de taille du nombre demand�
-    creation_joueurs(joueur, nombre_de_joueurs, identifiant_carte); // on cr�e les structures joueurs
+    creation_joueurs(joueur, nombre_de_joueurs, id_max_cartes); // on cr�e les structures joueurs
     remplissages_cartes(tab); // on remplit les cartes terrains
     remplissage_chance_commu(tab_c, 12); // on remplit les cartes chance et commu
     //melangeurCarte(tab_c, 16);
@@ -44,7 +43,7 @@ void partie_en_cours()
         {
             if (elimination[id] == false)
             {
-                tour_joueur(repere, joueur, nombre_de_joueurs, id, tab, identifiant_carte, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison, elimination);
+                tour_joueur(repere, joueur, nombre_de_joueurs, id, tab, id_max_cartes, tab_c, loto, card_chance, card_commu, sauvegarde_position, banque_de_carte, tour_prison, elimination);
             }
             else
             {

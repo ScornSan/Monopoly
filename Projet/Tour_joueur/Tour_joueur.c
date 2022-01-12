@@ -9,6 +9,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     int nb_lancer = 0;
     int key;
     int key_h;
+    int pouvoirsauv = 1;
     char chaine[2] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
@@ -22,6 +23,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
+        printf("nb : %d", nombre_joueurs);
         affichage_argent_joueurs(joueur_i,id_joueur);
         fflush(stdin);
         if (nb_lancer == 0)
@@ -222,7 +224,8 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
         }
         else if ((key == 'm' || key == 'M' ) && nb_lancer == 0)
         {
-            echap();
+            int keych = key;
+            echap(keych, pouvoirsauv, nombre_joueurs, joueur_i, cartes_terrain, id_carte);
         }
     }
     return joueur_i[id_joueur].argent;

@@ -44,7 +44,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
             Color(12,0);
             fflush(stdin);
             gets(&joueur[x].pseudo);
-            while (joueur[x].pseudo[0] == TOUCHE_ESPACE)
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_ESPACE || joueur[x].pseudo[0] == TOUCHE_TAB || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_TAB)
             {
                 effacement_perso(0, 1, 100, n, 72);
                 Color(15,0);

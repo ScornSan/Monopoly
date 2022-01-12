@@ -10,6 +10,7 @@
 #define GROUPES_CARTES 8
 #define TOUCHE_ESPACE 32
 #define TOUCHE_ENTER 13
+#define TOUCHE_TAB 9
 #define VAL_NUL 5 // constante qui permet de savoir qu'un joueur ne possede pas une carte
 #define TAILLE_CARTES 15
 
@@ -28,8 +29,7 @@ typedef struct players
 
 typedef struct cartes
 {
-    char *nom;
-    int numero_acquis;
+    char* nom;
     int nb_maison;
     int prix_maison;
     int prix_achat;
