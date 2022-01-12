@@ -56,23 +56,23 @@ void remplissages_cartes(t_carte carte[][3])
     /// On va maintenant définir en dur le nombre de chaque terrain
     //chaine = p_carte;
     carte[0][0].nom = "Eiffel 1";
-    carte[0][1].nom = "Ile aux cygnes";
+    carte[0][1].nom = "Bowling";
     carte[1][0].nom = "Eiffel 2";
     carte[1][1].nom = "Bir hakeim";
     carte[2][0].nom = "Eiffel 4";
     carte[2][1].nom = "Eiffel cafe";
     carte[3][0].nom = "Eiffel 3";
     carte[3][1].nom = "Beaugrenelle";
-    carte[3][2].nom = "Gaumont Pathe";
+    carte[3][2].nom = "Cine Pathe";
     carte[4][0].nom = "Monoprix";
     carte[4][1].nom = "Auchan";
     carte[5][0].nom = "Boulangerie";
     carte[5][1].nom = "Chipotle";
-    carte[5][2].nom = "Marche Grenelle";
+    carte[5][2].nom = "Tour Eiffel";
     carte[6][0].nom = "Coccimarket";
     carte[6][1].nom = "Macdo";
-    carte[7][0].nom = "Duplex";
+    carte[7][0].nom = "Dupleix";
     carte[7][1].nom = "Pharmacie";
-    carte[7][2].nom = "Fnac";
+    carte[7][2].nom = "Subway";
 }
 

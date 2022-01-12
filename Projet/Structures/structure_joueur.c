@@ -1,4 +1,6 @@
 #include "structure_joueur.h"
+
+
 /// ne pas faire la manip chaine de carac ici car debut donc pas centré
 int demander_nb_joueur()
 {
@@ -33,6 +35,12 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
     int n = 15;
     // tableau de structures, nombre de struct = nombre de joueurs
     // remplissage
+    bool continuer = true;
+    int tab[4];
+    tab[0] = "   ";
+    tab[1] = "  ";
+    tab[2] = " ";
+    tab[3] = "";
     for (int x = 0; x < nombre_joueurs; x++)
     {
         do
@@ -44,6 +52,42 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
             Color(12,0);
             fflush(stdin);
             gets(&joueur[x].pseudo);
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_ESPACE || joueur[x].pseudo[0] == TOUCHE_TAB || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_TAB)
+            {
+                effacement_perso(0, 1, 100, n, 72);
+                Color(15,0);
+                gotoligcol(n,72);
+                printf("Joueur %d, entrez votre pseudo : ", x + 1);
+                Color(12,0);
+                fflush(stdin);
+                gets(&joueur[x].pseudo);
+            }
+            tab[x] = joueur[x].pseudo;
+            if (strcmp(tab[0],tab[1]) == 0 || strcmp(tab[0],tab[2]) == 0 || strcmp(tab[0],tab[3]) == 0 || strcmp(tab[1],tab[2]) == 0 || strcmp(tab[1],tab[3]) == 0 || strcmp(tab[2],tab[3]) == 0)
+            {
+                continuer = false;
+            }
+            else
+            {
+                continuer = true;
+            }
+            /*for (int i = 0; i < nombre_joueurs; i++)
+            {
+                int bloc = 0;
+                for (int j = 0; j < strlen(joueur[x].pseudo); j++)
+                {
+                    if (joueur[x].pseudo[j] == joueur[i].pseudo[j] && x != 0)
+                    {
+                        bloc++;
+                    }
+                    if (bloc == strlen(joueur[x].pseudo))
+                    {
+                        continuer = false;
+                        gotoligcol(35,65);
+                        printf("Vous ne pouvez pas prendre le meme pseudo qu'un autre joueur");
+                    }
+                }
+            }*/
             while (joueur[x].pseudo[0] == TOUCHE_ESPACE)
             {
                 effacement_perso(0, 1, 100, n, 72);
@@ -55,7 +99,7 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
                 gets(&joueur[x].pseudo);
             }
         }
-        while (strlen(&joueur[x].pseudo) > 12 || strlen(&joueur[x].pseudo) <= 0);
+        while (strlen(&joueur[x].pseudo) > 12 || strlen(&joueur[x].pseudo) <= 0 || continuer == false);
 
         joueur[x].argent = 1500;
         joueur[x].position = 0;

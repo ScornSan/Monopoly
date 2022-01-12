@@ -20,6 +20,35 @@ void placement_script_carte(int longueur,int id_joueur, t_carte terrain[][3], in
     gotoligcol(ligne, colonne + (id_joueur * 19)+1);
 }
 
+void affichage_nom_terrain(int repere[], t_carte terrain[][3])
+{
+    Color(0,15);
+    int nb_cartes;
+    for (int i = 0; i < GROUPES_CARTES; i++)
+    {
+        if (i % 2 == 0 || i == 1)
+        {
+            nb_cartes = 2;
+        }
+        else
+        {
+            nb_cartes = 3;
+        }
+        for (int j = 0; j < nb_cartes; j++)
+        {
+            liaison_memoire_affichage(repere, i, j);
+            longueur = strlen(terrain[i][j].nom);
+            gotoligcol(repere[0] + 1 , repere[1] + 7 - (longueur/2));
+            printf("%s", terrain[i][j].nom);
+        }
+    }
+    Color(12,15);
+    gotoligcol(11, 93);
+    printf(" ALLEZ EN");
+    gotoligcol(13, 94);
+    printf(" PRISON");
+}
+
 void affichage_prix_terrain(int repere[], t_carte terrain[][3])
 {
     Color(0,15);

@@ -30,6 +30,7 @@ typedef struct cartes
     char *nom;
     int nb_maison;
     int prix_maison;
+    int num_acqui;
     int prix_achat;
     bool prop_achete;
     int prix_loyer;
@@ -39,7 +40,7 @@ typedef struct cartes
     int possession_carte;
     bool possession_quartier;
     int prix_rachat;
-    int id_carte;
+    int id_carte[25];
 
 }t_carte;
 

@@ -99,6 +99,9 @@
 		<Unit filename="Fonctions_actions_joueurs/hypothequer.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Fonctions_actions_joueurs/loto.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Fonctions_actions_joueurs/payer_un_loyer.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -133,6 +136,9 @@
 		<Unit filename="Menu/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="Partie/faillite.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Partie/nouvelle_partie.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -149,13 +155,10 @@
 		<Unit filename="Sauvegardes/chargerpartieclass.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sauvegardes/chargerpartieplus.c">
+		<Unit filename="Sauvegardes/partie_alternative.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sauvegardes/sauvegardeclassique.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Sauvegardes/sauvegardeenplus.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Structures/Structures_cartes.c">

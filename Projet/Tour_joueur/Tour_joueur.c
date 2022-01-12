@@ -1,7 +1,7 @@
 #include "../Fonctions_actions_joueurs/actions.h"
 #include "../Structures/structure_joueur.h"
 
-int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[], int tour_prison[])
+int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_joueur, t_carte cartes_terrain[][3], int id_carte[], int tab_cartes_c[], int loto, int card_chance, int card_commu, int sauvegarde_position[], int banque_de_carte[], int tour_prison[], bool elimination[])
 {
     int longueur;
     int longueur_2;
@@ -9,6 +9,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     int nb_lancer = 0;
     int key;
     int key_h;
+    int pouvoirsauv = 1;
     char chaine[2] = "";
     char phrase_impot[100] = ", vous devez payez l'impot sur le revenu s'elevant a 200";
     char phrase_stationnement[100] = " est en stationnement gratuit et peut souffler pendant un tour !";
@@ -22,6 +23,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
+        printf("nb : %d", nombre_joueurs);
         affichage_argent_joueurs(joueur_i,id_joueur);
         fflush(stdin);
         if (nb_lancer == 0)
@@ -111,7 +113,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,2);
                     printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
                     joueur_i[id_joueur].argent -= 200;
-                    usleep(3000);
+                    usleep(300000);
                     break;
 
                 case 5:
@@ -121,8 +123,13 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,2);
                     printf("%s%s",joueur_i[id_joueur].pseudo, phrase_chance);
                     placement_script(longueur_2,3),
-                                     printf("%s",phrase_chance_2);
-                    usleep(3000);
+                    printf("%s",phrase_chance_2);
+                    banquechance(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_chance, sauvegarde_position);
+                    if(joueur_i[id_joueur].argent < loto)
+                    {
+                        faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
+                    }
+                    usleep(300000);
 
                     break;
 
@@ -131,11 +138,15 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     longueur = strlen(phrase_commu);
                     longueur_2 = strlen(phrase_commu_2);
                     placement_script(longueur,2);
-                    printf("%s",phrase_commu);
+                    printf("%s%s",joueur_i[id_joueur].pseudo, phrase_commu);
                     placement_script(longueur_2,3),
-                                     printf("%s",phrase_commu_2);
-                    usleep(3000);
-
+                    printf("%s",phrase_commu_2);
+                    banquecommu(joueur_i, id_joueur, nombre_joueurs, tab_cartes_c, loto, card_commu, sauvegarde_position);
+                    if(joueur_i[id_joueur].argent < loto)
+                    {
+                        faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
+                    }
+                    usleep(300000);
                     break;
 
                 case 21:
@@ -155,19 +166,17 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     longueur = strlen(phrase_stationnement) + strlen(joueur_i[id_joueur].pseudo);
                     placement_script(longueur,2);
                     printf("%s%s",joueur_i[id_joueur].pseudo, phrase_stationnement);
-                    usleep(3000);
+                    usleep(300000);
                     break;
 
                 default:
-                    tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
+                    tomber_sur_terrain(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte, elimination);
                     break;
                 }
             }
         }
-        else if ((key == 'h' || key == 'H') && nb_lancer == 0)
+       else if ((key == 'h' || key == 'H') && nb_lancer == 0)
         {
-            gotoligcol(60, 60);
-            printf("%d", id_carte[id_joueur]);
             if (id_carte[id_joueur] - 1 != 0)
             {
                 carre_noir();
@@ -182,8 +191,6 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                 key_h = getch();
                 if ((key_h == 'r' || key_h == 'R'))
                 {
-                    gotoligcol(60, 60);
-                    printf("%d", id_carte[id_joueur]);
                     rachat_terrain(joueur_i, id_joueur, cartes_terrain, id_carte, banque_de_carte, repere);
                 }
                 else if(key_h == 'h' || key_h == 'H')
@@ -208,16 +215,26 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
             int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo);
             placement_script(longueur,0);
             printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-            vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
+            if (id_carte[id_joueur] - 1 != 0)
+            {
+                vente_maisons(repere, joueur_i, nombre_joueurs, id_joueur, cartes_terrain, id_carte, banque_de_carte);
+            }
+            else
+            {
+                carre_noir();
+                char chaine[100] = ", vous ne possedez aucun terrain !";
+                int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
+                placement_script(longueur,0);
+                printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
+                sleep(1);
+            }
+
         }
         else if ((key == 'm' || key == 'M' ) && nb_lancer == 0)
         {
-            echap();
+            int keych = key;
+            echap(keych, pouvoirsauv, nombre_joueurs, joueur_i, cartes_terrain, id_carte);
         }
     }
-    return joueur_i[id_joueur].argent;
 }
-
-/// tour d'un joueur, ou autre lancer car dés doubles
-
 
