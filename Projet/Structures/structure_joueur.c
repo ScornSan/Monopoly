@@ -36,6 +36,11 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
     // tableau de structures, nombre de struct = nombre de joueurs
     // remplissage
     bool continuer = true;
+    int tab[4];
+    tab[0] = "   ";
+    tab[1] = "  ";
+    tab[2] = " ";
+    tab[3] = "";
     for (int x = 0; x < nombre_joueurs; x++)
     {
         do
@@ -47,6 +52,25 @@ void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_car
             Color(12,0);
             fflush(stdin);
             gets(&joueur[x].pseudo);
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_ESPACE || joueur[x].pseudo[0] == TOUCHE_TAB || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_TAB)
+            {
+                effacement_perso(0, 1, 100, n, 72);
+                Color(15,0);
+                gotoligcol(n,72);
+                printf("Joueur %d, entrez votre pseudo : ", x + 1);
+                Color(12,0);
+                fflush(stdin);
+                gets(&joueur[x].pseudo);
+            }
+            tab[x] = joueur[x].pseudo;
+            if (strcmp(tab[0],tab[1]) == 0 || strcmp(tab[0],tab[2]) == 0 || strcmp(tab[0],tab[3]) == 0 || strcmp(tab[1],tab[2]) == 0 || strcmp(tab[1],tab[3]) == 0 || strcmp(tab[2],tab[3]) == 0)
+            {
+                continuer = false;
+            }
+            else
+            {
+                continuer = true;
+            }
             /*for (int i = 0; i < nombre_joueurs; i++)
             {
                 int bloc = 0;

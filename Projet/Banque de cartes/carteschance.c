@@ -27,10 +27,12 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
         case 0:
             gotoligcol(47, 93 + x * 2);
             affichage_pion(x);
+            remplacement_position(sauvegarde_position, joueur[x].position);
             placement_script(strlen(case_depart) + taille_pseudo, 1);
-            Color(x + 9, 0);
+            Color( x +9, 0);
             printf("%s%s", joueur[x].pseudo, case_depart);
             joueur[x].position = 0;
+            joueur[x].ancienne_position = 0;
             usleep(3000000);
             break;
 
@@ -118,12 +120,12 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
         case 10:
             placement_script(strlen(prison) + taille_pseudo, 1);
             printf("%s%s", joueur[x].pseudo, prison);
+            joueur[x].prison = true;
+            affichage_pion_prison(x,joueur[x].prison);
             remplacement_position(sauvegarde_position,joueur[x].position);
-            affichage_pion_prison_c(x,joueur[x].prison);
             Color(0, x + 9);
             printf(" ");
             joueur[x].position = 7;
-            joueur[x].prison = true;
             usleep(3000000);
             break;
         case 6:
