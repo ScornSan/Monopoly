@@ -1,47 +1,103 @@
 #include "structure_joueur.h"
 
 
-int repet = -1;
-
+/// ne pas faire la manip chaine de carac ici car debut donc pas centré
 int demander_nb_joueur()
 {
-    // demande le nombre de joueurs
     int nb_joueurs = 0;
-    //int nb_joueurs = 2; /// TODO remettre à 0
-    while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4)
+    // demande le nombre de joueurs
+    do
     {
-        char chaine[100] = "A combien souhaitez-vous jouer ?";
-        longueur = strlen(chaine);
-        carre_noir();
-        placement_script(longueur,0);
-        printf("%s",chaine);
-        GetConsoleScreenBufferInfo (GetStdHandle(STD_OUTPUT_HANDLE), &coninfo);
-        int y = coninfo.dwCursorPosition.Y;
-        gotoligcol(y +1,51);
+        system("cls");
+        Color(12, 0);
+        printf("Appuyez sur [ECHAP] pour revenir au menu");
+        Color(9, 0);
+        gotoligcol(8,70);
+        printf("BIENVENUE DANS UNE NOUVELLE PARTIE ! \n");
+        gotoligcol(11,72);
+        Color(15, 0);
+        printf("A combien souhaitez-vous jouer ?\n");
         fflush(stdin);
+        gotoligcol(13,72);
+        Color(15, 0);
+        printf("Entrez votre selection : ");
+        Color(12, 0);
         scanf("%d", &nb_joueurs);
     }
+    while (nb_joueurs != 2 && nb_joueurs != 3 && nb_joueurs != 4);
+
     return nb_joueurs; // on retourne avec -1 car la valeur qu'on retourne va nous servir pour les indices
 }
 
 
-void creation_joueurs(t_joueur joueur[], int nombre_joueurs)
+void creation_joueurs(t_joueur joueur[], int nombre_joueurs, int identifiant_carte[])
 {
+    int n = 15;
     // tableau de structures, nombre de struct = nombre de joueurs
     // remplissage
-    repet = 0;
-    carre_noir();
+    bool continuer = true;
+    int tab[4];
+    tab[0] = "   ";
+    tab[1] = "  ";
+    tab[2] = " ";
+    tab[3] = "";
     for (int x = 0; x < nombre_joueurs; x++)
     {
-        repet +=1;
-        char chaine[100] = "Joueur ";
-        char chaine2[100] = ", Entrez votre pseudo : ";
-        longueur = (strlen(chaine)+strlen(chaine2));
-        placement_script(longueur,repet);
-        printf("%s%d%s",chaine, x + 1,chaine2);
-        fflush(stdin);
-        gets(&joueur[x].pseudo);
+        do
+        {
+            effacement_perso(0, 1, 100, n, 72);
+            Color(15,0);
+            gotoligcol(n,72);
+            printf("Joueur %d, entrez votre pseudo : ", x + 1);
+            Color(12,0);
+            fflush(stdin);
+            gets(&joueur[x].pseudo);
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_ESPACE || joueur[x].pseudo[0] == TOUCHE_TAB || joueur[x].pseudo[strlen(joueur[x].pseudo) - 1] == TOUCHE_TAB)
+            tab[x] = joueur[x].pseudo;
+            if (strcmp(tab[0],tab[1]) == 0 || strcmp(tab[0],tab[2]) == 0 || strcmp(tab[0],tab[3]) == 0 || strcmp(tab[1],tab[2]) == 0 || strcmp(tab[1],tab[3]) == 0 || strcmp(tab[2],tab[3]) == 0)
+            {
+                continuer = false;
+            }
+            else
+            {
+                continuer = true;
+            }
+            /*for (int i = 0; i < nombre_joueurs; i++)
+            {
+                int bloc = 0;
+                for (int j = 0; j < strlen(joueur[x].pseudo); j++)
+                {
+                    if (joueur[x].pseudo[j] == joueur[i].pseudo[j] && x != 0)
+                    {
+                        bloc++;
+                    }
+                    if (bloc == strlen(joueur[x].pseudo))
+                    {
+                        continuer = false;
+                        gotoligcol(35,65);
+                        printf("Vous ne pouvez pas prendre le meme pseudo qu'un autre joueur");
+                    }
+                }
+            }*/
+            while (joueur[x].pseudo[0] == TOUCHE_ESPACE)
+            {
+                effacement_perso(0, 1, 100, n, 72);
+                Color(15,0);
+                gotoligcol(n,72);
+                printf("Joueur %d, entrez votre pseudo : ", x + 1);
+                Color(12,0);
+                fflush(stdin);
+                gets(&joueur[x].pseudo);
+            }
+        }
+        while (strlen(&joueur[x].pseudo) > 12 || strlen(&joueur[x].pseudo) <= 0 || continuer == false);
+
         joueur[x].argent = 1500;
         joueur[x].position = 0;
+        joueur[x].prison = false;
+        identifiant_carte[x] = 1; // on initialise les identifiants des cartes de chaque joueur à 1
+        n = n+1;
     }
+
+    system("cls");
 }

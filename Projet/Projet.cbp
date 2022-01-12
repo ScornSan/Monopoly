@@ -155,7 +155,7 @@
 		<Unit filename="Sauvegardes/chargerpartieclass.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Sauvegardes/partiealternative.c">
+		<Unit filename="Sauvegardes/partie_alternative.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Sauvegardes/sauvegardeclassique.c">

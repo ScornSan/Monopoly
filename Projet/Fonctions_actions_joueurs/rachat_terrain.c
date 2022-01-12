@@ -101,7 +101,7 @@ void rachat_terrain(t_joueur pion_joueur[], int id_joueur, t_carte terrain[][3],
         carre_noir();
         char echec_rachat[70] = ", vous n'avez pas assez d'argent !";
         placement_script(strlen(echec_rachat) + strlen(pion_joueur[id_joueur].pseudo), 0);
-        printf("%s %s", echec_rachat, pion_joueur[id_joueur].pseudo);
+        printf("'%s' %s", terrain[groupe][prop].nom, echec_rachat);
         affichage_argent_joueurs(pion_joueur, id_joueur);
         usleep(5000000);
     }

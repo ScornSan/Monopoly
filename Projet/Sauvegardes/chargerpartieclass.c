@@ -65,4 +65,3 @@ void chargerpartie1(int *nb_joueurs, t_joueur joueur_x[], t_carte carte[][3], in
     }
 }
 
-

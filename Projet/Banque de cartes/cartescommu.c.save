@@ -1,14 +1,44 @@
 #include "../Structures/structure_joueur.h"
 
-void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], int loto, int card, int sauvegarde_position[])
+int equation()
+{
+    int x = 0;
+    int solution = 6;
+    carre_noir();
+    char equation[40] = "3 * x - 6 = 12";
+    placement_script(strlen(equation), 0);
+    printf("%s", equation);
+    char devinette[60] = "Devinez la solution de l'equation : ";
+    placement_script(strlen(devinette), 1);
+    printf("%s", devinette);
+    scanf("%d", &x);
+    if (x == solution)
+    {
+        char bravo [50] = "Bravo ! Vous avez gagnez 50$";
+        placement_script(strlen(bravo), 3);
+        printf("%s", bravo);
+    }
+    else
+    {
+        char nul[50] = "Dommage, vous avez perdu!";
+        placement_script(strlen(nul), 3);
+        printf("%s", nul);
+    }
+    fflush(stdin);
+    return x;
+}
+
+
+void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int loto, int card, int sauvegarde_position[])
 {
     int key;
-    int tailletabcartes = 11;
-    int taille_pseudo = strlen(joueur[x].pseudo);
     int solution;
-    melangeurCarte(cartechance, tailletabcartes);
+    int tailletabcartes = 16;
 
-    char* case_depart = ", placez vous sur la case départ";
+    melangeurCarte(cartecommu, tailletabcartes);
+
+    int taille_pseudo = strlen(joueur[x].pseudo);
+    char* case_depart = ", placez vous sur la case DEPART";
     char* impot_100 = ", vous devez payer 100$";
     char* impot_50 = ", vous devez payer 50$";
     char* impot_20 = ", vous devez payer 20$";
@@ -22,12 +52,13 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
 
     if (getch()) // On entre 32 en constante, correspondant à ESPACE
     {
-        switch(cartechance[card])
+
+        switch( 0/*cartecommu[card]*/)
         {
         case 0:
             gotoligcol(47, 93 + x * 2);
             affichage_pion(x);
-            remplacement_position(sauvegarde_position, joueur[x].position);
+            remplacement_position(sauvegarde_position, )
             placement_script(strlen(case_depart) + taille_pseudo, 1);
             Color( x +9, 0);
             printf("%s%s", joueur[x].pseudo, case_depart);
@@ -76,7 +107,7 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
             usleep(3000000);
             break;
 
-        /*case 6: /// CRASH
+        /*case 6:
             placement_script(strlen(phrase_loto) + taille_pseudo + strlen(loto), 1);
             printf("%s%s %d", joueur[x].pseudo, phrase_loto, loto);
             joueur[x].argent = joueur[x].argent + loto;
@@ -118,12 +149,12 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
         case 10:
             placement_script(strlen(prison) + taille_pseudo, 1);
             printf("%s%s", joueur[x].pseudo, prison);
-            joueur[x].prison = true;
-            affichage_pion_prison(x,joueur[x].prison);
             remplacement_position(sauvegarde_position,joueur[x].position);
+            affichage_pion_prison_c(x,joueur[x].prison);
             Color(0, x + 9);
             printf(" ");
             joueur[x].position = 7;
+            joueur[x].prison = true;
             usleep(3000000);
             break;
         case 6:

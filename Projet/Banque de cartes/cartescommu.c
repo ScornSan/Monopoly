@@ -33,12 +33,12 @@ void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int
 {
     int key;
     int solution;
-    int tailletabcartes = 16;
+    int tailletabcartes = 11;
 
     melangeurCarte(cartecommu, tailletabcartes);
 
     int taille_pseudo = strlen(joueur[x].pseudo);
-    char* case_depart = ", placez vous sur la case départ";
+    char* case_depart = ", placez vous sur la case DEPART";
     char* impot_100 = ", vous devez payer 100$";
     char* impot_50 = ", vous devez payer 50$";
     char* impot_20 = ", vous devez payer 20$";
@@ -58,9 +58,12 @@ void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int
         case 0:
             gotoligcol(47, 93 + x * 2);
             affichage_pion(x);
+            remplacement_position(sauvegarde_position, joueur[x].position);
             placement_script(strlen(case_depart) + taille_pseudo, 1);
+            Color( x +9, 0);
             printf("%s%s", joueur[x].pseudo, case_depart);
             joueur[x].position = 0;
+            joueur[x].ancienne_position = 0;
             usleep(3000000);
             break;
 
@@ -146,12 +149,12 @@ void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int
         case 10:
             placement_script(strlen(prison) + taille_pseudo, 1);
             printf("%s%s", joueur[x].pseudo, prison);
+            joueur[x].prison = true;
+            affichage_pion_prison(x,joueur[x].prison);
             remplacement_position(sauvegarde_position,joueur[x].position);
-            affichage_pion_prison_c(x,joueur[x].prison);
             Color(0, x + 9);
             printf(" ");
             joueur[x].position = 7;
-            joueur[x].prison = true;
             usleep(3000000);
             break;
         case 6:

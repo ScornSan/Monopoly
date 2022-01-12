@@ -61,7 +61,6 @@ void hypothequer(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte
                         longueur = strlen(nb_maison);
                         effacement_perso(0, 1, 60, 37, 30);
                         placement_script(longueur, 8);
-                        printf("%d", touche2);
                         printf("%s %s", nb_maison, terrain[a][b].nom);
                         groupe = a;
                         prop = b;
@@ -100,7 +99,7 @@ void hypothequer(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte
             affichage_prix_terrain(repere, terrain);
             affichage_carte(repere, id_joueur, terrain, groupe, prop);
             identifiant_joueur_max[id_joueur]--;
-            usleep(3000000);
+            usleep(300000);
         }
         else
         {
@@ -111,11 +110,7 @@ void hypothequer(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte
             char echec_hypotheque[100] = "vous avez deja hypotheque la propriete ";
             placement_script(strlen(echec_hypotheque) + strlen(terrain[groupe][prop].nom) + 2, 1);
             printf("%s'%s'", echec_hypotheque, terrain[groupe][prop].nom);
-            usleep(3000000);
+            usleep(300000);
         }
-        gotoligcol(38,65);
-        Color(0,3);
-        sleep(2);
     }
 }
-

@@ -6,6 +6,7 @@ void sauvegardeclassique(int nb_joueurs, t_joueur joueur_x[], t_carte carte[][3]
     sauvegarde1 = fopen("sauvegarde1.txt", "w"); // "w" pour ECRASEMENT donc on crée un NOUVEAU FICHIER et on ECRASE l'autre si il y'en a un
     //int nb_cartes;
     fprintf(sauvegarde1, "%d\n", nb_joueurs);
+    printf("%d", nb_joueurs);
     for (int x = 0; x < nb_joueurs; x++) // Boucle pour sauvegarder les structures
     {
         fprintf(sauvegarde1, "%s\n", joueur_x[x].pseudo);
