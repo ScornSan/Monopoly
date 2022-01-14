@@ -61,7 +61,6 @@ void hypothequer(t_joueur pion_joueur[], int max_joueurs, int id_joueur, t_carte
                         longueur = strlen(nb_maison);
                         effacement_perso(0, 1, 60, 37, 30);
                         placement_script(longueur, 8);
-                        printf("%d", touche2);
                         printf("%s %s", nb_maison, terrain[a][b].nom);
                         groupe = a;
                         prop = b;

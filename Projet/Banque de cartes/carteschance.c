@@ -3,7 +3,7 @@
 void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], int loto, int card, int sauvegarde_position[])
 {
     int key;
-    int tailletabcartes = 16;
+    int tailletabcartes = 11;
     int taille_pseudo = strlen(joueur[x].pseudo);
     int solution;
     melangeurCarte(cartechance, tailletabcartes);
@@ -94,7 +94,6 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
             break;
 
         case 8:
-            printf("8");
             placement_script(strlen(revenue_50) + taille_pseudo, 1);
             printf("%s%s", joueur[x].pseudo, revenue_50);
             joueur[x].argent+= 50;
@@ -103,7 +102,6 @@ void banquechance(t_joueur joueur[], int x, int nb_joueurs, int cartechance[], i
             break;
 
         case 9:
-            printf("9");
             placement_script(strlen(revenue_20) + taille_pseudo, 1);
             printf("%s%s", joueur[x].pseudo, revenue_20);
             joueur[x].argent+= 20;

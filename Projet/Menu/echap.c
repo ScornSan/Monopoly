@@ -10,7 +10,6 @@ void echap(int keych, int pouvoirsauv, int nombre_de_joueurs, t_joueur joueur[],
     do
     {
         system("cls");
-        affichage_Menu();
         affichage_Menu(pouvoirsauv, nombre_de_joueurs, joueur, cartes, id_max);
     }
     while(keych != 'm' || keych != 'M');

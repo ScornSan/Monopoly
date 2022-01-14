@@ -33,7 +33,7 @@ void banquecommu(t_joueur joueur[], int x, int nb_joueurs, int cartecommu[], int
 {
     int key;
     int solution;
-    int tailletabcartes = 16;
+    int tailletabcartes = 11;
 
     melangeurCarte(cartecommu, tailletabcartes);
 

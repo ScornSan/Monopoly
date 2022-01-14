@@ -23,7 +23,6 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
     /// vérification tour suivant ou pas
     while ((nb_lancer == 0) || (de1 == de2))
     {
-        printf("nb : %d", nombre_joueurs);
         affichage_argent_joueurs(joueur_i,id_joueur);
         fflush(stdin);
         if (nb_lancer == 0)
@@ -113,7 +112,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     placement_script(longueur,2);
                     printf("%s%s", joueur_i[id_joueur].pseudo, phrase_impot);
                     joueur_i[id_joueur].argent -= 200;
-                    usleep(300000);
+                    usleep(800000);
                     break;
 
                 case 5:
@@ -129,7 +128,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     {
                         faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
                     }
-                    usleep(300000);
+                    usleep(800000);
 
                     break;
 
@@ -146,7 +145,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     {
                         faillite(joueur_i, id_joueur, nombre_joueurs, cartes_terrain, id_carte, loto, banque_de_carte, repere, elimination);
                     }
-                    usleep(300000);
+                    usleep(800000);
                     break;
 
                 case 21:
@@ -159,14 +158,14 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                     remplacement_position(sauvegarde_position,joueur_i[id_joueur].position);
                     joueur_i[id_joueur].ancienne_position = 7;
                     joueur_i[id_joueur].position = 7;
-                    usleep(300000);
+                    usleep(800000);
                     break;
 
                 case 14:
                     longueur = strlen(phrase_stationnement) + strlen(joueur_i[id_joueur].pseudo);
                     placement_script(longueur,2);
                     printf("%s%s",joueur_i[id_joueur].pseudo, phrase_stationnement);
-                    usleep(300000);
+                    usleep(800000);
                     break;
 
                 default:
@@ -205,7 +204,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                 int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
                 placement_script(longueur,0);
                 printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-                sleep(1);
+                sleep(2);
             }
         }
         else if ((key == 'v' || key == 'V' ) && nb_lancer == 0)
@@ -226,7 +225,7 @@ int tour_joueur(int repere[], t_joueur joueur_i[], int nombre_joueurs, int id_jo
                 int longueur = strlen(chaine) + strlen(joueur_i[id_joueur].pseudo) ;
                 placement_script(longueur,0);
                 printf("%s%s",joueur_i[id_joueur].pseudo, chaine);
-                sleep(1);
+                sleep(2);
             }
 
         }
